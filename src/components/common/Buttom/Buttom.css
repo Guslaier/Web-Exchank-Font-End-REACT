@@ -1,0 +1,66 @@
+.btn-submit{
+    background-color: var(--btn-submit);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้ปุ่มดูมีมิติ */  
+
+}
+.btn-submit:hover {
+    background-color: var(--btn-submit-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+.btn-cancel{
+    background-color: var(--btn-cancel);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-cancel:hover {
+    background-color: var(--btn-cancel-dark); /* สีส้มเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-view{
+    background-color: var(--btn-view);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-view:hover {
+    background-color: var(--btn-view-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-close{
+    background-color: var(--btn-deactive);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-close:hover {
+    background-color: var(--btn-deactive-dark); /* สีส้มเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-open{
+    background-color: var(--btn-open);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-open:hover {
+    background-color: var(--btn-open-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}

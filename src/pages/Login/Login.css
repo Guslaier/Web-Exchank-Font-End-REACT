@@ -1,0 +1,57 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--primary-color); /* พื้นหลังสีน้ำเงิน */
+  color: white;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 0.8;
+}
+
+.login-logo .m-yellow {
+  color: #FFD700; /* ตัว M สีเหลือง */
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login-form input {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.login-form .btn-submit {
+  align-self: flex-end; /* ปุ่มชิดขวาตามแบบ */
+  background-color: var(--btn-submit);
+  color: white;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.login-form .btn-submit:hover {
+  background-color: var(--btn-submit-dark);
+}

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sarabun", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+/* src/index.css */
+
+.sarabun-thin {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.sarabun-extralight {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.sarabun-light {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sarabun-regular {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sarabun-medium {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.sarabun-semibold {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sarabun-bold {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sarabun-extrabold {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sarabun-thin-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.sarabun-extralight-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.sarabun-light-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.sarabun-regular-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sarabun-medium-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.sarabun-semibold-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.sarabun-bold-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.sarabun-extrabold-italic {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+:root {
+  /* --- Colors from your GUI --- */
+  
+  /* สีน้ำเงินหลักของ Sidebar และ Header */
+  --primary-color: #2A50A2;      /* Blue จากแถบด้านซ้าย */
+  --primary-dark: #13357F;       /* สำหรับ Hover หรือส่วนที่เข้มกว่า */
+  
+  /* สีพื้นหลัง (Background) */
+  --bg-main: #f4f7fe;           /* พื้นหลังสีเทาอ่อนด้านขวา */
+  --bg-card: #ffffff;           /* พื้นหลังขาวของ Card/Table */
+  
+  /* สีข้อความ (Text) */
+  --text-main: #2d3748;         /* สีตัวหนังสือหลักเข้มๆ */
+  --text-muted: #718096; 
+  --text-white: #ffffff;        /* สีขาวสำหรับข้อความบน Background สีน้ำเงิน */
+  
+  /* สีปุ่มและสถานะ (Buttons & Status) */
+  --btn-submit: #48bb78;        /* สีเขียวจากปุ่ม Create */
+  --btn-submit-dark: #38a169;   /* สีเขียวเข้มสำหรับ Hover */
+  --btn-open: #48bb78;        /* สีเขียวจากปุ่ม Create */
+  --btn-open-dark: #38a169;   /* สีเขียวเข้มสำหรับ Hover */
+  --btn-view: #718096;        /* สีเขียวจากปุ่ม Create */
+  --btn-view-dark: #4a5568;   /* สีเขียวเข้มสำหรับ Hover */
+  --btn-deactive: #ed8936; 
+  --btn-deactive-dark: #dd6b30;     /* สีส้มเข้มสำหรับ Hover */
+  --btn-close: #ed8936; 
+  --btn-close-dark: #dd6b30;     /* สีส้มเข้มสำหรับ Hover */
+  --btn-edit: #3182ce;       /* สีน้ำเงินจากปุ่ม Edit */
+  --btn-edit-dark: #2c5282;    /* สีน้ำเงินเข้มสำหรับ Hover */
+  --btn-delete: #f56565;        /* สีแดงจากปุ่ม Delete */
+  --btn-delete-dark: #e53e3e;   /* สีแดงเข้มสำหรับ Hover */
+  --btn-cancel: #f56565;      /* สีส้มจากปุ่ม Deactive */
+  --btn-cancel-dark: #e53e3e;   /* สีส้มเข้มสำหรับ Hover */
+  
+  /* --- Role-based Colors --- */
+  
+  /* สีตามสิทธิ์ผู้ใช้งาน (อิงจากปุ่ม Action ในรูป) */
+  --role-owner: #2b59c3;        /* สีน้ำเงินเหมือนแบรนด์ */
+  --role-staff: #718096;        /* สีเทาสำหรับ Staff ทั่วไป */
+  
+  /* --- Layout Sizes --- */
+  --sidebar-width: 11rem;
+  --border-radius: 15px;
+}
+
+/* ใส่ต่อจาก :root เดิมของคุณ */
+.dark-theme {
+  /* --- Colors for Dark Mode --- */
+  
+  /* พื้นหลังหลักและ Sidebar */
+  --primary-color: #1a1c23;      /* สีดำอมน้ำเงินเข้มสำหรับ Sidebar */
+  --primary-dark: #000000;       
+  
+  /* พื้นหลัง (Background) */
+  --bg-main: #121317;           /* พื้นหลังจอภาพรวม */
+  --bg-card: #24262d;           /* พื้นหลังขาวของ Card/Table เปลี่ยนเป็นเทาเข้ม */
+  
+  /* สีข้อความ (Text) */
+  --text-main: #e2e8f0;         /* ตัวหนังสือหลักเปลี่ยนเป็นสีสว่าง */
+  --text-muted: #94a3b8; 
+  --text-white: #ffffff;
+  
+  /* สีปุ่ม (Buttons) - ปรับให้เรืองแสงขึ้นเล็กน้อยในพื้นหลังมืด */
+  --btn-submit: #38a169;        
+  --btn-submit-dark: #2f855a;
+  
+  --btn-cancel: #e53e3e;
+  --btn-cancel-dark: #c53030;
+
+  /* ตาราง (Table) ในโหมดมืด */
+  --table-border: #2d3748;
+  --table-hover: #2d2f39;
+}

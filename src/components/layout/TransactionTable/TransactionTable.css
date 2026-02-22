@@ -1,0 +1,71 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  background: white;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px; /* 🚩 ป้องกันตารางเบียดกันเกินไปจนอ่านไม่ออก */
+}
+
+.transaction-table th, 
+.transaction-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.transaction-table thead {
+  background-color: #f8f9fa;
+  position: sticky; /* 🚩 หัวตารางค้างไว้ขณะเลื่อน */
+  top: 0;
+}
+
+.transaction-table th.amount {
+  text-align: center;
+}
+
+/* จัดการสีตัวอักษร BUY/SALE */
+.text-red { color: #ef4444; }
+.text-green { color: #22c55e; }
+
+
+
+/* ปรับขนาดปุ่มเฉพาะในตาราง (แทนการใช้ scale) */
+.transaction-table .btn {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 11px !important;
+  min-width: 70px;
+  height: auto !important;
+  margin: 0.25rem 0.1rem;
+}
+
+/* ตกแต่งคอลัมน์ตัวเลขให้ชิดขวา */
+.transaction-table .amount {
+  text-align: right;
+}
+
+.transaction-table .id     { width: 12%; }
+.transaction-table .booth  { width: 10%; }
+.transaction-table .user   { width: 10%; }
+.transaction-table .type   { width: 10%; }
+.transaction-table .amount { width: 15%; }
+.transaction-table .action { width: 15%; }
+.transaction-table th, 
+.transaction-table td {
+  padding: 0.5rem 0.25rem; /* ลด Padding ของช่องตารางลง */
+  font-size: 13px; /* ลดขนาดฟอนต์ในตาราง */
+}
+
+/* ย่อปุ่มในคอลัมน์ Action */
+.btn-table {
+  padding: 2px 6px !important;
+  font-size: 11px !important;
+  transform: none; /* เลิกใช้ scale แล้วใช้การปรับ padding แทนเพื่อให้ภาพคมชัด */
+}
+
+
+

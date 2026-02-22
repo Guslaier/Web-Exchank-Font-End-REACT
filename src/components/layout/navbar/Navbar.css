@@ -1,0 +1,128 @@
+
+.navbar{    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    width: var(--sidebar-width );
+    min-height: 100vh; /* ปรับความสูงให้เหมาะสมกับเนื้อหา */
+    padding: 1rem 1rem ;
+    transition: 0.6s;
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+
+}
+.navbar .nav-logo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar .nav-logo span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFCC00;
+}
+.navbar .nav-logo div {
+    display: flex;
+    flex-wrap: wrap; /* 🚩 หัวใจสำคัญ: ยอมให้ตัวอักษรตกบรรทัด */
+    flex-direction: row;
+    width: 200px;    /* ความกว้างตอนกางออก (ปรับตามความยาวคำ) */
+    overflow: hidden;
+}
+.navbar .nav-logo div span {
+    color: white;
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: bold;
+    word-break: break-all; /* บังคับให้ตัดคำทุกตัวอักษร */
+    width: min-content; /* บีบความกว้างให้เท่ากับตัวอักษรเดียว */
+}
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.navbar .nav-menu {
+    display: flex;
+    gap: 0.1rem;
+    flex-direction: column;
+    width: 100%;
+}
+.navbar .nav-menu li {
+    display: flex;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+}
+.navbar .nav-menu .link{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+.navbar .nav-menu a:hover {
+    background-color: var(--primary-dark);
+}
+
+.navbar .nav-menu-bottom {
+    display: flex;
+    gap: 0.1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto; /* ดันเมนูนี้ไปด้านล่าง */
+}
+.navbar .nav-menu-bottom li {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.navbar .nav-menu-bottom .link{
+    width: 100%;
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+}
+.navbar .nav-menu-bottom a:hover {
+    background-color: var(--primary-dark);
+}
+
+.navbar .nav-menu-bottom button {
+    font-size: 2rem;
+    border: none;
+    color: var(--text-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    padding: 0.2rem;
+}
+.navbar .nav-menu-bottom button:hover {
+    background-color: var(--primary-dark);
+}
+.navbar.active .nav-menu {
+    display: none;
+}
+.navbar.active .nav-menu-bottom li {
+    display: none;
+}
+.navbar.active{
+    display: flex;
+    width: 4.3rem;
+}
+.navbar.active .nav-logo div {
+    width: 100%;
+    flex-direction: column;
+}

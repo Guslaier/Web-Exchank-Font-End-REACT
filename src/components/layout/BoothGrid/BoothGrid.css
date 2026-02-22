@@ -1,0 +1,44 @@
+.grid-booth {
+  display: grid;
+  /* 🚩 แก้ไข: ใช้ auto-fill ร่วมกับ minmax เพื่อให้ปุ่มจัดเรียงอัตโนมัติตามความกว้างจอ */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  gap: 1rem;
+  width: 100%;
+  min-height: content;
+  max-height: 300px; /* กำหนดความสูงขั้นต่ำให้กับ grid */
+  overflow-y: scroll;
+  padding: 0.5rem;
+}
+
+.grid-booth .btn {
+    color: var(--text-white);
+    border: none;
+    padding: 0.8rem 1rem; 
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้ตัวอักษรดูเด่นขึ้น */
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้ปุ่มดูมีมิติ */  
+    text-decoration: none;
+}
+
+.grid-booth .btn.btn-booth-open {
+    background-color: var(--btn-open);
+}
+.btn-booth-open:hover {
+    background-color: var(--btn-open-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+    transform: scale(1.05); /* เพิ่มเอฟเฟกต์ขยายเล็กน้อยเมื่อ Hover */
+    filter: brightness(1.1); /* เพิ่มความสว่างเมื่อ Hover */
+}
+.grid-booth .btn.btn-booth-closed {
+    background-color: var(--btn-deactive);
+}
+
+.btn-booth-closed:hover {
+    background-color: var(--btn-deactive-dark); /* สีส้มเข้มขึ้นสำหรับ Hover */
+    transform: scale(1.05); /* เพิ่มเอฟเฟกต์ขยายเล็กน้อยเมื่อ Hover */
+    filter: brightness(1.1); /* เพิ่มความสว่างเมื่อ Hover */
+}

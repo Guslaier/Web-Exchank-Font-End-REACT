@@ -1,0 +1,18 @@
+body{
+    background-color: var(--primary-color);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  margin: 1rem;
+  margin-left: 0;
+  border-radius: var(--border-radius);
+}
