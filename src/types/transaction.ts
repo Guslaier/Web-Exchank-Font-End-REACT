@@ -1,5 +1,5 @@
 // src/types/transaction.ts
-import { TranStatus, TranType, MovementType } from './entities';
+import type { TranStatus, TranType, MovementType } from './entities'; // ดึงประเภทต่างๆ จาก entities.ts เพื่อความสอดคล้องกัน
 
 export interface TransactionBase {
   transaction_no: string; // Primary Key

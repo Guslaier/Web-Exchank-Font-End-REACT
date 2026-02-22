@@ -1,5 +1,5 @@
 import type { AuthResponse } from "../types/auth.ts";
-import type { Booth } from "../types/booth.ts";
+import type { Booth } from "../types/entities.ts";
 import type { User } from "../types/entities.ts";
 import type { TransactionVoid } from "../types/transaction.ts";
 
@@ -34,16 +34,16 @@ export const mockBooths:Booth[] = [
 // ข้อมูลธุรกรรมจำลอง 12 รายการ
 export const mockTransactionsVoid: TransactionVoid[] = [
   { id: 'TXN001', booth: '7-11', user: 'gool_staff', time: '2026-02-22T10:00:00Z', rate: 30.5, currency_name: 'USD', type: 'SALE', amount: 1000, status: 'PENDING' },
-  { id: 'TXN002', booth: 'Lotus', user: 'user_01', time: '2026-02-22T11:00:00Z', rate: 30.0, currency_name: 'EUR', type: 'REFUND', amount: 500, status: 'COMPLETED' },
+  { id: 'TXN002', booth: 'Lotus', user: 'user_01', time: '2026-02-22T11:00:00Z', rate: 30.0, currency_name: 'EUR', type: 'BUY', amount: 500, status: 'COMPLETED' },
   { id: 'TXN003', booth: 'Siam', user: 'user_02', time: '2026-02-22T12:00:00Z', rate: 29.8, currency_name: 'JPY', type: 'SALE', amount: 2000, status: 'VOIDED' },
   { id: 'TXN004', booth: 'Station', user: 'gool_staff', time: '2026-02-22T13:00:00Z', rate: 30.2, currency_name: 'USD', type: 'SALE', amount: 1500, status: 'PENDING' },
-  { id: 'TXN005', booth: 'MK', user: 'user_01', time: '2026-02-22T14:00:00Z', rate: 30.1, currency_name: 'EUR', type: 'REFUND', amount: 700, status: 'COMPLETED' },
+  { id: 'TXN005', booth: 'MK', user: 'user_01', time: '2026-02-22T14:00:00Z', rate: 30.1, currency_name: 'EUR', type: 'BUY', amount: 700, status: 'COMPLETED' },
   { id: 'TXN006', booth: 'Airport', user: 'user_02', time: '2026-02-22T15:00:00Z', rate: 29.9, currency_name: 'JPY', type: 'SALE', amount: 3000, status: 'VOIDED' },
   { id: 'TXN007', booth: 'Silom', user: 'gool_staff', time: '2026-02-22T16:00:00Z', rate: 30.3, currency_name: 'USD', type: 'SALE', amount: 1200, status: 'PENDING' },
-  { id: 'TXN008', booth: 'Central', user: 'user_01', time: '2026-02-22T17:00:00Z', rate: 30.0, currency_name: 'EUR', type: 'REFUND', amount: 600, status: 'COMPLETED' },
+  { id: 'TXN008', booth: 'Central', user: 'user_01', time: '2026-02-22T17:00:00Z', rate: 30.0, currency_name: 'EUR', type: 'BUY', amount: 600, status: 'COMPLETED' },
   { id: 'TXN009', booth: 'MBK', user: 'user_02', time: '2026-02-22T18:00:00Z', rate: 29.7, currency_name: 'JPY', type: 'SALE', amount: 2500, status: 'VOIDED' },
   { id: 'TXN010', booth: 'Emporium', user: 'gool_staff', time: '2026-02-22T19:00:00Z', rate: 30.4, currency_name: 'USD', type: 'SALE', amount: 1800, status: 'PENDING' },
-  { id: 'TXN011', booth: 'Paragon', user: 'user_01', time: '2026-02-22T20:00:00Z', rate: 30.2, currency_name: 'EUR', type: 'REFUND', amount: 800, status: 'COMPLETED' },
+  { id: 'TXN011', booth: 'Paragon', user: 'user_01', time: '2026-02-22T20:00:00Z', rate: 30.2, currency_name: 'EUR', type: 'BUY', amount: 800, status: 'COMPLETED' },
   { id: 'TXN012', booth: 'Gaysorn', user: 'user_02', time: '2026-02-22T21:00:00Z', rate: 29.8, currency_name: 'JPY', type: 'SALE', amount: 3500, status: 'VOIDED' },
 ];
 
@@ -67,16 +67,18 @@ export const mockStaffAuth: AuthResponse = {
     created_at: "2026-01-15T08:00:00Z"
   },
   currentShift: {
-    id: 5001,
+    id: 201,
     user_id: 101,
-    booth_id: 1, // บูธ 7-11 ตามในรูป
+    booth_id: 1,
     date_shift: "2026-02-22",
-    shift_start: "08:30:00",
-    total_receive: 50000.00,
-    total_exchange: 12500.50,
-    balance: 62500.50,
-    balance_check: 0,
-    cash_advance: 10000.00,
+    shift_start: "2026-02-22T08:00:00Z",
+    total_receive: 50000,
+    total_exchange: 30000,
+    balance: 20000,
+    balance_check: 20000,
+    cash_advance: 5000,
+    created_at: "2026-02-22T08:00:00Z",
+    updated_at: "2026-02-22T12:00:00Z"
   }
 };
 
