@@ -100,253 +100,34 @@ export const mockAdminAuth: AuthResponse = {
   }
 };
 
-export const mockCURRENCIES: Currency[] = [
-  {
-    code: 'USD',
-    name: 'US Dollar',
-    symbol: '$',
-    buyRate: 34.55,
-    sellRate: 35.10,
-    is_active: true
-  },
-  {
-    code: 'EUR',
-    name: 'Euro',
-    symbol: '€',
-    buyRate: 37.20,
-    sellRate: 38.05,
-    is_active: true
-  },
-  {
-    code: 'JPY',
-    name: 'Japanese Yen',
-    symbol: '¥',
-    buyRate: 0.2315,
-    sellRate: 0.2380,
-    is_active: true
-  },
-  {
-    code: 'GBP',
-    name: 'British Pound',
-    symbol: '£',
-    buyRate: 43.85,
-    sellRate: 44.60,
-    is_active: true
-  },
-  {
-    code: 'AUD',
-    name: 'Australian Dollar',
-    symbol: 'A$',
-    buyRate: 22.45,
-    sellRate: 23.15,
-    is_active: true
-  },
-  {
-    code: 'CHF',
-    name: 'Swiss Franc',
-    symbol: 'CHF',
-    buyRate: 39.15,
-    sellRate: 40.05,
-    is_active: true
-  },
-  {
-    code: 'CNY',
-    name: 'Chinese Yuan',
-    symbol: '¥',
-    buyRate: 4.75,
-    sellRate: 4.90,
-    is_active: true
-  },
-  {
-    code: 'SGD',
-    name: 'Singapore Dollar',
-    symbol: 'S$',
-    buyRate: 25.65,
-    sellRate: 26.30,
-    is_active: true
-  },
-  {
-    code: 'HKD',
-    name: 'Hong Kong Dollar',
-    symbol: 'HK$',
-    buyRate: 4.40,
-    sellRate: 4.55,
-    is_active: true
-  },
-  {
-    code: 'KRW',
-    name: 'Korean Won',
-    symbol: '₩',
-    buyRate: 0.0255,
-    sellRate: 0.0275,
-    is_active: false
-  }
+export const mockCurrencies: Currency[] = [
+  { code: 'USD', name: 'US Dollar', symbol: '$', buyRate: 34.55, sellRate: 35.10, is_active: true },
+  { code: 'EUR', name: 'Euro', symbol: '€', buyRate: 37.20, sellRate: 38.05, is_active: true },
+  { code: 'JPY', name: 'Japanese Yen', symbol: '¥', buyRate: 0.2315, sellRate: 0.2380, is_active: true },
+  { code: 'GBP', name: 'British Pound', symbol: '£', buyRate: 43.85, sellRate: 44.60, is_active: true },
+  { code: 'AUD', name: 'Australian Dollar', symbol: 'A$', buyRate: 22.45, sellRate: 23.15, is_active: true },
+  { code: 'CHF', name: 'Swiss Franc', symbol: 'CHF', buyRate: 39.15, sellRate: 40.05, is_active: true },
+  { code: 'CNY', name: 'Chinese Yuan', symbol: '¥', buyRate: 4.75, sellRate: 4.90, is_active: true },
+  { code: 'SGD', name: 'Singapore Dollar', symbol: 'S$', buyRate: 25.65, sellRate: 26.30, is_active: true },
+  { code: 'HKD', name: 'Hong Kong Dollar', symbol: 'HK$', buyRate: 4.40, sellRate: 4.55, is_active: true },
+  { code: 'KRW', name: 'Korean Won', symbol: '₩', buyRate: 0.0255, sellRate: 0.0275, is_active: false }
 ];
 
 export const mockExchangeRates: ExchangeRate[] = [
-  // --- USD Split (L, M, S) ---
-  {
-    id: 1,
-    currency_code: 'USD',
-    name: 'USD (L) 50-100',
-    range_start: 50,
-    range_stop: 100,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 34.55,
-    sell_rate: 35.10,
-    is_active: true,
-    updated_at: '2026-02-24T10:00:00Z'
-  },
-  {
-    id: 2,
-    currency_code: 'USD',
-    name: 'USD (M) 10-20',
-    range_start: 10,
-    range_stop: 20,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 34.55,
-    sell_rate: 35.10,
-    is_active: true,
-    updated_at: '2026-02-24T10:00:00Z'
-  },
-  {
-    id: 3,
-    currency_code: 'USD',
-    name: 'USD (S) 1-5',
-    range_start: 1,
-    range_stop: 5,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 34.55,
-    sell_rate: 35.10,
-    is_active: true,
-    updated_at: '2026-02-24T10:00:00Z'
-  },
-
-  // --- CNY Split (L, M, S) ---
-  {
-    id: 4,
-    currency_code: 'CNY',
-    name: 'CNY (L) 100',
-    range_start: 100,
-    range_stop: 100,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 4.75,
-    sell_rate: 4.90,
-    is_active: true,
-    updated_at: '2026-02-24T10:05:00Z'
-  },
-  {
-    id: 5,
-    currency_code: 'CNY',
-    name: 'CNY (M) 50',
-    range_start: 50,
-    range_stop: 50,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 4.75,
-    sell_rate: 4.90,
-    is_active: true,
-    updated_at: '2026-02-24T10:05:00Z'
-  },
-  {
-    id: 6,
-    currency_code: 'CNY',
-    name: 'CNY (S) 1-20',
-    range_start: 1,
-    range_stop: 20,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 4.75,
-    sell_rate: 4.90,
-    is_active: true,
-    updated_at: '2026-02-24T10:05:00Z'
-  },
-
-  // --- Other Currencies (Standard Range) ---
-  {
-    id: 7,
-    currency_code: 'EUR',
-    name: 'EUR (All Notes)',
-    range_start: 5,
-    range_stop: 500,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 37.20,
-    sell_rate: 38.05,
-    is_active: true,
-    updated_at: '2026-02-24T10:10:00Z'
-  },
-  {
-    id: 8,
-    currency_code: 'JPY',
-    name: 'JPY (All Notes)',
-    range_start: 1000,
-    range_stop: 10000,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 0.2315,
-    sell_rate: 0.2380,
-    is_active: true,
-    updated_at: '2026-02-24T10:10:00Z'
-  },
-  {
-    id: 9,
-    currency_code: 'GBP',
-    name: 'GBP (All Notes)',
-    range_start: 5,
-    range_stop: 50,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 43.85,
-    sell_rate: 44.60,
-    is_active: true,
-    updated_at: '2026-02-24T10:10:00Z'
-  },
-  {
-    id: 10,
-    currency_code: 'SGD',
-    name: 'SGD (All Notes)',
-    range_start: 2,
-    range_stop: 1000,
-    formula_buy: null,
-    formula_sell: null,
-    buy_rate: 25.65,
-    sell_rate: 26.30,
-    is_active: true,
-    updated_at: '2026-02-24T10:10:00Z'
-  }
+  { id: 1, currency_code: 'USD', name: 'USD (L) 50-100', range_start: 50, range_stop: 100, formula_buy: null, formula_sell: null, buy_rate: 34.55, sell_rate: 35.10, is_active: true, updated_at: '2026-02-24T10:00:00Z' },
+  { id: 2, currency_code: 'USD', name: 'USD (M) 10-20', range_start: 10, range_stop: 20, formula_buy: null, formula_sell: null, buy_rate: 34.55, sell_rate: 35.10, is_active: true, updated_at: '2026-02-24T10:00:00Z' },
+  { id: 3, currency_code: 'USD', name: 'USD (S) 1-5', range_start: 1, range_stop: 5, formula_buy: null, formula_sell: null, buy_rate: 34.55, sell_rate: 35.10, is_active: true, updated_at: '2026-02-24T10:00:00Z' },
+  { id: 4, currency_code: 'CNY', name: 'CNY (L) 100', range_start: 100, range_stop: 100, formula_buy: null, formula_sell: null, buy_rate: 4.75, sell_rate: 4.90, is_active: true, updated_at: '2026-02-24T10:05:00Z' },
+  { id: 5, currency_code: 'CNY', name: 'CNY (M) 50', range_start: 50, range_stop: 50, formula_buy: null, formula_sell: null, buy_rate: 4.75, sell_rate: 4.90, is_active: true, updated_at: '2026-02-24T10:05:00Z' },
+  { id: 6, currency_code: 'CNY', name: 'CNY (S) 1-20', range_start: 1, range_stop: 20, formula_buy: null, formula_sell: null, buy_rate: 4.75, sell_rate: 4.90, is_active: true, updated_at: '2026-02-24T10:05:00Z' },
+  { id: 7, currency_code: 'EUR', name: 'EUR (All Notes)', range_start: 5, range_stop: 500, formula_buy: null, formula_sell: null, buy_rate: 37.20, sell_rate: 38.05, is_active: true, updated_at: '2026-02-24T10:10:00Z' },
+  { id: 8, currency_code: 'JPY', name: 'JPY (All Notes)', range_start: 1000, range_stop: 10000, formula_buy: null, formula_sell: null, buy_rate: 0.2315, sell_rate: 0.2380, is_active: true, updated_at: '2026-02-24T10:10:00Z' },
+  { id: 9, currency_code: 'GBP', name: 'GBP (All Notes)', range_start: 5, range_stop: 50, formula_buy: null, formula_sell: null, buy_rate: 43.85, sell_rate: 44.60, is_active: true, updated_at: '2026-02-24T10:10:00Z' },
+  { id: 10, currency_code: 'SGD', name: 'SGD (All Notes)', range_start: 2, range_stop: 1000, formula_buy: null, formula_sell: null, buy_rate: 25.65, sell_rate: 26.30, is_active: true, updated_at: '2026-02-24T10:10:00Z' }
 ];
 
-export const MOCK_EXCLUSIVE_RATES: ExclusiveExchangeRate[] = [
-  {
-    exchange_rate_id: 1, // อ้างอิง USD (L) 50-100
-    formula_buy: null,
-    formula_buy_max: null,
-    buy_rate: 34.55,      // เรทพิเศษที่สูงกว่าเรทกลางเล็กน้อย (จากเดิม 34.55)
-    buy_rate_max: 34.75,  // เพดานสูงสุดที่พนักงานสาขานี้ปรับเพิ่มได้
-    booth_id: 1,
-    updated_at: '2026-02-24T10:30:00Z'
-  },
-  {
-    exchange_rate_id: 2, // อ้างอิง USD (M) 10-20
-    formula_buy: null,
-    formula_buy_max: null,
-    buy_rate: 34.55,
-    buy_rate_max: 34.75,
-    booth_id: 1,
-    updated_at: '2026-02-24T10:30:00Z'
-  },
-  {
-    exchange_rate_id: 3, // อ้างอิง USD (S) 1-5
-    formula_buy: null,
-    formula_buy_max: null,
-    buy_rate: 34.55,
-    buy_rate_max: 34.75,
-    booth_id: 1,
-    updated_at: '2026-02-24T10:30:00Z'
-  }
+export const MockExclusiveRates: ExclusiveExchangeRate[] = [
+  { exchange_rate_id: 1, formula_buy: null, formula_buy_max: null, buy_rate: 34.55, buy_rate_max: 34.75, booth_id: 1, updated_at: '2026-02-24T10:30:00Z' },
+  { exchange_rate_id: 2, formula_buy: null, formula_buy_max: null, buy_rate: 34.55, buy_rate_max: 34.75, booth_id: 1, updated_at: '2026-02-24T10:30:00Z' },
+  { exchange_rate_id: 3, formula_buy: null, formula_buy_max: null, buy_rate: 34.55, buy_rate_max: 34.75, booth_id: 1, updated_at: '2026-02-24T10:30:00Z' }
 ];
