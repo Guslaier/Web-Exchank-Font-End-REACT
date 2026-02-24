@@ -52,3 +52,16 @@ export interface Currency {
   sellRate: number;
   is_active: boolean;
 }
+
+export interface ExchangeRate {
+  id: number;
+  currency_code: string;
+  name: string;
+  range_start: number;
+  range_stop: number;
+  formula_buy?: any; // แก้เป็น String ทีหลัง
+  formula_sell?: any;  // แก้เป็น String ทีหลัง
+  buy_rate: number;
+  sell_rate: number;
+  updated_at: Date | string;
+}

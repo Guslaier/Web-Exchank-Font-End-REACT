@@ -2,6 +2,7 @@ import type { AuthResponse } from "../types/auth.ts";
 import type { Booth } from "../types/entities.ts";
 import type { User } from "../types/entities.ts";
 import type { Currency } from "../types/entities.ts";
+import type { ExchangeRate } from "../types/entities.ts";
 import type { TransactionVoid } from "../types/transaction.ts";
 
 
@@ -178,5 +179,133 @@ export const mockCURRENCIES: Currency[] = [
     buyRate: 0.0255,
     sellRate: 0.0275,
     is_active: false
+  }
+];
+
+export const mockExchangeRates : ExchangeRate[] = [
+  // --- USD Split (L, M, S) ---
+  {
+    id: 1,
+    currency_code: 'USD',
+    name: 'USD (L) 50-100',
+    range_start: 50,
+    range_stop: 100,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 34.55,
+    sell_rate: 35.10,
+    updated_at: '2026-02-24T10:00:00Z'
+  },
+  {
+    id: 2,
+    currency_code: 'USD',
+    name: 'USD (M) 10-20',
+    range_start: 10,
+    range_stop: 20,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 34.55,
+    sell_rate: 35.10,
+    updated_at: '2026-02-24T10:00:00Z'
+  },
+  {
+    id: 3,
+    currency_code: 'USD',
+    name: 'USD (S) 1-5',
+    range_start: 1,
+    range_stop: 5,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 34.55,
+    sell_rate: 35.10,
+    updated_at: '2026-02-24T10:00:00Z'
+  },
+
+  // --- CNY Split (L, M, S) ---
+  {
+    id: 4,
+    currency_code: 'CNY',
+    name: 'CNY (L) 100',
+    range_start: 100,
+    range_stop: 100,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 4.75,
+    sell_rate: 4.90,
+    updated_at: '2026-02-24T10:05:00Z'
+  },
+  {
+    id: 5,
+    currency_code: 'CNY',
+    name: 'CNY (M) 50',
+    range_start: 50,
+    range_stop: 50,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 4.75,
+    sell_rate: 4.90,
+    updated_at: '2026-02-24T10:05:00Z'
+  },
+  {
+    id: 6,
+    currency_code: 'CNY',
+    name: 'CNY (S) 1-20',
+    range_start: 1,
+    range_stop: 20,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 4.75,
+    sell_rate: 4.90,
+    updated_at: '2026-02-24T10:05:00Z'
+  },
+
+  // --- Other Currencies (Standard Range) ---
+  {
+    id: 7,
+    currency_code: 'EUR',
+    name: 'EUR (All Notes)',
+    range_start: 5,
+    range_stop: 500,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 37.20,
+    sell_rate: 38.05,
+    updated_at: '2026-02-24T10:10:00Z'
+  },
+  {
+    id: 8,
+    currency_code: 'JPY',
+    name: 'JPY (All Notes)',
+    range_start: 1000,
+    range_stop: 10000,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 0.2315,
+    sell_rate: 0.2380,
+    updated_at: '2026-02-24T10:10:00Z'
+  },
+  {
+    id: 9,
+    currency_code: 'GBP',
+    name: 'GBP (All Notes)',
+    range_start: 5,
+    range_stop: 50,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 43.85,
+    sell_rate: 44.60,
+    updated_at: '2026-02-24T10:10:00Z'
+  },
+  {
+    id: 10,
+    currency_code: 'SGD',
+    name: 'SGD (All Notes)',
+    range_start: 2,
+    range_stop: 1000,
+    formula_buy: null,
+    formula_sell: null,
+    buy_rate: 25.65,
+    sell_rate: 26.30,
+    updated_at: '2026-02-24T10:10:00Z'
   }
 ];
