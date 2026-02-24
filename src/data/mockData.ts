@@ -3,6 +3,7 @@ import type { Booth } from "../types/entities.ts";
 import type { User } from "../types/entities.ts";
 import type { Currency } from "../types/entities.ts";
 import type { ExchangeRate } from "../types/entities.ts";
+import type { ExclusiveExchangeRate } from "../types/entities.ts";
 import type { TransactionVoid } from "../types/transaction.ts";
 
 
@@ -317,5 +318,35 @@ export const mockExchangeRates: ExchangeRate[] = [
     sell_rate: 26.30,
     is_active: true,
     updated_at: '2026-02-24T10:10:00Z'
+  }
+];
+
+export const MOCK_EXCLUSIVE_RATES: ExclusiveExchangeRate[] = [
+  {
+    exchange_rate_id: 1, // อ้างอิง USD (L) 50-100
+    formula_buy: null,
+    formula_buy_max: null,
+    buy_rate: 34.55,      // เรทพิเศษที่สูงกว่าเรทกลางเล็กน้อย (จากเดิม 34.55)
+    buy_rate_max: 34.75,  // เพดานสูงสุดที่พนักงานสาขานี้ปรับเพิ่มได้
+    booth_id: 1,
+    updated_at: '2026-02-24T10:30:00Z'
+  },
+  {
+    exchange_rate_id: 2, // อ้างอิง USD (M) 10-20
+    formula_buy: null,
+    formula_buy_max: null,
+    buy_rate: 34.55,
+    buy_rate_max: 34.75,
+    booth_id: 1,
+    updated_at: '2026-02-24T10:30:00Z'
+  },
+  {
+    exchange_rate_id: 3, // อ้างอิง USD (S) 1-5
+    formula_buy: null,
+    formula_buy_max: null,
+    buy_rate: 34.55,
+    buy_rate_max: 34.75,
+    booth_id: 1,
+    updated_at: '2026-02-24T10:30:00Z'
   }
 ];

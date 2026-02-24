@@ -67,3 +67,12 @@ export interface ExchangeRate {
   updated_at: string;
 }
 
+export interface ExclusiveExchangeRate {
+  exchange_rate_id: number;
+  formula_buy: any;
+  formula_buy_max: any;
+  buy_rate: number;
+  buy_rate_max: number;
+  booth_id: number;
+  updated_at: string;
+}
