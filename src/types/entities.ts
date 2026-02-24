@@ -63,5 +63,7 @@ export interface ExchangeRate {
   formula_sell?: any;  // แก้เป็น String ทีหลัง
   buy_rate: number;
   sell_rate: number;
-  updated_at: Date | string;
+  is_active : boolean; 
+  updated_at: string;
 }
+

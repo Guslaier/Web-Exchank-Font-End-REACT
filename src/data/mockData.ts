@@ -15,7 +15,7 @@ import type { TransactionVoid } from "../types/transaction.ts";
 //     is_open: boolean; // เพิ่มเพื่อใช้ในหน้า UI
 //     crated_at: string;
 // }
-export const mockBooths:Booth[] = [
+export const mockBooths: Booth[] = [
   { id: 1, name: '7-11', location: 'Floor 1, Zone A', current_user_id: 1, is_active: true, is_open: true, crated_at: new Date().toISOString() },
   { id: 2, name: 'Lotus', location: 'Floor 1, Zone B', current_user_id: null, is_active: true, is_open: false, crated_at: new Date().toISOString() },
   { id: 3, name: 'Siam', location: 'Floor 2, Zone A', current_user_id: 2, is_active: true, is_open: true, crated_at: new Date().toISOString() },
@@ -182,7 +182,7 @@ export const mockCURRENCIES: Currency[] = [
   }
 ];
 
-export const mockExchangeRates : ExchangeRate[] = [
+export const mockExchangeRates: ExchangeRate[] = [
   // --- USD Split (L, M, S) ---
   {
     id: 1,
@@ -194,6 +194,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 34.55,
     sell_rate: 35.10,
+    is_active: true,
     updated_at: '2026-02-24T10:00:00Z'
   },
   {
@@ -206,6 +207,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 34.55,
     sell_rate: 35.10,
+    is_active: true,
     updated_at: '2026-02-24T10:00:00Z'
   },
   {
@@ -218,6 +220,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 34.55,
     sell_rate: 35.10,
+    is_active: true,
     updated_at: '2026-02-24T10:00:00Z'
   },
 
@@ -232,6 +235,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 4.75,
     sell_rate: 4.90,
+    is_active: true,
     updated_at: '2026-02-24T10:05:00Z'
   },
   {
@@ -244,6 +248,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 4.75,
     sell_rate: 4.90,
+    is_active: true,
     updated_at: '2026-02-24T10:05:00Z'
   },
   {
@@ -256,6 +261,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 4.75,
     sell_rate: 4.90,
+    is_active: true,
     updated_at: '2026-02-24T10:05:00Z'
   },
 
@@ -270,6 +276,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 37.20,
     sell_rate: 38.05,
+    is_active: true,
     updated_at: '2026-02-24T10:10:00Z'
   },
   {
@@ -282,6 +289,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 0.2315,
     sell_rate: 0.2380,
+    is_active: true,
     updated_at: '2026-02-24T10:10:00Z'
   },
   {
@@ -294,6 +302,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 43.85,
     sell_rate: 44.60,
+    is_active: true,
     updated_at: '2026-02-24T10:10:00Z'
   },
   {
@@ -306,6 +315,7 @@ export const mockExchangeRates : ExchangeRate[] = [
     formula_sell: null,
     buy_rate: 25.65,
     sell_rate: 26.30,
+    is_active: true,
     updated_at: '2026-02-24T10:10:00Z'
   }
 ];
