@@ -7,7 +7,7 @@ import './ManageTransaction.css';
 import Search from '../../components/common/Search/Search';
 import { transactionVoidService } from '../../services/transaction_void.service.ts';
 import type { TransactionVoid } from '../../types/transaction.ts';
-import type { Booth } from '../../types/booth.ts';
+import type { Booth } from '../../types/entities.ts';
 import { boothService } from '../../services/booth.service.ts';
 
 const ManageTransaction: React.FC = () => {
