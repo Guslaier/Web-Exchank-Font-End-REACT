@@ -1,0 +1,21 @@
+.time-tag-container {
+  display: inline-block;
+  padding: 4px;
+}
+
+.time-tag-text {
+  /* สีน้ำเงินเข้มตามตัวอย่างภาพ image_9c5eb9.png */
+  color: #2d54a6; 
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 800; /* ตัวหนาพิเศษ */
+  font-size: 24px;
+  text-transform: uppercase; /* ทำให้เป็นตัวพิมพ์ใหญ่ทั้งหมด */
+  letter-spacing: 0.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* เพิ่มระยะห่างพิเศษรอบเครื่องหมายโคลอนตามภาพ */
+.time-tag-text::after {
+  content: "";
+}
