@@ -8,6 +8,7 @@ import {
 import "./index.css";
 import App from "./App.tsx";
 import ManageTransaction from "./pages/ManageTransaction/ManageTransaction.tsx";
+import RecordTrading from "./pages/RecordTrading/RecordTrading.tsx";
 import MainGuard from "./้hooks/Guard.tsx";
 import { Path } from "./config/path.Config.ts";
 import LogoutAction from "./components/common/auth/LogoutAction.tsx";
@@ -49,7 +50,8 @@ const router = createBrowserRouter([
             element: <MainGuard allowedRoles={["STAFF"]} />, // ทั้ง STAFF และ ADMIN เข้าได้
             children: [
               {
-
+                path: Path.RECORD_TRADING,  
+                element : <RecordTrading /> ,
               }
             ]
           }
