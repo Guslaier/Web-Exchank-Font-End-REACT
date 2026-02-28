@@ -1,0 +1,30 @@
+.user-tag-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* ระยะห่างระหว่างไอคอนและชื่อ */
+  padding: 4px;
+}
+
+.user-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  background-color: #2d54a6; /* สีน้ำเงินตามภาพตัวอย่าง image_9c74e6.png */
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.user-name-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 700; /* ตัวหนาตามภาพ image_9c74e6.png */
+  font-size: 24px;
+  color: #000000;
+  line-height: 1;
+}
