@@ -1,4 +1,4 @@
-import type { Booth } from '../types/booth.ts';
+import type { Booth } from '../types/entities.ts';
 import { mockBooths } from '../data/mockData';
 import api from './api.ts';
 import { API_ENDPOINTS } from '../config/api.config.ts';
