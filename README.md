@@ -65,10 +65,3 @@ npm run build
 ```bash
 npm run preview
 ```
-
----
-
-## เชื่อมต่อกับ Backend
-
-- Backend API: ตั้งค่าที่ `VITE_API_URL`
-- ต้องรัน backend และฐานข้อมูลให้พร้อมก่อน (ดูคู่มือใน repo backend)
