@@ -21,12 +21,7 @@ Frontend ของระบบ **Web-Exchank** ถูกพัฒนาขึ้
 
 ---
 
-## การติดตั้งครั้งแรก (First-time setup)
-
-### ข้อกำหนดเบื้องต้น
-
-- Node.js (แนะนำเวอร์ชัน LTS)
-- npm
+## การติดตั้งครั้งแรก 
 
 ### 1) ติดตั้ง Dependencies
 
@@ -36,12 +31,10 @@ npm install
 
 ### 2) ตั้งค่า Environment Variables
 
-โปรเจกต์นี้ใช้ Vite environment variables โดยตัวอย่างถูกกำหนดไว้ในไฟล์ `.env`
+โปรเจกต์นี้ใช้ Vite environment variables ถูกกำหนดไว้ในไฟล์ `.env`
 
-ค่าที่สำคัญ:
-
-- `VITE_API_URL` = URL ของ Backend API (ตัวอย่างใน repo ตั้งไว้เป็น `http://localhost:3000`)
-- 
+- `VITE_API_URL` = URL ของ Backend API 
+  
 ### 3) รันโปรเจกต์โหมด Development
 
 ```bash
