@@ -41,18 +41,12 @@ npm install
 ค่าที่สำคัญ:
 
 - `VITE_API_URL` = URL ของ Backend API (ตัวอย่างใน repo ตั้งไว้เป็น `http://localhost:3000`)
-
-> หมายเหตุ: ควรตั้งค่า `VITE_API_URL` ให้ตรงกับพอร์ตที่ backend รันอยู่จริง (เช่น `http://localhost:3001` หากใช้ docker-compose ของ backend)
-
+- 
 ### 3) รันโปรเจกต์โหมด Development
 
 ```bash
 npm run dev
 ```
-
-โดยปกติ Vite จะรันที่:
-
-- `http://localhost:5173`
 
 ### 4) สร้างไฟล์สำหรับ Production
 
