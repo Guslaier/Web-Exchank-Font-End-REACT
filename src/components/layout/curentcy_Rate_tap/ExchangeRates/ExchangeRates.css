@@ -141,7 +141,7 @@
 .er-formula-input {
   display: flex;
   width: 8rem;
-  min-width: 8rem;
+  
   padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
   border: 1px solid #cbd5e0;
   border-radius: calc(var(--border-radius) / 2);
