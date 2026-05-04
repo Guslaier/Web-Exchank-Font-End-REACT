@@ -1,0 +1,139 @@
+.btn-submit{
+    background-color: var(--btn-submit);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้ปุ่มดูมีมิติ */  
+
+}
+.btn-submit:hover {
+    background-color: var(--btn-submit-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+.btn-cancel{
+    background-color: var(--btn-cancel);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-cancel:hover {
+    background-color: var(--btn-cancel-dark); /* สีส้มเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-view{
+    background-color: var(--btn-view);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-view:hover {
+    background-color: var(--btn-view-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-close{
+    background-color: var(--btn-deactive);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-close:hover {
+    background-color: var(--btn-deactive-dark); /* สีส้มเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-open{
+    background-color: var(--btn-open);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-open:hover {
+    background-color: var(--btn-open-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+
+.btn-add{
+    background-color: var(--btn-add);
+    color: var(--text-white);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-add:hover {
+    background-color: var(--btn-add-dark); /* สีเขียวเข้มขึ้นสำหรับ Hover */
+}
+
+.selected-row {
+    background-color: var(--selected-row-bg);
+    border: 5px solid var(--selected-row-border);
+    color:var(--text-white);
+}
+.none-selected:hover {
+    border-radius: var(--border-radius);
+    background-color: var(--none-selected-row-bg);
+}
+.select-user-table-container {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.select-user-modal-actions {
+    display: flex;
+    justify-content:space-between;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.modal-Preview {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--bg-main);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--booth-card-border);
+}
+
+.preview-title {
+    font-size: 0.9rem;
+    color: var(--text-support);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.preview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.preview-item strong {
+    color: var(--booth-title);
+}
+
+.role-tag {
+    background-color: var(--booth-chip-active-bg);
+    color: var(--booth-chip-active-text);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}

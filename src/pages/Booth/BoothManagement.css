@@ -1,0 +1,81 @@
+
+.booth-main-add {
+  min-width: 180px;
+  min-height: 52px;
+  border-radius: 14px;
+  font-size: 1.25rem;
+}
+
+.booth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.3rem;
+}
+
+.booth-create-card {
+  min-height: 260px;
+  border: 2px dashed var(--booth-create-border);
+  border-radius: 18px;
+  background: var(--booth-create-bg);
+  color: var(--booth-create-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.booth-create-card:hover {
+  border-color: var(--booth-create-hover-border);
+  color: var(--booth-create-hover-text);
+  background: var(--booth-create-hover-bg);
+}
+
+.booth-create-icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 999px;
+  background: var(--booth-create-icon-bg);
+  display: grid;
+  place-items: center;
+}
+
+.booth-create-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.booth-modal-content {
+  max-width: 460px;
+}
+
+.booth-modal-description {
+  color: var(--text-support);
+  margin-top: 0.5rem;
+}
+
+.booth-modal-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+@media (max-width: 760px) {
+  .booth-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booth-main-add {
+    width: 100%;
+  }
+
+  .booth-grid {
+    grid-template-columns: 1fr;
+  }
+}

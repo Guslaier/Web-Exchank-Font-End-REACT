@@ -7,6 +7,7 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ReactSVG } from "react-svg";
+import LanguageSelector from "../../common/LanguageSelector/LanguageSelector.tsx";
 const Navbar: React.FC<{ role: UserRole; userName: string }> = ({
   role,
   userName,
@@ -17,8 +18,8 @@ const Navbar: React.FC<{ role: UserRole; userName: string }> = ({
         <div className="nav-logo border-b">
           <div className="nav-logo-container">
             <div className="nav-title">
-              <div className="nav-logo-f">M</div>
-              <div className="nav-logo-text">Exchang</div>
+              <div className="nav-logo-f" translate="no">M</div>
+              <div className="nav-logo-text" translate="no">Exchang</div>
             </div>
             <div className="role">{role}</div>
           </div>
@@ -65,8 +66,9 @@ const Navbar: React.FC<{ role: UserRole; userName: string }> = ({
           <li>
             <Link className="link signed" to={Path.PROFILE}>
               <div className="t1">Signed in as</div>
-              <div className="t2">{userName}</div>
+              <div className="t2" translate="no">{userName}</div>
             </Link>
+            <LanguageSelector />
           </li>
           {menusLogout
             .filter((item) => item.roles.includes(role)) // กรองเมนูตาม Role ตรงนี้!

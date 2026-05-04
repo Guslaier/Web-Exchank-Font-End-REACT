@@ -14,6 +14,8 @@ import Login from "./pages/Login/Login.tsx";
 import UserManagement from "./pages/User/UserManagement.tsx";
 import ResetPassword from "./pages/Reset_Password/Reset_Password.tsx";
 import Profile from "./pages/Profile/Profile.tsx";
+import BoothManagement from "./pages/Booth/BoothManagement.tsx";
+import Currency from "./pages/Currency/Currency.tsx";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +60,15 @@ const router = createBrowserRouter([
                   element: <UserManagement />, // ตัวอย่างหน้า User Management
                 },
                 {
+                  path: Path.MANAGE_BOOTH,
+                  element: <BoothManagement />, // ตัวอย่างหน้า Booth Management
+
+                },
+                {
+                  path: Path.EDIT_RATE,
+                  element: <Currency />, // ตัวอย่างหน้า Currency Management
                 }
+
             ]
           },
 

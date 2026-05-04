@@ -1,0 +1,206 @@
+/* ===== CentralRateBase Tab ===== */
+
+.crb-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+/* ----- Toolbar ----- */
+.crb-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3);
+  background: var(--bg-card);
+  border: 1px solid var(--booth-create-border);
+  border-radius: var(--border-radius);
+}
+
+.crb-toolbar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+}
+
+.crb-label {
+  font-weight: 700;
+  color: var(--booth-title);
+  white-space: nowrap;
+}
+
+/* Ghost button (พื้นขาว ขอบเทา) */
+.crb-btn-ghost {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  font-size: calc(var(--font-size-base) * 0.85);
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid #cbd5e0;
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.crb-btn-ghost:hover { background-color: #f1f5f9; }
+
+/* Set Auto button (เขียวอ่อน) */
+.crb-btn-auto {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  font-size: calc(var(--font-size-base) * 0.85);
+  font-weight: 700;
+  background-color: var(--booth-open-bg);
+  color: var(--booth-open-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.crb-btn-auto:hover:not(:disabled) { opacity: 0.75; }
+.crb-btn-auto:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Set Manual button (แดงอ่อน) */
+.crb-btn-manual {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  font-size: calc(var(--font-size-base) * 0.85);
+  font-weight: 700;
+  background-color: var(--booth-close-bg);
+  color: var(--booth-close-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.crb-btn-manual:hover:not(:disabled) { opacity: 0.75; }
+.crb-btn-manual:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Save button */
+.crb-btn-save {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6);
+  font-weight: 700;
+  background-color: var(--btn-add);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.crb-btn-save:hover:not(:disabled) { background-color: var(--btn-add-dark); }
+.crb-btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ----- Table ----- */
+.crb-table thead tr {
+  background-color: var(--booth-shift-bg);
+}
+
+.crb-th {
+  padding: calc(var(--spacing) * 1.5);
+  font-size: calc(var(--font-size-base) * 0.8);
+  font-weight: 700;
+  color: var(--booth-title);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.crb-td {
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+  vertical-align: middle;
+}
+
+.crb-row-alt { background-color: #fafafa; }
+
+/* Currency cell (icon + text) */
+.crb-currency-cell {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+
+.crb-code-badge {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: var(--booth-shift-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--font-size-base) * 0.65);
+  font-weight: 700;
+  color: var(--booth-shift-id);
+  flex-shrink: 0;
+}
+
+.crb-code {
+  font-weight: 700;
+  color: var(--booth-title);
+  font-size: calc(var(--font-size-base) * 0.95);
+}
+
+.crb-name {
+  font-size: calc(var(--font-size-base) * 0.75);
+  color: var(--text-support);
+}
+
+/* Mode badge */
+.crb-mode-badge {
+  display: inline-block;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
+  border-radius: 999px;
+  font-size: calc(var(--font-size-base) * 0.75);
+  font-weight: 700;
+}
+.crb-mode-badge--auto   { background: var(--booth-open-bg);  color: var(--booth-open-text); }
+.crb-mode-badge--manual { background: var(--booth-close-bg); color: var(--booth-close-text); }
+
+/* Rate input */
+.crb-rate-input {
+  width: 7rem;
+  text-align: center;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  border-radius: var(--border-radius);
+  font-family: monospace;
+  font-weight: 600;
+  font-size: calc(var(--font-size-base) * 0.9);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.crb-rate-input--editable {
+  background: var(--bg-card);
+  border: 1px solid #cbd5e0;
+}
+.crb-rate-input--editable:focus {
+  outline: none;
+  border-color: var(--btn-add);
+  box-shadow: 0 0 0 2px rgba(47, 95, 255, 0.15);
+}
+.crb-rate-input--readonly {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-support);
+  cursor: not-allowed;
+}
+
+/* เมื่อชี้ที่แถวใดแถวหนึ่งในกลุ่มเดียวกัน */
+tr[key-r]:hover, 
+tr[key-r]:not([key-r$="-conflict"]):hover + tr[key-r$="-conflict"] {
+    background-color: var(--table-hover);
+}
+
+/* 2. เมื่อ Hover แถว Conflict ให้เปลี่ยนสีตัวเอง */
+tr[key-r$="-conflict"]:hover {
+    background-color: var(--table-hover);
+}
+
+/* 3. เมื่อ Hover แถว Conflict ให้ย้อนไปเปลี่ยนสีแถวหลักที่อยู่ก่อนหน้ามัน (:has) */
+tr[key-r]:not([key-r$="-conflict"]):has(+ tr[key-r$="-conflict"]:hover) {
+    background-color: var(--table-hover);
+}
+
+.crb-conflict-cell{
+  color: var(--text-error);
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 0.75);
+  padding: 0 0 0 0.5rem;
+}

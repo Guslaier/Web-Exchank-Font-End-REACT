@@ -66,7 +66,7 @@ export const userService = {
     getUserById: async (id: string): Promise<UserDatas   > => {
         try {
             const response = await api.get<UserDatas>(API_ENDPOINTS.USER.FIND_ONE(id));
-            console.log("Fetched user:", response); // ตรวจสอบข้อมูลที่ได้รับจาก API
+        
             if (response.data) {
                 return new UserDatas(response.data) as UserDatas;
             } else {

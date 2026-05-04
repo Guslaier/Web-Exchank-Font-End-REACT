@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* ===== Global reset and base defaults ===== */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +10,8 @@
   font-style: normal;
   scrollbar-gutter: stable preserved;
 }
+
+/* ===== Global scrollbar styles ===== */
 /* src/index.css */
 *::-webkit-scrollbar {
   width: 12px; /* ปรับให้แคบลง */
@@ -21,6 +25,8 @@
   background: rgb(80, 80, 80); /* สีของตัวเลื่อนแบบจางๆ */
   border-radius: 10px;
 }
+
+/* ===== Sarabun font utility classes ===== */
 .sarabun-thin {
   font-family: "Sarabun", sans-serif;
   font-weight: 100;
@@ -117,15 +123,20 @@
   font-style: italic;
 }
 
+/* ===== Design tokens (colors, spacing, typography) ===== */
 :root {
   /* --- Colors from your GUI --- */
 
   /* สีน้ำเงินหลักของ Sidebar และ Header */
   --primary-color: oklch(19.56% 0.04521 257.162); /* Blue จากแถบด้านซ้าย */
-  --primary-dark: oklch(28.306% 0.03221 249.054); /* สำหรับ Hover หรือส่วนที่เข้มกว่า */
+  --primary-dark: oklch(
+    28.306% 0.03221 249.054
+  ); /* สำหรับ Hover หรือส่วนที่เข้มกว่า */
   --tw-border-style: solid; /* ตัวอย่างการใช้ Tailwind border style */
   --tw-border-width: 1px; /* ตัวอย่างการใช้ Tailwind border width */
-  --tw-border-color: oklch(42.944% 0.03789 284.685 / 0.386); /* ตัวอย่างการใช้ Tailwind border color */
+  --tw-border-color: oklch(
+    42.944% 0.03789 284.685 / 0.386
+  ); /* ตัวอย่างการใช้ Tailwind border color */
   /* สีพื้นหลัง (Background) */
   --bg-main: #f4f7fe; /* พื้นหลังสีเทาอ่อนด้านขวา */
   --bg-card: #ffffff; /* พื้นหลังขาวของ Card/Table */
@@ -135,7 +146,7 @@
   --text-support: #989898; /* สีตัวหนังสือรองลงมา */
   --text-muted: #e5e5e5; /* สีเทาสำหรับข้อความรองลงมา */
   --text-white: #ffffff; /* สีขาวสำหรับข้อความบน Background สีน้ำเงิน */
-
+--text-error: #e53e3e; /* สีแดงสำหรับข้อความผิดพลาด */
   /* สีปุ่มและสถานะ (Buttons & Status) */
   --btn-submit: #48bb78; /* สีเขียวจากปุ่ม Create */
   --btn-submit-dark: #38a169; /* สีเขียวเข้มสำหรับ Hover */
@@ -153,9 +164,37 @@
   --btn-delete-dark: #e53e3e; /* สีแดงเข้มสำหรับ Hover */
   --btn-cancel: #f56565; /* สีส้มจากปุ่ม Deactive */
   --btn-cancel-dark: #e53e3e; /* สีส้มเข้มสำหรับ Hover */
-  --btn-add: #482af3; /* สีเขียวจากปุ่ม Add */
-  --btn-add-dark: #3b22c2; /* สีเขียวเข้มสำหรับ Hover */
+  /* ปรับให้เข้าธีม nav (น้ำเงินเข้ม) มากขึ้น */
+  --btn-add: #2f5fff;
+  --btn-add-dark: #244ed1;
 
+  /* --- Booth page colors --- */
+  --booth-card-border: #e8ebf2;
+  --booth-card-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --booth-title: #071940;
+  --booth-chip-active-text: #37fe97;
+  --booth-chip-active-bg: #c8f0d8;
+  --booth-chip-inactive-text: #ff9a9a;
+  --booth-chip-inactive-bg: #edf1f5;
+  --booth-location-text: #4a5870;
+  --booth-location-icon: #5b6778;
+  --booth-shift-bg: #e8edf5;
+  --booth-shift-label: #2f5fff;
+  --booth-shift-id: #18305d;
+  --booth-close-text: #cf1717;
+  --booth-close-bg: #efd4d6;
+  --booth-edit-text: #0f7d44;
+  --booth-edit-bg: #bfe6cc;
+  --booth-open-text: #0f7d44;
+  --booth-open-bg: #bfe6cc;
+  --booth-delete-bg: #ed1b26;
+  --booth-create-border: #dce4ef;
+  --booth-create-bg: #f9fbff;
+  --booth-create-text: #7e8ba3;
+  --booth-create-hover-border: #b5c4db;
+  --booth-create-hover-bg: #f1f6ff;
+  --booth-create-hover-text: #5a6680;
+  --booth-create-icon-bg: #e9eff8;
 
   /* --- Role-based Colors --- */
 
@@ -168,28 +207,104 @@
   --border-radius: 8px;
   --spacing: 0.25rem; /* ตัวอย่างการใช้ Tailwind spacing */
 
-
   /* --- fonts --- */
   --font-primary: "Sarabun", sans-serif;
   --font-size-base: 1rem;
 
   /*---- role badge colors ---*/
   --role-admin: oklch(91.301% 0.04257 309.991); /* สีแดงสำหรับ ADMIN */
-  --text-role-admin: oklch(49.6% .265 301.924);; /* สีข้อความสำหรับ ADMIN */
+  --text-role-admin: oklch(49.6% 0.265 301.924); /* สีข้อความสำหรับ ADMIN */
   --role-manager: oklch(90.368% 0.04713 257.298); /* สีน้ำเงินสำหรับ MANAGER */
-  --text-role-manager: oklch(48.8% .243 264.376); /* สีข้อความสำหรับ MANAGER */
-  --role-employee: oklch(93.1% 0.00011 271.152);; /* สีเขียวสำหรับ EMPLOYEE */
-  --text-role-employee: oklch(44.6% .03 256.802); /* สีข้อความสำหรับ EMPLOYEE */
+  --text-role-manager: oklch(48.8% 0.243 264.376); /* สีข้อความสำหรับ MANAGER */
+  --role-employee: oklch(93.1% 0.00011 271.152); /* สีเขียวสำหรับ EMPLOYEE */
+  --text-role-employee: oklch(
+    44.6% 0.03 256.802
+  ); /* สีข้อความสำหรับ EMPLOYEE */
   --role-unknown: #a0aec0; /* สีเทาสำหรับ UNKNOWN */
   --text-role-unknown: #ffffff; /* สีข้อความสำหรับ UNKNOWN */
+
+  --none-selected-row-bg: #b5b5b5; /* สีพื้นหลังสำหรับแถวที่ไม่ถูกเลือก */
+  --selected-row-bg: oklch(
+    19.56% 0.04521 257.162 / 0.753
+  ); /* สีพื้นหลังสำหรับแถวที่ถูกเลือก */
+
+  /* 🟢 OPEN (ตามรูป: พื้นเขียวอ่อน ตัวหนังสือเขียวเข้ม) */
+  --booth-open-bg: #c6e7d1;
+  --booth-open-text: #006d35;
+
+  /* 🔴 CLOSE (ตามรูป: พื้นแดงอ่อน ตัวหนังสือแดงเข้ม) */
+  --booth-close-bg: #f2d5d5;
+  --booth-close-text: #c00000;
+
+  /* 🔵 COMPLETED (โทนน้ำเงินพาสเทล) */
+  --booth-completed-bg: #dbeafe;
+  --booth-completed-text: #1e40af;
+
+  /* READY FOR TOMORROW: ลดโทนม่วงจัดให้กลมกับธีมหลัก */
+  --booth-tomorrow-bg: #e4ebff;
+  --booth-tomorrow-text: #2f4da5;
+
+  /* 🟠 NO SHIFT (โทนส้มพาสเทล) */
+  --booth-noshift-bg: #ffedd5;
+  --booth-noshift-text: #9a3412;
+
+  /* ⚪ UNKNOWN (โทนเทาพาสเทล) */
+  --booth-unknown-bg: #f1f5f9;
+  --booth-unknown-text: #475569;
+
+  --table-hover: #d6e6f6; /* สีพื้นหลังเมื่อ Hover แถวในตาราง */
+  
+  --text-buy: #2f5fff; /* สีน้ำเงินสำหรับข้อความ BUY */
+  --text-sell: #cf1717; /* สีแดงสำหรับข้อความ SELL */
+  --text-formula: #718096; /* สีเทาสำหรับข้อความ Formula */
+  --text-result:  #006d35; /* สีสำหรับข้อความ Result */
+  --exr-add-btn-bg: rgb(138, 240, 153); /* สีพื้นหลังสำหรับปุ่มเพิ่มอัตราแลกเปลี่ยน */
+  --exr-delete-btn-bg: rgb(240, 138, 138); /* สีพื้นหลังสำหรับปุ่มลบอัตราแลกเปลี่ยน */
+
 }
 
-  button {
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    line-height: 1.5;
+/* ===== Google Translate widget suppression ===== */
+/* index.css */
+
+/* ซ่อน Banner และ Iframe ของ Google ทั้งหมด */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+input[type="number"]{
+    text-align: center;
+    padding-left: 24px; /* ชดเชยพื้นที่ที่ลูกศรกินไปทางขวา */
+    width: 100%;
+    box-sizing: border-box;
   }
 
+/* บังคับให้ Body อยู่ที่บนสุดเสมอ และล้าง Margin ที่ Google ฉีดเข้ามา */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* สำหรับ Browser รุ่นใหม่ๆ ที่ Google อาจใช้ Widget แบบอื่น */
+.skiptranslate {
+  display: none !important;
+}
+
+/* ยกเว้นส่วนปุ่มที่เราสร้างเอง (ถ้าคุณใช้ class skiptranslate ในปุ่ม ให้เอาออก) */
+#google_translate_element {
+  display: none !important;
+}
+
+/* ===== Generic text/button utilities ===== */
+
+button {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+}
 
 .TP {
   display: flex;
@@ -206,20 +321,28 @@
   margin-bottom: calc(var(--spacing) * 2);
 }
 
+/* ===== Table layout and helper utilities ===== */
+
 /* text-center py-4 px-6 text-sm text-gray-700 */
-.table-container{
+.table-container {
   display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacing) * 2);
-  overflow-x: auto;
-  border-radius: var(--border-radius);
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    overflow-x: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 }
 .table {
   border-collapse: collapse;
   max-width: 100%;
   width: 100%;
   background-color: var(--bg-card);
+}
+.main-row-alt {
+  background-color: #f8f8f9;
+}
+.table-header {
+  background-color: var(--booth-shift-bg);
 }
 .table-container::-webkit-scrollbar-track {
   background: transparent; /* ทำให้พื้นหลังโปร่งแสง จะได้เห็นมุมโค้ง */
@@ -243,6 +366,7 @@
   padding-left: calc(var(--spacing) * 6);
   padding-right: calc(var(--spacing) * 6);
 }
+/* Note: this later declaration intentionally overrides .text-sm font-weight */
 .text-sm {
   font-size: calc(var(--font-size-base) * 0.875);
   font-weight: 800;
@@ -272,16 +396,17 @@
   border-top-width: 1px;
   border-top-style: var(--tw-border-style);
   border-top-color: var(--tw-border-color);
-
 }
 .border-gray-100 {
   border-color: #f7fafc;
 }
 .hover\:bg-gray-50:hover {
-  background-color: #f9fafb;
+  background-color: var(--table-hover);
 }
-
-.bg-gray-100{
+.bg-gray-500 {
+  background-color: #5f5f5f;
+}
+.bg-gray-100 {
   background-color: #f6f6f6;
 }
 .items-center {
@@ -290,7 +415,7 @@
   justify-content: center;
 }
 
-
+/* ===== Modal shared styles ===== */
 /* --- Global styles for modals --- */
 .modal-overlay {
   position: fixed;
@@ -303,7 +428,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000; /* ให้แน่ใจว่าอยู่เหนือเนื้อหาอื่นๆ */
-  overflow-y: auto; 
+  overflow-y: auto;
   padding: calc(var(--spacing) * 4); /* เพิ่มระยะห่างขอบจอเวลาเลื่อน */
 }
 .modal-content {
@@ -312,7 +437,7 @@
   border-radius: var(--border-radius);
   width: 100%;
   max-width: 500px; /* กำหนดความกว้างสูงสุด */
-  margin:calc(var(--spacing) * 4); /* เพิ่มระยะห่างด้านข้างสำหรับหน้าจอเล็ก */
+  margin: calc(var(--spacing) * 4); /* เพิ่มระยะห่างด้านข้างสำหรับหน้าจอเล็ก */
   max-height: 90vh; /* ให้สูงได้ไม่เกิน 90% ของความสูงหน้าจอ */
   overflow-y: auto; /* ถ้าเนื้อหาในตัวมันล้น ให้เลื่อนได้เฉพาะในการ์ด */
 }
@@ -344,7 +469,9 @@
   padding: calc(var(--spacing) * 4) calc(var(--spacing) * 4);
   border: 1px solid #d1d5db; /* สีเทาอ่อนสำหรับขอบ */
   border-radius: var(--border-radius);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .modal-input:focus {
@@ -359,7 +486,9 @@
   padding: calc(var(--spacing) * 4) calc(var(--spacing) * 4);
   border: 1px solid #d1d5db; /* สีเทาอ่อนสำหรับขอบ */
   border-radius: var(--border-radius);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   color: var(--text-main);
 }
 .modal-select:focus {

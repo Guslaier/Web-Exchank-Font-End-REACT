@@ -1,0 +1,1478 @@
+    {
+        "booth_id": "0cdf6e48-bd57-417e-b2e1-9bffb8177d86",
+        "booth_name": "4",
+        "exchange_rates": [
+            {
+                "exchange_rate_id": "f5b81568-ec04-4705-ab25-1eb767420bf0",
+                "name": "EUR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 37.941,
+                "base_sell": 38.6081,
+                "exclusive_details": [
+                    {
+                        "id": "242d5887-efcc-47b2-86dd-724cc84cbd22",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "37.941000",
+                        "buy_rate_max": "38.274550",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "43f6c3dd-b2e6-4a2b-8f19-ca50fc4607e2",
+                "name": "CNY",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 4.7391,
+                "base_sell": 4.8399,
+                "exclusive_details": [
+                    {
+                        "id": "b39a20c0-1475-4906-8df7-edef8b310e70",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "4.739100",
+                        "buy_rate_max": "4.789500",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "c108a4a1-9e9a-4085-a957-66e52e2dc35a",
+                "name": "GBP",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 43.7662,
+                "base_sell": 44.5666,
+                "exclusive_details": [
+                    {
+                        "id": "abf87ab5-b0ea-4253-8560-d5f59338426b",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "43.766200",
+                        "buy_rate_max": "44.166400",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "a41a7df0-c2f7-4455-9d02-df8977dd1326",
+                "name": "IDR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.0018,
+                "base_sell": 0.002,
+                "exclusive_details": [
+                    {
+                        "id": "c6ac8504-f7db-4f42-ac11-82aa323c20a5",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.001800",
+                        "buy_rate_max": "0.001900",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "a8d86ea2-645c-46af-8d97-8a6b0f13aa8e",
+                "name": "INR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.3184,
+                "base_sell": 0.375,
+                "exclusive_details": [
+                    {
+                        "id": "f8427fc0-6551-4407-9007-93dc457bc47a",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.318400",
+                        "buy_rate_max": "0.346700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "80a76c22-89e8-4433-9319-3e2d53544165",
+                "name": "JPY",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.2016,
+                "base_sell": 0.2079,
+                "exclusive_details": [
+                    {
+                        "id": "9bda737f-b7a9-4442-9958-251b73d82623",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.201600",
+                        "buy_rate_max": "0.204750",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "1efdc6ed-da19-4003-a194-b8a72beb477d",
+                "name": "DKK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 5.0828,
+                "base_sell": 5.1574,
+                "exclusive_details": [
+                    {
+                        "id": "0be8c30a-50d7-4def-bd4b-88b9e5544dd6",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "5.082800",
+                        "buy_rate_max": "5.120100",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f0d2b112-8b6c-42e4-9817-6cf6b55bd246",
+                "name": "USD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 32.6063,
+                "base_sell": 32.9252,
+                "exclusive_details": [
+                    {
+                        "id": "5da56c01-60b7-47fd-9464-1e695ec38d52",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "32.606300",
+                        "buy_rate_max": "32.765750",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "9d7a97c3-e348-4621-9351-96661abd1768",
+                "name": "CHF",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 41.1438,
+                "base_sell": 41.7566,
+                "exclusive_details": [
+                    {
+                        "id": "4e4a8998-e995-445c-8104-bc91cacdf49c",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "41.143800",
+                        "buy_rate_max": "41.450200",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d257c325-e08a-4d39-9417-fabb10d25ff7",
+                "name": "HKD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 4.1476,
+                "base_sell": 4.2196,
+                "exclusive_details": [
+                    {
+                        "id": "c4d35601-8331-4e1e-81b1-7f6e4a1556ea",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "4.147600",
+                        "buy_rate_max": "4.183600",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "1ac8bae7-bbcc-4fce-861a-be99e9ecb4d5",
+                "name": "MYR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 8.1537,
+                "base_sell": 8.3715,
+                "exclusive_details": [
+                    {
+                        "id": "803bf298-e3d5-40d6-a0c8-d2935666be0d",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "8.153700",
+                        "buy_rate_max": "8.262600",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "45a8830d-14b6-4bef-ba7b-71933d16a20a",
+                "name": "BND",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 25.2078,
+                "base_sell": 25.9633,
+                "exclusive_details": [
+                    {
+                        "id": "1a9828c8-30c5-49a3-b425-48a0efb8dd7c",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "25.207800",
+                        "buy_rate_max": "25.585550",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "e31e1545-984c-45e5-af0e-909ef30632d8",
+                "name": "PHP",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.5087,
+                "base_sell": 0.55,
+                "exclusive_details": [
+                    {
+                        "id": "47fd9125-fe86-4c5a-ae78-fb34de02505d",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.508700",
+                        "buy_rate_max": "0.529350",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f6650744-f827-4bf7-a7a3-9e16eff38a80",
+                "name": "AUD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 22.9624,
+                "base_sell": 23.718,
+                "exclusive_details": [
+                    {
+                        "id": "d43fe48d-371b-48a7-935b-6bbd5016e5e5",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "22.962400",
+                        "buy_rate_max": "23.340200",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f8d1fa85-5a6c-4e9b-9875-9a979c6dd647",
+                "name": "NZD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 18.8852,
+                "base_sell": 19.4862,
+                "exclusive_details": [
+                    {
+                        "id": "dc42cfb0-12f3-4aa4-8423-86cc1a00f6df",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "18.885200",
+                        "buy_rate_max": "19.185700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "90dd1d8d-8358-46cf-ba68-c84112d81f65",
+                "name": "SGD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 25.305,
+                "base_sell": 25.8759,
+                "exclusive_details": [
+                    {
+                        "id": "afcd8dfd-aed2-4208-957e-009fa5555664",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "25.305000",
+                        "buy_rate_max": "25.590450",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "0faaaf64-eff9-4c0d-a322-ab9b7126d2ec",
+                "name": "THB",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 1,
+                "base_sell": 1,
+                "exclusive_details": [
+                    {
+                        "id": "89b4e0f6-5004-46ff-861f-866abdbe139b",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.999900",
+                        "buy_rate_max": "0.999900",
+                        "sync_status": "SYSTEM_ADJUSTED",
+                        "is_reviewed": false
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "0408d713-bb73-4464-a3d6-a38b9c7d5827",
+                "name": "NOK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 3.4806,
+                "base_sell": 3.5428,
+                "exclusive_details": [
+                    {
+                        "id": "62af7443-3653-4fcc-acc7-9f4e72503062",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "3.480600",
+                        "buy_rate_max": "3.511700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d45bde09-f8c4-4273-b829-35555a67c1b4",
+                "name": "CAD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 23.7317,
+                "base_sell": 24.152,
+                "exclusive_details": [
+                    {
+                        "id": "7a875d02-6c5c-4f1c-868e-8aa843fab3ae",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "23.731700",
+                        "buy_rate_max": "23.941850",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d11bb83f-5e24-4ed7-913f-5b9d22f3d17e",
+                "name": "SEK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 3.4892,
+                "base_sell": 3.551,
+                "exclusive_details": [
+                    {
+                        "id": "3cf3311f-7542-49b8-9497-232bbc0a3743",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "3.489200",
+                        "buy_rate_max": "3.520100",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "booth_id": "56162177-c3ea-4d5f-a354-debf5328eb40",
+        "booth_name": "3",
+        "exchange_rates": [
+            {
+                "exchange_rate_id": "80a76c22-89e8-4433-9319-3e2d53544165",
+                "name": "JPY",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.2016,
+                "base_sell": 0.2079,
+                "exclusive_details": [
+                    {
+                        "id": "0fdd9245-50a9-4e93-bd7f-b364bf74d414",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.201600",
+                        "buy_rate_max": "0.204750",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d257c325-e08a-4d39-9417-fabb10d25ff7",
+                "name": "HKD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 4.1476,
+                "base_sell": 4.2196,
+                "exclusive_details": [
+                    {
+                        "id": "98956ed7-aa64-48a4-9ab9-0645d56e29b3",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "4.147600",
+                        "buy_rate_max": "4.183600",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "1ac8bae7-bbcc-4fce-861a-be99e9ecb4d5",
+                "name": "MYR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 8.1537,
+                "base_sell": 8.3715,
+                "exclusive_details": [
+                    {
+                        "id": "5fbbda7e-a99e-4aca-86fd-8df9017fb03a",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "8.153700",
+                        "buy_rate_max": "8.262600",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f0d2b112-8b6c-42e4-9817-6cf6b55bd246",
+                "name": "USD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 32.6063,
+                "base_sell": 32.9252,
+                "exclusive_details": [
+                    {
+                        "id": "f9ae5a78-2660-4e83-ba65-db8c88bcce24",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "32.606300",
+                        "buy_rate_max": "32.765750",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "0faaaf64-eff9-4c0d-a322-ab9b7126d2ec",
+                "name": "THB",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 1,
+                "base_sell": 1,
+                "exclusive_details": [
+                    {
+                        "id": "a950882b-1cd6-41eb-b8d8-d31044ff8f6c",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.999900",
+                        "buy_rate_max": "0.999900",
+                        "sync_status": "SYSTEM_ADJUSTED",
+                        "is_reviewed": false
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d11bb83f-5e24-4ed7-913f-5b9d22f3d17e",
+                "name": "SEK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 3.4892,
+                "base_sell": 3.551,
+                "exclusive_details": [
+                    {
+                        "id": "06859991-06b2-4f56-9fc6-24c6f90fd9ff",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "3.489200",
+                        "buy_rate_max": "3.520100",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "90dd1d8d-8358-46cf-ba68-c84112d81f65",
+                "name": "SGD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 25.305,
+                "base_sell": 25.8759,
+                "exclusive_details": [
+                    {
+                        "id": "751a44ad-b255-45e3-8543-ae48bbe87dbd",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "25.305000",
+                        "buy_rate_max": "25.590450",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "45a8830d-14b6-4bef-ba7b-71933d16a20a",
+                "name": "BND",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 25.2078,
+                "base_sell": 25.9633,
+                "exclusive_details": [
+                    {
+                        "id": "b929549f-e73f-4838-9121-58ec57784c05",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "25.207800",
+                        "buy_rate_max": "25.585550",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f8d1fa85-5a6c-4e9b-9875-9a979c6dd647",
+                "name": "NZD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 18.8852,
+                "base_sell": 19.4862,
+                "exclusive_details": [
+                    {
+                        "id": "249a58c8-db38-4c08-9f4a-d9ef4e747fb7",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "18.885200",
+                        "buy_rate_max": "19.185700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "e31e1545-984c-45e5-af0e-909ef30632d8",
+                "name": "PHP",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.5087,
+                "base_sell": 0.55,
+                "exclusive_details": [
+                    {
+                        "id": "9b62b66a-cf4f-469f-959b-d8d206823a10",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.508700",
+                        "buy_rate_max": "0.529350",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f5b81568-ec04-4705-ab25-1eb767420bf0",
+                "name": "EUR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 37.941,
+                "base_sell": 38.6081,
+                "exclusive_details": [
+                    {
+                        "id": "6fb01882-4027-46a9-a859-ea43a07786b7",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "37.941000",
+                        "buy_rate_max": "38.274550",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "d45bde09-f8c4-4273-b829-35555a67c1b4",
+                "name": "CAD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 23.7317,
+                "base_sell": 24.152,
+                "exclusive_details": [
+                    {
+                        "id": "30a8d1e6-f08c-4a44-b197-4a51c860746d",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "23.731700",
+                        "buy_rate_max": "23.941850",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "1efdc6ed-da19-4003-a194-b8a72beb477d",
+                "name": "DKK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 5.0828,
+                "base_sell": 5.1574,
+                "exclusive_details": [
+                    {
+                        "id": "11cb5316-8abe-4671-bbe6-53a488b9a98b",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "5.082800",
+                        "buy_rate_max": "5.120100",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "a41a7df0-c2f7-4455-9d02-df8977dd1326",
+                "name": "IDR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.0018,
+                "base_sell": 0.002,
+                "exclusive_details": [
+                    {
+                        "id": "0d46e87d-b60e-453d-b749-7f39fe5e7677",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.001800",
+                        "buy_rate_max": "0.001900",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "a8d86ea2-645c-46af-8d97-8a6b0f13aa8e",
+                "name": "INR",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 0.3184,
+                "base_sell": 0.375,
+                "exclusive_details": [
+                    {
+                        "id": "523b9597-7657-424f-9a79-ad0a364401ca",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "0.318400",
+                        "buy_rate_max": "0.346700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "9d7a97c3-e348-4621-9351-96661abd1768",
+                "name": "CHF",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 41.1438,
+                "base_sell": 41.7566,
+                "exclusive_details": [
+                    {
+                        "id": "7cfdea21-de90-4204-8883-3c148565cca1",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "41.143800",
+                        "buy_rate_max": "41.450200",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "c108a4a1-9e9a-4085-a957-66e52e2dc35a",
+                "name": "GBP",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 43.7662,
+                "base_sell": 44.5666,
+                "exclusive_details": [
+                    {
+                        "id": "34165d2d-a1a0-43c0-89b3-496f19b9faab",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "43.766200",
+                        "buy_rate_max": "44.166400",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "f6650744-f827-4bf7-a7a3-9e16eff38a80",
+                "name": "AUD",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 22.9624,
+                "base_sell": 23.718,
+                "exclusive_details": [
+                    {
+                        "id": "029e09d9-0c94-477a-8603-9e386342c3ef",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "22.962400",
+                        "buy_rate_max": "23.340200",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "0408d713-bb73-4464-a3d6-a38b9c7d5827",
+                "name": "NOK",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 3.4806,
+                "base_sell": 3.5428,
+                "exclusive_details": [
+                    {
+                        "id": "e6bd9c79-47d0-4306-9e18-a891906c9633",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "3.480600",
+                        "buy_rate_max": "3.511700",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            },
+            {
+                "exchange_rate_id": "43f6c3dd-b2e6-4a2b-8f19-ca50fc4607e2",
+                "name": "CNY",
+                "rate_start": 0,
+                "rate_stop": 99999999,
+                "base_buy": 4.7391,
+                "base_sell": 4.8399,
+                "exclusive_details": [
+                    {
+                        "id": "e67c4946-e8e8-4e3c-87b8-e755fe0179ab",
+                        "formula_buy": "BUY",
+                        "formula_buy_max": "BUY + (SELL - BUY) * 0.5",
+                        "buy_rate": "4.739100",
+                        "buy_rate_max": "4.789500",
+                        "sync_status": "NORMAL",
+                        "is_reviewed": true
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+{
+    "AUD": {
+        "currencyInfo": {
+            "id": "e98571f8-c244-4c00-af14-1e5239bb796a",
+            "code": "AUD",
+            "name": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+            "buyRate": "22.9624",
+            "sellRate": "23.7180"
+        },
+        "rates": [
+            {
+                "id": "f6650744-f827-4bf7-a7a3-9e16eff38a80",
+                "name": "AUD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 22.9624,
+                "sell_rate": 23.718
+            }
+        ]
+    },
+    "BND": {
+        "currencyInfo": {
+            "id": "08b6cd8c-d751-4bc7-b528-bba631178528",
+            "code": "BND",
+            "name": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+            "buyRate": "25.2078",
+            "sellRate": "25.9633"
+        },
+        "rates": [
+            {
+                "id": "45a8830d-14b6-4bef-ba7b-71933d16a20a",
+                "name": "BND",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 25.2078,
+                "sell_rate": 25.9633
+            }
+        ]
+    },
+    "CAD": {
+        "currencyInfo": {
+            "id": "b8fbb726-d039-4bfd-b008-c138f66728ee",
+            "code": "CAD",
+            "name": "แคนาดา : ดอลลาร์ (CAD)",
+            "buyRate": "23.7317",
+            "sellRate": "24.1520"
+        },
+        "rates": [
+            {
+                "id": "d45bde09-f8c4-4273-b829-35555a67c1b4",
+                "name": "CAD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 23.7317,
+                "sell_rate": 24.152
+            }
+        ]
+    },
+    "CHF": {
+        "currencyInfo": {
+            "id": "1b599c97-2d14-4e83-96ec-6299e922ae46",
+            "code": "CHF",
+            "name": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+            "buyRate": "41.1438",
+            "sellRate": "41.7566"
+        },
+        "rates": [
+            {
+                "id": "9d7a97c3-e348-4621-9351-96661abd1768",
+                "name": "CHF",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 41.1438,
+                "sell_rate": 41.7566
+            }
+        ]
+    },
+    "CNY": {
+        "currencyInfo": {
+            "id": "f2148248-4e1f-472c-867f-f8ea85c7c975",
+            "code": "CNY",
+            "name": "จีน : หยวน เรนมินบิ (CNY)",
+            "buyRate": "4.7391",
+            "sellRate": "4.8399"
+        },
+        "rates": [
+            {
+                "id": "43f6c3dd-b2e6-4a2b-8f19-ca50fc4607e2",
+                "name": "CNY",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 4.7391,
+                "sell_rate": 4.8399
+            }
+        ]
+    },
+    "DKK": {
+        "currencyInfo": {
+            "id": "e9367559-0f75-4862-8b27-efeebb530a73",
+            "code": "DKK",
+            "name": "เดนมาร์ก : โครน (DKK)",
+            "buyRate": "5.0828",
+            "sellRate": "5.1574"
+        },
+        "rates": [
+            {
+                "id": "1efdc6ed-da19-4003-a194-b8a72beb477d",
+                "name": "DKK",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 5.0828,
+                "sell_rate": 5.1574
+            }
+        ]
+    },
+    "EUR": {
+        "currencyInfo": {
+            "id": "7e455143-1609-487f-a31e-235ec9eea9e7",
+            "code": "EUR",
+            "name": "ยูโรโซน : ยูโร (EUR)",
+            "buyRate": "37.9410",
+            "sellRate": "38.6081"
+        },
+        "rates": [
+            {
+                "id": "f5b81568-ec04-4705-ab25-1eb767420bf0",
+                "name": "EUR",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 37.941,
+                "sell_rate": 38.6081
+            }
+        ]
+    },
+    "GBP": {
+        "currencyInfo": {
+            "id": "1d5fd6a0-f120-46c1-9614-5c1ee68d4d39",
+            "code": "GBP",
+            "name": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+            "buyRate": "43.7662",
+            "sellRate": "44.5666"
+        },
+        "rates": [
+            {
+                "id": "c108a4a1-9e9a-4085-a957-66e52e2dc35a",
+                "name": "GBP",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 43.7662,
+                "sell_rate": 44.5666
+            }
+        ]
+    },
+    "HKD": {
+        "currencyInfo": {
+            "id": "c7a1db10-037c-4fab-84f4-57f38dc32cbf",
+            "code": "HKD",
+            "name": "ฮ่องกง : ดอลลาร์ (HKD) ",
+            "buyRate": "4.1476",
+            "sellRate": "4.2196"
+        },
+        "rates": [
+            {
+                "id": "d257c325-e08a-4d39-9417-fabb10d25ff7",
+                "name": "HKD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 4.1476,
+                "sell_rate": 4.2196
+            }
+        ]
+    },
+    "IDR": {
+        "currencyInfo": {
+            "id": "c736fea9-1313-4660-9330-c1570e24166c",
+            "code": "IDR",
+            "name": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+            "buyRate": "0.0018",
+            "sellRate": "0.0020"
+        },
+        "rates": [
+            {
+                "id": "a41a7df0-c2f7-4455-9d02-df8977dd1326",
+                "name": "IDR",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 0.0018,
+                "sell_rate": 0.002
+            }
+        ]
+    },
+    "INR": {
+        "currencyInfo": {
+            "id": "e9f1453a-1276-46d0-bbca-5e08359d5a37",
+            "code": "INR",
+            "name": "อินเดีย : รูปี (INR) ",
+            "buyRate": "0.3184",
+            "sellRate": "0.3750"
+        },
+        "rates": [
+            {
+                "id": "a8d86ea2-645c-46af-8d97-8a6b0f13aa8e",
+                "name": "INR",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 0.3184,
+                "sell_rate": 0.375
+            }
+        ]
+    },
+    "JPY": {
+        "currencyInfo": {
+            "id": "ff88ac2f-2bb6-48d0-8a4d-8a33493103c7",
+            "code": "JPY",
+            "name": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "buyRate": "0.2016",
+            "sellRate": "0.2079"
+        },
+        "rates": [
+            {
+                "id": "80a76c22-89e8-4433-9319-3e2d53544165",
+                "name": "JPY",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 0.2016,
+                "sell_rate": 0.2079
+            }
+        ]
+    },
+    "MYR": {
+        "currencyInfo": {
+            "id": "a1cab735-e979-4b1e-af2c-33b4320bfcbe",
+            "code": "MYR",
+            "name": "มาเลเซีย : ริงกิต (MYR)",
+            "buyRate": "8.1537",
+            "sellRate": "8.3715"
+        },
+        "rates": [
+            {
+                "id": "1ac8bae7-bbcc-4fce-861a-be99e9ecb4d5",
+                "name": "MYR",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 8.1537,
+                "sell_rate": 8.3715
+            }
+        ]
+    },
+    "NOK": {
+        "currencyInfo": {
+            "id": "95eacf2b-8736-48fa-8be1-a6a211ed033d",
+            "code": "NOK",
+            "name": "นอร์เวย์ : โครน (NOK) ",
+            "buyRate": "3.4806",
+            "sellRate": "3.5428"
+        },
+        "rates": [
+            {
+                "id": "0408d713-bb73-4464-a3d6-a38b9c7d5827",
+                "name": "NOK",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 3.4806,
+                "sell_rate": 3.5428
+            }
+        ]
+    },
+    "NZD": {
+        "currencyInfo": {
+            "id": "6c0a1b99-27e0-4280-b463-2082e5b935c7",
+            "code": "NZD",
+            "name": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+            "buyRate": "18.8852",
+            "sellRate": "19.4862"
+        },
+        "rates": [
+            {
+                "id": "f8d1fa85-5a6c-4e9b-9875-9a979c6dd647",
+                "name": "NZD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 18.8852,
+                "sell_rate": 19.4862
+            }
+        ]
+    },
+    "PHP": {
+        "currencyInfo": {
+            "id": "c976bad8-7d57-40c4-a1bb-ac0e172a6cd2",
+            "code": "PHP",
+            "name": "ฟิลิปปินส์ : เปโซ (PHP) ",
+            "buyRate": "0.5087",
+            "sellRate": "0.5500"
+        },
+        "rates": [
+            {
+                "id": "e31e1545-984c-45e5-af0e-909ef30632d8",
+                "name": "PHP",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 0.5087,
+                "sell_rate": 0.55
+            }
+        ]
+    },
+    "SEK": {
+        "currencyInfo": {
+            "id": "fb331621-c2f5-4ea9-86e1-6b872fc90a30",
+            "code": "SEK",
+            "name": "สวีเดน : โครนา (SEK)",
+            "buyRate": "3.4892",
+            "sellRate": "3.5510"
+        },
+        "rates": [
+            {
+                "id": "d11bb83f-5e24-4ed7-913f-5b9d22f3d17e",
+                "name": "SEK",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 3.4892,
+                "sell_rate": 3.551
+            }
+        ]
+    },
+    "SGD": {
+        "currencyInfo": {
+            "id": "9d9c0263-b2fa-4486-b4c0-6624c1c32163",
+            "code": "SGD",
+            "name": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+            "buyRate": "25.3050",
+            "sellRate": "25.8759"
+        },
+        "rates": [
+            {
+                "id": "90dd1d8d-8358-46cf-ba68-c84112d81f65",
+                "name": "SGD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 25.305,
+                "sell_rate": 25.8759
+            }
+        ]
+    },
+    "THB": {
+        "currencyInfo": {
+            "id": "ebe72d5d-daef-457d-bc82-918b7f8bb8e3",
+            "code": "THB",
+            "name": "ไทย : บาท (THB)",
+            "buyRate": "1.0000",
+            "sellRate": "1.0000"
+        },
+        "rates": [
+            {
+                "id": "0faaaf64-eff9-4c0d-a322-ab9b7126d2ec",
+                "name": "THB",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 1,
+                "sell_rate": 1
+            }
+        ]
+    },
+    "USD": {
+        "currencyInfo": {
+            "id": "afe22b6c-5cb6-4d45-969c-df94682ce7f9",
+            "code": "USD",
+            "name": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "buyRate": "32.6063",
+            "sellRate": "32.9252"
+        },
+        "rates": [
+            {
+                "id": "f0d2b112-8b6c-42e4-9817-6cf6b55bd246",
+                "name": "USD",
+                "range_start": 0,
+                "range_stop": 99999999,
+                "formula_buy": "BASE",
+                "formula_sell": "BASE",
+                "buy_rate": 32.6063,
+                "sell_rate": 32.9252
+            }
+        ]
+    }
+}
+[
+    {
+        "id": "e98571f8-c244-4c00-af14-1e5239bb796a",
+        "code": "AUD",
+        "name": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+        "symbol": null,
+        "buyRate": "22.9624",
+        "sellRate": "23.7180",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.792Z",
+        "deletedAt": null
+    },
+    {
+        "id": "08b6cd8c-d751-4bc7-b528-bba631178528",
+        "code": "BND",
+        "name": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+        "symbol": null,
+        "buyRate": "25.2078",
+        "sellRate": "25.9633",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.781Z",
+        "deletedAt": null
+    },
+    {
+        "id": "b8fbb726-d039-4bfd-b008-c138f66728ee",
+        "code": "CAD",
+        "name": "แคนาดา : ดอลลาร์ (CAD)",
+        "symbol": null,
+        "buyRate": "23.7317",
+        "sellRate": "24.1520",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.795Z",
+        "deletedAt": null
+    },
+    {
+        "id": "1b599c97-2d14-4e83-96ec-6299e922ae46",
+        "code": "CHF",
+        "name": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+        "symbol": null,
+        "buyRate": "41.1438",
+        "sellRate": "41.7566",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.790Z",
+        "deletedAt": null
+    },
+    {
+        "id": "f2148248-4e1f-472c-867f-f8ea85c7c975",
+        "code": "CNY",
+        "name": "จีน : หยวน เรนมินบิ (CNY)",
+        "symbol": null,
+        "buyRate": "4.7391",
+        "sellRate": "4.8399",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.802Z",
+        "deletedAt": null
+    },
+    {
+        "id": "e9367559-0f75-4862-8b27-efeebb530a73",
+        "code": "DKK",
+        "name": "เดนมาร์ก : โครน (DKK)",
+        "symbol": null,
+        "buyRate": "5.0828",
+        "sellRate": "5.1574",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.799Z",
+        "deletedAt": null
+    },
+    {
+        "id": "7e455143-1609-487f-a31e-235ec9eea9e7",
+        "code": "EUR",
+        "name": "ยูโรโซน : ยูโร (EUR)",
+        "symbol": null,
+        "buyRate": "37.9410",
+        "sellRate": "38.6081",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.767Z",
+        "deletedAt": null
+    },
+    {
+        "id": "1d5fd6a0-f120-46c1-9614-5c1ee68d4d39",
+        "code": "GBP",
+        "name": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+        "symbol": null,
+        "buyRate": "43.7662",
+        "sellRate": "44.5666",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.763Z",
+        "deletedAt": null
+    },
+    {
+        "id": "c7a1db10-037c-4fab-84f4-57f38dc32cbf",
+        "code": "HKD",
+        "name": "ฮ่องกง : ดอลลาร์ (HKD) ",
+        "symbol": null,
+        "buyRate": "4.1476",
+        "sellRate": "4.2196",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.773Z",
+        "deletedAt": null
+    },
+    {
+        "id": "c736fea9-1313-4660-9330-c1570e24166c",
+        "code": "IDR",
+        "name": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+        "symbol": null,
+        "buyRate": "0.0018",
+        "sellRate": "0.0020",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.786Z",
+        "deletedAt": null
+    },
+    {
+        "id": "e9f1453a-1276-46d0-bbca-5e08359d5a37",
+        "code": "INR",
+        "name": "อินเดีย : รูปี (INR) ",
+        "symbol": null,
+        "buyRate": "0.3184",
+        "sellRate": "0.3750",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.788Z",
+        "deletedAt": null
+    },
+    {
+        "id": "ff88ac2f-2bb6-48d0-8a4d-8a33493103c7",
+        "code": "JPY",
+        "name": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+        "symbol": null,
+        "buyRate": "0.2016",
+        "sellRate": "0.2079",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.770Z",
+        "deletedAt": null
+    },
+    {
+        "id": "a1cab735-e979-4b1e-af2c-33b4320bfcbe",
+        "code": "MYR",
+        "name": "มาเลเซีย : ริงกิต (MYR)",
+        "symbol": null,
+        "buyRate": "8.1537",
+        "sellRate": "8.3715",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.775Z",
+        "deletedAt": null
+    },
+    {
+        "id": "95eacf2b-8736-48fa-8be1-a6a211ed033d",
+        "code": "NOK",
+        "name": "นอร์เวย์ : โครน (NOK) ",
+        "symbol": null,
+        "buyRate": "3.4806",
+        "sellRate": "3.5428",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.800Z",
+        "deletedAt": null
+    },
+    {
+        "id": "6c0a1b99-27e0-4280-b463-2082e5b935c7",
+        "code": "NZD",
+        "name": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+        "symbol": null,
+        "buyRate": "18.8852",
+        "sellRate": "19.4862",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.793Z",
+        "deletedAt": null
+    },
+    {
+        "id": "c976bad8-7d57-40c4-a1bb-ac0e172a6cd2",
+        "code": "PHP",
+        "name": "ฟิลิปปินส์ : เปโซ (PHP) ",
+        "symbol": null,
+        "buyRate": "0.5087",
+        "sellRate": "0.5500",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.784Z",
+        "deletedAt": null
+    },
+    {
+        "id": "fb331621-c2f5-4ea9-86e1-6b872fc90a30",
+        "code": "SEK",
+        "name": "สวีเดน : โครนา (SEK)",
+        "symbol": null,
+        "buyRate": "3.4892",
+        "sellRate": "3.5510",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.797Z",
+        "deletedAt": null
+    },
+    {
+        "id": "9d9c0263-b2fa-4486-b4c0-6624c1c32163",
+        "code": "SGD",
+        "name": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+        "symbol": null,
+        "buyRate": "25.3050",
+        "sellRate": "25.8759",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.779Z",
+        "deletedAt": null
+    },
+    {
+        "id": "ebe72d5d-daef-457d-bc82-918b7f8bb8e3",
+        "code": "THB",
+        "name": "ไทย : บาท (THB)",
+        "symbol": null,
+        "buyRate": "1.0000",
+        "sellRate": "1.0000",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.803Z",
+        "deletedAt": null
+    },
+    {
+        "id": "afe22b6c-5cb6-4d45-969c-df94682ce7f9",
+        "code": "USD",
+        "name": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+        "symbol": null,
+        "buyRate": "32.6063",
+        "sellRate": "32.9252",
+        "isActive": true,
+        "updateMode": "AUTO",
+        "hasInitialBotData": true,
+        "createdAt": "2026-04-29T19:26:05.080Z",
+        "updatedAt": "2026-05-02T20:22:30.757Z",
+        "deletedAt": null
+    }
+]

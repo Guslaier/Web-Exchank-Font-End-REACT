@@ -1,0 +1,233 @@
+/* ===== ExchangeRates (Formula Rate) Tab ===== */
+
+.er-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+}
+
+/* ----- Toolbar ----- */
+.er-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+}
+
+.er-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+
+/* Booth selector */
+.er-select {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  border: 1px solid #cbd5e0;
+  border-radius: var(--border-radius);
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--booth-shift-label);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.er-select:focus {
+  outline: none;
+  border-color: var(--btn-add);
+  box-shadow: 0 0 0 2px rgba(47, 95, 255, 0.15);
+}
+
+/* Save button */
+.er-btn-save {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6);
+  font-weight: 700;
+  background-color: var(--btn-edit);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.er-btn-save:hover:not(:disabled) { background-color: var(--btn-edit-dark); }
+.er-btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ----- Table headers ----- */
+.er-th {
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
+  font-size: calc(var(--font-size-base) * 0.8);
+  font-weight: 700;
+  color: var(--booth-title);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--booth-shift-bg);
+  white-space: nowrap;
+}
+
+/* BUY group header */
+.er-th--buy {
+  text-align: center;
+  color: var(--booth-shift-label);
+  border-left: 2px solid #cbd5e0;
+}
+
+/* SELL group header */
+.er-th--sell {
+  text-align: center;
+  color: var(--booth-close-text);
+  border-left: 2px solid #cbd5e0;
+}
+
+/* Sub-header row */
+.er-sub-row th {
+  background-color: #f0f4ff;
+}
+
+.er-th-sub {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  font-size: calc(var(--font-size-base) * 0.75);
+  font-weight: 600;
+  color: var(--text-support);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Result sub-headers keep colour hint */
+.er-th-sub--result      { color: var(--booth-open-text); }
+.er-th-sub--result-sell { color: var(--booth-close-text); }
+
+/* ----- Table cells ----- */
+.er-td {
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
+  vertical-align: middle;
+}
+
+.er-td--code {
+  font-weight: 700;
+  color: var(--booth-title);
+  font-size: calc(var(--font-size-base) * 0.95);
+  padding-left: calc(var(--spacing) * 4);
+}
+
+.er-td--range {
+  font-size: calc(var(--font-size-base) * 0.8);
+  color: var(--text-support);
+}
+
+/* Base value cell */
+.er-base-val {
+  font-family: monospace;
+  color: var(--text-support);
+  font-size: calc(var(--font-size-base) * 0.85);
+}
+
+/* Result cells */
+.er-result-buy {
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--booth-open-text);
+  background-color: rgba(198, 231, 209, 0.25);
+}
+
+.er-result-sell {
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--booth-close-text);
+  background-color: rgba(242, 213, 213, 0.25);
+}
+
+/* Formula input */
+.er-formula-input {
+  display: flex;
+  width: 8rem;
+  min-width: 8rem;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1);
+  border: 1px solid #cbd5e0;
+  border-radius: calc(var(--border-radius) / 2);
+  text-align: center;
+  font-family: monospace;
+  font-size: calc(var(--font-size-base) * 0.8);
+  background: var(--bg-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.er-formula-input.range {
+  width:4rem;
+}
+.er-formula-input.name {
+  width: 4rem;
+}
+.contains-range{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.er-formula-input--buy:focus {
+  outline: none;
+  border-color: var(--btn-add);
+  box-shadow: 0 0 0 1px var(--btn-add);
+}
+.er-formula-input--sell:focus {
+  outline: none;
+  border-color: var(--btn-close);
+  box-shadow: 0 0 0 1px var(--btn-close);
+}
+
+.exchange-add-btn {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+
+  border-radius: 100%;
+  background: transparent;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  border: none;
+  background-color: var(--exr-add-btn-bg);
+}
+.exchange-add-btn:hover {
+  transform: scale(1.2);
+}
+
+.exchange-add-btn svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--text-white);
+}
+
+.exchange-delete-btn {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+
+  border-radius: 100%;
+  background: transparent;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  border: none;
+  background-color: var(--exr-delete-btn-bg);
+}
+.exchange-delete-btn:hover {
+  transform: scale(1.2);
+}
+
+.exchange-delete-btn svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--text-white);
+}
+.er-td--name {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

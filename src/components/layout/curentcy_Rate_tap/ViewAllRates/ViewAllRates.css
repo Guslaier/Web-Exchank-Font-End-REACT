@@ -1,0 +1,100 @@
+/* ===== ViewAllRates Tab ===== */
+
+.var-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+}
+
+/* ----- Header row ----- */
+.var-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+}
+
+.var-title {
+  font-size: calc(var(--font-size-base) * 1.25);
+  font-weight: 700;
+  color: var(--booth-title);
+  margin-bottom: calc(var(--spacing) * 1);
+}
+
+.var-subtitle {
+  font-size: calc(var(--font-size-base) * 0.85);
+  color: var(--text-support);
+}
+
+/* Export button */
+.var-btn-export {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid #cbd5e0;
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.var-btn-export:hover { background-color: #f1f5f9; }
+
+/* ----- Table ----- */
+.var-table thead tr {
+  background-color: var(--primary-color);
+}
+
+.var-th {
+  padding: calc(var(--spacing) * 4);
+  font-size: calc(var(--font-size-base) * 0.75);
+  font-weight: 700;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Currency column header ชิดซ้าย */
+.var-th--currency {
+  text-align: left;
+}
+
+.var-td {
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  vertical-align: middle;
+}
+
+.var-row-alt { background-color: #fafafa; }
+
+/* Currency name + code cell */
+.var-currency-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.var-code {
+  font-weight: 700;
+  color: var(--booth-title);
+  font-size: calc(var(--font-size-base) * 0.95);
+}
+
+.var-name {
+  font-size: calc(var(--font-size-base) * 0.75);
+  color: var(--text-support);
+}
+
+.var-td--code {
+  min-width: 14rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+/* Rate value cells */
+.var-rate-val {
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: calc(var(--font-size-base) * 0.9);
+}

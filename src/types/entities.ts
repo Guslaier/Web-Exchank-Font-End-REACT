@@ -23,7 +23,6 @@ export interface BoothData {
     name: string;
     location: string;
     isActive: boolean;
-    isOpen: boolean;
     currentShiftId: string | null; // ใช้สำหรับเช็คว่าบูธนี้มีการเปิดกะอยู่หรือไม่
     createdAt: Date;
     updatedAt: Date;
@@ -44,6 +43,7 @@ export interface ShiftData {
     cashAdvance: number;     // cash_advance
     createdAt: Date;         // created_at
     updatedAt: Date;         // updated_at
+    status: string;             // status (เช่น 'OPEN', 'CLOSED')
 }
 
 //== Customer Interfaces ==//

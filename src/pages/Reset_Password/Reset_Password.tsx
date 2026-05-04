@@ -40,7 +40,7 @@ export default function ResetPassword() {
 
   return (
     <div className="reset-container">
-      <div className="reset-logo">
+      <div className="reset-logo" translate="no">
         <h1>
           <span className="m-yellow">M</span>
           <br />

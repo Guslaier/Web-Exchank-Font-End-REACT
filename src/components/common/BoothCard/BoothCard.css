@@ -1,0 +1,264 @@
+.booth-card {
+    background: var(--bg-card);
+    border: 1px solid var(--booth-card-border);
+    border-radius: 18px;
+    padding: 1.4rem 1.4rem 1.2rem;
+    box-shadow: var(--booth-card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    min-height: 260px;
+    min-width: 280px;
+}
+
+.booth-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.booth-card-title {
+
+    color: var(--booth-title);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.booth-Act {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.booth-Act.is-active {
+    color: var(--booth-chip-active-text);
+}
+
+.booth-Act.is-inactive {
+    color: var(--booth-chip-inactive-text);
+}
+.booth-chip {
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 78px;
+    text-align: center;
+}
+.booth-chip.is-open {
+    color: var(--booth-open-text);
+    background: var(--booth-open-bg);
+}
+
+.booth-chip.is-close {
+    color: var(--booth-close-text);
+    background: var(--booth-close-bg);
+}
+.booth-chip.is-open:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.booth-chip.is-close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.booth-location {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--booth-location-text);
+}
+
+.booth-location svg {
+    color: var(--booth-location-icon);
+    flex-shrink: 0;
+}
+
+.booth-location-pin {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--booth-location-icon);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    flex-shrink: 0;
+}
+
+.booth-location-pin::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: var(--booth-location-icon);
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+}
+
+.booth-shift-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--booth-shift-bg);
+    border-radius: 14px;
+    padding: 0.8rem 1rem;
+}
+
+
+.booth-shift-box  .booth-change-btn{
+    width: fit-content;
+        background: none;
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+    display: flex;
+    border: none;
+}
+.booth-shift-box  .booth-change-icon div{
+    height: 35px;
+    aspect-ratio: 1/1;
+    display: flex;
+    background: none;
+    cursor: pointer;
+}
+.booth-shift-box  .booth-change-icon div:hover{
+    scale: 1.1;
+}
+
+.booth-shift-label {
+    flex-shrink: 0;
+    min-width: fit-content;
+    color: var(--booth-shift-label);
+}
+
+.booth-shift-id {
+    color: var(--booth-shift-id);
+}
+
+.booth-actions {
+    display: grid;
+    grid-template-columns: 1fr 56px;
+    gap: 0.7rem;
+    margin-top: auto;
+}
+
+.booth-edit-btn,
+.booth-delete-btn {
+    border: none;
+    border-radius: 14px;
+    min-height: 46px;
+    cursor: pointer;
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.booth-edit-btn:hover,
+.booth-delete-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.96);
+}
+
+.booth-edit-btn {
+    color: var(--booth-edit-text);
+    /* background: opsity; */
+    background: var(--booth-edit-bg);
+}
+
+
+
+.booth-delete-btn {
+    background: var(--booth-delete-bg);
+        color: var(--text-white);
+    display: grid;
+    place-items: center;
+}
+
+.booth-delete-icon,
+.booth-delete-icon div,
+.booth-delete-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.booth-delete-icon svg {
+    color: var(--text-white);
+}
+
+@media (max-width: 720px) {
+    .booth-card {
+        min-height: 230px;
+    }
+
+    .booth-actions {
+        grid-template-columns: 1fr 52px;
+    }
+}
+.booth-modal-actions{
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.booth-change-status-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+/* คลาสสถานะทั้งหมด */
+
+/* 1. วันนี้: เปิดทำการ (Active) */
+.booth-chip.is-open {
+    color: var(--booth-open-text);
+    background: var(--booth-open-bg);
+}
+
+/* 2. วันนี้: ปิดทำการ/ยังไม่ถึงเวลา (Inactive) */
+.booth-chip.is-close {
+    color: var(--booth-close-text);
+    background: var(--booth-close-bg);
+}
+
+/* 3. เสร็จสิ้นภารกิจ (Completed) */
+.booth-chip.is-completed {
+    color: var(--booth-completed-text);
+    background: var(--booth-completed-bg);
+}
+
+/* 4. เตรียมพร้อมสำหรับพรุ่งนี้ (Ready For Tomorrow) */
+.booth-chip.is-readyfortomorrow {
+    color: var(--booth-tomorrow-text);
+    background: var(--booth-tomorrow-bg);
+}
+
+/* 5. ไม่มีกะ (NoShift) */
+.booth-chip.is-noshift {
+    color: var(--booth-noshift-text);
+    background: var(--booth-noshift-bg);
+}
+
+/* 6. ไม่ทราบสถานะ (Unknown) */
+.booth-chip.is-unknown {
+    color: var(--booth-unknown-text);
+    background: var(--booth-unknown-bg);
+}
+
+/* Hover Effect สำหรับทุกสถานะเพื่อให้กดง่ายขึ้น */
+.booth-chip:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

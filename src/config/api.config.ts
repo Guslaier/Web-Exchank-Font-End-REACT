@@ -28,14 +28,16 @@ export const API_ENDPOINTS = {
 
   // ========== BOOTH ==========
   BOOTH: {
-    CREATE: '/booths',
-    FIND_ALL: '/booths',
+    CREATE: '/booths/create',
+    FIND_ALL: '/booths/find-all',
     FIND_ONE: (id: string) => `/booths/${id}`,
     SET_CURRENT_SHIFT: (id: string) => `/booths/${id}/set-current-shift`,
-    SET_DEACTIVE: (id: string) => `/booths/${id}/set-deactive`,
-    SET_REACTIVE: (id: string) => `/booths/${id}/set-reactive`,
-    DELETE: (id: string) => `/booths/${id}`,
+    SET_DEACTIVE: (id: string) => `/booths/set-deactive/${id}`,
+    ASSIGN_USER: (boothId: string) => `/booths/set-currentshift/${boothId}`,
+    SET_REACTIVE: (id: string) => `/booths/set-reactive/${id}`,
+    DELETE: (id: string) => `/booths/remove/${id}`,
     FIND_BY_SHIFT: (shiftId: string) => `/booths/find-by-shift/${shiftId}`,
+    UPDATE: (id: string) => `/booths/update/${id}`,
   },
 
   // ========== CURRENCIES ==========
@@ -45,19 +47,16 @@ export const API_ENDPOINTS = {
     GET_BY_ID: (id: string) => `/currencies/${id}`,
     GET_BY_CODE: (code: string) => `/currencies/code/${code}`,
     MANUAL_UPDATE: '/currencies/manual-update',
-    SET_MODE_MANUAL: '/currencies/set-mode-manual',
-    SET_MODE_AUTO: '/currencies/set-mode-auto',
-    SET_MODE_MANUAL_ALL: '/currencies/set-mode-manual-all',
-    SET_MODE_AUTO_ALL: '/currencies/set-mode-auto-all',
+    SET_MODE_BULK: '/currencies/mode',
   },
 
   // ========== EXCHANGE RATES ==========
   EXCHANGE_RATE: {
     GET_ALL: '/exchange-rates',
-    CREATE: '/exchange-rates',
     UPDATE: (id: string) => `/exchange-rates/${id}`,
     DELETE: (id: string) => `/exchange-rates/${id}`,
     BULK_UPDATE: '/exchange-rates/bulk-update',
+    ADD_RATE: '/exchange-rates/',
     SYNC_FORCE_ALL: '/exchange-rates/sync/force-all',
   },
 
@@ -68,8 +67,9 @@ export const API_ENDPOINTS = {
     PENDING_REVIEWS: '/exclusive-exchange-rates/pending-reviews',
     GET_ALL: '/exclusive-exchange-rates',
     GET_BY_ID: (id: string) => `/exclusive-exchange-rates/${id}`,
-    GET_BY_EXCHANGE_HOUSE: (exhId: string) => `/exclusive-exchange-rates/exchange-house/${exhId}`,
+    GET_BY_EXCHANGE_HOUSE: (exhId: string) => `/exclusive-exchange-rates/booth/${exhId}`,
     GET_BY_CURRENCY: (currencyId: string) => `/exclusive-exchange-rates/currency/${currencyId}`,
+    UPDATE_BULK: '/exclusive-exchange-rates/bulk-update',
   },
 
   // ========== EXCHANGE TRANSACTIONS ==========
@@ -92,11 +92,18 @@ export const API_ENDPOINTS = {
     SUMMARIZE: (id: string) => `/shifts/${id}/summarize`,
     GET_SUMMARY: (id: string) => `/shifts/${id}/summary`,
     GET_ALL: '/shifts',
+    GET_BY_ID: (id: string) => `/shifts/${id}`,
+    GET_BY_BOOTH: (boothId: string) => `/shifts/booth/?id=${boothId}`,
   },
 
   // ========== CUSTOMERS ==========
   CUSTOMER: {
     GET_IMAGE: (id: string) => `/customers/${id}/image`,
+  },
+
+  // ========== SSE ==========
+  SSE: {
+    REFRESH: '/sse/refresh-signal',
   },
 
   // ========== TRANSFER TRANSACTIONS ==========

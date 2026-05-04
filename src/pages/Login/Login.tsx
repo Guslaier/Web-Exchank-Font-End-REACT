@@ -35,7 +35,7 @@ const Login: React.FC = () => {
   };
   return (
     <div className="login-container">
-      <div className="login-logo">
+      <div className="login-logo" translate="no">
         <h1>
           <span className="m-yellow">M</span>
           <br />

@@ -1,0 +1,385 @@
+{
+  "info": {
+    "_postman_id": "6ad793d4-eba1-4fe4-a136-f0f71aa206b0",
+    "name": "export",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39509630",
+    "_collection_link": "https://go.postman.co/collection/39509630-6ad793d4-eba1-4fe4-a136-f0f71aa206b0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "tranfer-transection Copy",
+      "item": [
+        {
+          "name": "BtoB C2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"boothId\": \"e1a5ad17-7b56-4fac-9c4f-594bc1253c71\",\r\n    \"refBoothId\": \"891af359-c0eb-4177-b62e-c1306cf16f7a\",\r\n    \"amount\": 15,\r\n    \"exchangeRateId\" : \"02a29800-d2e1-4348-ad72-603eb050ea00\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/transfer-transactions/booth-to-booth",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "transfer-transactions",
+                "booth-to-booth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BtoB C1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"boothId\": \"891af359-c0eb-4177-b62e-c1306cf16f7a\",\r\n    \"refBoothId\": \"e1a5ad17-7b56-4fac-9c4f-594bc1253c71\",\r\n    \"amount\": 500,\r\n    \"exchangeRateId\" : \"02a29800-d2e1-4348-ad72-603eb050ea00\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/transfer-transactions/booth-to-booth",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "transfer-transactions",
+                "booth-to-booth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CtoB in",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"boothId\": \"891af359-c0eb-4177-b62e-c1306cf16f7a\",\r\n    \"amount\": 1000,\r\n    \"type\":\"CASH_IN\",\r\n    \"exchangeRateId\" : \"02a29800-d2e1-4348-ad72-603eb050ea00\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/transfer-transactions/center-to-booth",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "transfer-transactions",
+                "center-to-booth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CtoB out",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"boothId\": \"891af359-c0eb-4177-b62e-c1306cf16f7a\",\r\n    \"amount\": 159,\r\n    \"type\":\"CASH_OUT\",\r\n    \"exchangeRateId\" : \"02a29800-d2e1-4348-ad72-603eb050ea00\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/transfer-transactions/center-to-booth",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "transfer-transactions",
+                "center-to-booth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": \"d0fd481e-e919-44fe-9d6f-4dae72dc93a8\",\r\n    \"currencyCode\": \"THB\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/transfer-transactions/sum",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "transfer-transactions",
+                "sum"
+              ]
+            }
+          },
+          "response": []
+        },
+		
+  {
+    "name": "Get All Transactions",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "GET",
+      "header": [],
+      "url": {
+        "raw": "{{host}}/transfer-transactions",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions"
+        ]
+      }
+    },
+    "response": []
+  },
+  {
+    "name": "Get By Transaction ID",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "GET",
+      "header": [],
+      "url": {
+        "raw": "{{host}}/transfer-transactions/{{transactionId}}",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions",
+          "{{transactionId}}"
+        ]
+      }
+    },
+    "response": []
+  },
+  {
+    "name": "Get By Booth ID",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "GET",
+      "header": [],
+      "url": {
+        "raw": "{{host}}/transfer-transactions/booth/{{boothId}}",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions",
+          "booth",
+          "{{boothId}}"
+        ]
+      }
+    },
+    "response": []
+  },
+  {
+    "name": "Get By Shift ID",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "GET",
+      "header": [],
+      "url": {
+        "raw": "{{host}}/transfer-transactions/shift/{{shiftId}}",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions",
+          "shift",
+          "{{shiftId}}"
+        ]
+      }
+    },
+    "response": []
+  },
+  {
+    "name": "Get By Date Range",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "GET",
+      "header": [],
+      "body": {
+        "mode": "raw",
+        "raw": "{\n    \"startDate\": \"2026-04-01T00:00:00.000Z\",\n    \"endDate\": \"2026-04-30T23:59:59.999Z\"\n}",
+        "options": {
+          "raw": {
+            "language": "json"
+          }
+        }
+      },
+      "url": {
+        "raw": "{{host}}/transfer-transactions/date-range",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions",
+          "date-range"
+        ]
+      }
+    },
+    "response": []
+  },
+  {
+    "name": "Cancel Transaction",
+    "request": {
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{auth}}",
+            "type": "string"
+          }
+        ]
+      },
+      "method": "POST",
+      "header": [],
+      "url": {
+        "raw": "{{host}}/transfer-transactions/cancel/{{transactionId}}",
+        "host": [
+          "{{host}}"
+        ],
+        "path": [
+          "transfer-transactions",
+          "cancel",
+          "{{transactionId}}"
+        ]
+      }
+    },
+    "response": []
+  }
+
+      ]
+    }
+  ]
+}

@@ -56,8 +56,8 @@ export default function UserManagement() {
     // 1. ตรวจสอบข้อมูล (Validation) ด้วย Toast หรือ Alert ของ SWAL
     if (!newUser.email || !newUser.username || !newUser.phoneNumber) {
       Swal.fire({
-        title: "ข้อมูลไม่ครบถ้วน",
-        text: "กรุณากรอกข้อมูลให้ครบทุกช่อง",
+        title: "data is incomplete",
+        text: "Please fill in all fields",
         icon: "warning",
         confirmButtonColor: "var(--btn-submit)", // ใช้สีเดียวกับ Navbar
       });
@@ -81,14 +81,14 @@ export default function UserManagement() {
         icon: "success",
         html: `
     <div style="text-align: left; background: #f8fafc; padding: 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0; font-family: sans-serif;">
-      <div style="margin-bottom: 10px;"><strong>Email:</strong> <span style="color: #475569;">${response.user.email}</span></div>
-      <div style="margin-bottom: 10px;"><strong>Username:</strong> <span style="color: #475569;">${response.user.username}</span></div>
-      <div style="margin-bottom: 10px;"><strong>Phone:</strong> <span style="color: #475569;">${response.user.phoneNumber}</span></div>
-      <div style="margin-bottom: 15px;"><strong>Role:</strong> <span style="badge; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em;">${response.user.role}</span></div>
+      <div style="margin-bottom: 10px;"><strong>Email:</strong> <span style="color: #475569;" translate="no">${response.user.email}</span></div>
+      <div style="margin-bottom: 10px;"><strong>Username:</strong> <span style="color: #475569;" translate="no">${response.user.username}</span></div>
+      <div style="margin-bottom: 10px;"><strong>Phone:</strong> <span style="color: #475569;" translate="no">${response.user.phoneNumber}</span></div>
+      <div style="margin-bottom: 15px;"><strong>Role:</strong> <span style="badge; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em;" translate="no">${response.user.role}</span></div>
       
       <div style="background: #fff; border: 2px dashed var(--primary-color); padding: 1rem; border-radius: 8px; text-align: center;">
         <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 5px;">Initial Password (Please copy)</div>
-        <div style="font-size: 1.5rem; font-weight: 800; color: #1e293b; letter-spacing: 2px;">${response.generatedPassword}</div>
+        <div style="font-size: 1.5rem; font-weight: 800; color: #1e293b; letter-spacing: 2px;" translate="no">${response.generatedPassword}</div>
       </div>
     </div>
     <p style="margin-top: 15px; font-size: 0.85rem; color: #ef4444;">* Please provide this password to the user for their initial login</p>
@@ -113,10 +113,10 @@ export default function UserManagement() {
     } catch (error: any) {
       // 3. แจ้งเตือนเมื่อเกิดข้อผิดพลาด (Error)
       Swal.fire({
-        title: "เกิดข้อผิดพลาด!",
+        title: "Error!",
         text:
           error.response?.data?.message ||
-          "ไม่สามารถเพิ่มผู้ใช้ได้ กรุณาลองใหม่อีกครั้ง",
+          "Unable to add user. Please try again.",
         icon: "error",
         confirmButtonColor: "var(--btn-submit)",
       });
@@ -132,8 +132,8 @@ export default function UserManagement() {
         !editingUserId.phoneNumber
       ) {
         Swal.fire({
-          title: "ข้อมูลไม่ครบถ้วน",
-          text: "กรุณากรอกข้อมูลให้ครบทุกช่อง",
+          title: "Data is incomplete",
+          text: "Please fill in all fields",
           icon: "warning",
           confirmButtonColor: "var(--btn-submit)", // ใช้สีเดียวกับ Navbar
         });
@@ -165,10 +165,10 @@ export default function UserManagement() {
       }
     } catch (error: any) {
       Swal.fire({
-        title: "เกิดข้อผิดพลาด!",
+        title: "Error!",
         text:
           error.response?.data?.message ||
-          "ไม่สามารถแก้ไขผู้ใช้ได้ กรุณาลองใหม่อีกครั้ง",
+          "Unable to update user. Please try again.",
         icon: "error",
         confirmButtonColor: "var(--btn-submit)",
       });
@@ -297,7 +297,7 @@ export default function UserManagement() {
       />
       <div className="table-container">
         <table className="table">
-          <thead className="bg-gray-100">
+          <thead className="table-header">
             <tr>
               <th className="text-left py-4 px-6 text-sm text-gray-700">
                 Username
@@ -328,7 +328,7 @@ export default function UserManagement() {
                   className="border-t border-gray-100 hover:bg-gray-50"
                 >
                   <td className="py-4 px-6 text-gray-900" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <span>{u.username}</span>
+                    <span translate="no">{u.username}</span>
                     <span>
                       <button
                         className="actions-btn view"
@@ -338,8 +338,8 @@ export default function UserManagement() {
                       </button>
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-gray-600">{u.email}</td>
-                  <td className="py-4 px-6 text-gray-600">{u.phoneNumber}</td>
+                  <td className="py-4 px-6 text-gray-600" translate="no">{u.email}</td>
+                  <td className="py-4 px-6 text-gray-600" translate="no">{u.phoneNumber}</td>
                   <td className="py-4 px-6 text-center">
                     <div className={`role r-${getRoleBadgeColor(u.role)}`}>
                       {u.role}
@@ -389,7 +389,8 @@ export default function UserManagement() {
 
             <div className="modal-body">
               <div className="modal-field">
-                <label className="modal-label">Email</label>
+                <label className="modal-label" 
+                        translate="no">Email</label>
                 <input
                   type="email"
                   value={newUser.email}
@@ -402,7 +403,8 @@ export default function UserManagement() {
               </div>
 
               <div className="modal-field">
-                <label className="modal-label">Username</label>
+                <label className="modal-label" 
+                        translate="no">Username</label>
                 <input
                   type="text"
                   value={newUser.username}
@@ -415,7 +417,8 @@ export default function UserManagement() {
               </div>
 
               <div className="modal-field">
-                <label className="modal-label">Phone Number</label>
+                <label className="modal-label" 
+                        translate="no">Phone Number</label>
                 <input
                   type="text"
                   value={newUser.phoneNumber}

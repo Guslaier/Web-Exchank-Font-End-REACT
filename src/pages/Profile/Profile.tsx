@@ -75,7 +75,7 @@ export default function Profile() {
           <div className="modal-body">
               <div className="modal-field">
                 <label className="modal-label">Username : </label>
-                <span className="value">
+                <span className="value" translate="no">
                   {userData?.username || "N/A"}
                 </span>
               </div>
@@ -83,28 +83,28 @@ export default function Profile() {
 
               <div className="modal-field">
                 <label className="modal-label">Email : </label>
-                <span className="value">
+                <span className="value" translate="no">
                   {userData?.email || "N/A"}
                 </span>
               </div>
               
               <div className="modal-field">
                 <label className="modal-label">Phone Number : </label>
-                <span className="value">
+                <span className="value" translate="no">
                   {userData?.phoneNumber || "N/A"}
                 </span>
               </div>
               
               <div className="modal-field">
                 <label className="modal-label">Role : </label>
-                <span className="value">
+                <span className="value" >
                   {userData?.role || "N/A"}
                 </span>
               </div>
 
               <div className="modal-field">
                 <label className="modal-label">Status : </label>
-                <span className="value">
+                <span className="value" >
                   {userData?.isActive ? "Active" : "Inactive"}
                 </span>
               </div>
