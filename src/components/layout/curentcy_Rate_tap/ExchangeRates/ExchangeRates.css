@@ -152,7 +152,7 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .er-formula-input.range {
-  width:4rem;
+      width: 8rem;
 }
 .er-formula-input.name {
   width: 4rem;
