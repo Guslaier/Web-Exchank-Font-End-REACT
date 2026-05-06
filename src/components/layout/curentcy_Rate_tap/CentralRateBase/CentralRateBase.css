@@ -80,7 +80,7 @@
 .crb-btn-save {
   padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6);
   font-weight: 700;
-  background-color: var(--btn-add);
+  background-color: var(--btn-edit);
   color: var(--text-white);
   border: none;
   border-radius: var(--border-radius);
@@ -203,4 +203,15 @@ tr[key-r]:not([key-r$="-conflict"]):has(+ tr[key-r$="-conflict"]:hover) {
   font-weight: 700;
   font-size: calc(var(--font-size-base) * 0.75);
   padding: 0 0 0 0.5rem;
+}
+
+.crb-last-update {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-support);
+  gap: calc(var(--spacing) * 0.5);
+  font-size: calc(var(--font-size-base) * 0.6);
 }

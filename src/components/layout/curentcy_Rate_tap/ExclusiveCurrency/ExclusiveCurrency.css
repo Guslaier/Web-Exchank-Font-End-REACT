@@ -40,7 +40,7 @@
 .exc-btn-save {
   padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6);
   font-weight: 700;
-  background-color: var(--btn-deactive);
+  background-color: var(--btn-edit);
   color: var(--text-white);
   border: none;
   border-radius: var(--border-radius);
@@ -52,7 +52,7 @@
 
 /* ----- Table ----- */
 .exc-th {
-  padding: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
   font-size: calc(var(--font-size-base) * 0.8);
   font-weight: 700;
   color: var(--booth-title);
@@ -160,5 +160,19 @@
 }
 .exc-text-result{
   color: var(--text-result);
+}
+
+/* Conflict / validation error row */
+.exc-conflict-cell {
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
+  border-top: none;
+  color: var(--text-warning);
+}
+
+.exc-conflict {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 1);
 }
 

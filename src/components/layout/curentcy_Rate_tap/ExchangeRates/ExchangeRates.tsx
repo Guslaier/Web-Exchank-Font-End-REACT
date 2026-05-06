@@ -2,12 +2,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import "./ExchangeRates.css";
 import {
   ExchangeRateService,
-  ExclusiveRateService,
   type CurrencyData,
   type UpdateExchangeRateData,
 } from "../../../../services/currency.service";
 import React from "react";
-import { e, evaluate } from "mathjs";
+import { useExchangeRateFormula } from "../../../../hooks/useExchangeRateFormula";
 import Swal from "sweetalert2";
 import { useSSE } from "../../../../services/sse.service";
 import { Minus, Plus } from "lucide-react";
@@ -19,12 +18,6 @@ export default function ExchangeRates() {
   const [loading, setLoading] = useState(true);
   const [saving] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
-  const [conflictIds, setConflictIds] = useState<
-    { id: string; text: string }[]
-  >([]);
-  const [previews, setPreviews] = useState<
-    Record<string, { buy: number | null; sell: number | null }>
-  >({});
 
   const formulaRefs = useRef<
     Record<
@@ -51,6 +44,9 @@ export default function ExchangeRates() {
       }
     >
   >({});
+
+  const { previews, conflictIds, computePreview, checkForConflicts } =
+    useExchangeRateFormula(formulaRefs, originalValues, setIsChanged);
 
   const loadExchangRate = async () => {
     const data = await ExchangeRateService.getAll();
@@ -80,134 +76,11 @@ export default function ExchangeRates() {
     loadExchangRate();
   }, []);
 
-  useSSE(() => {
-    loadExchangRate();
-  });
   // รับสัญญาณ SSE จาก Backend เพื่อ reload ข้อมูลอัตโนมัติ
   const handleSSERefresh = useCallback(() => {
     loadExchangRate();
   }, []);
   useSSE(handleSSERefresh);
-
-  const mathjsFormula = (formula: string, baseValue: number): number | null => {
-    if (!formula || formula.toUpperCase() === "BASE") return baseValue;
-    if (formula.length > 100) return null;
-    try {
-      const scope = { BASE: baseValue, base: baseValue };
-      const result = evaluate(formula, scope);
-      const finalValue = Number(result);
-      if (isNaN(finalValue) || !isFinite(finalValue)) return null;
-      const MAX_DB_VALUE = 99999999999.9999;
-      if (Math.abs(finalValue) > MAX_DB_VALUE) return null;
-      return parseFloat(finalValue.toFixed(6));
-    } catch {
-      return null;
-    }
-  };
-
-  const checkIsChanged = () => {
-    const changed = Object.entries(formulaRefs.current).some(([id, refs]) => {
-      const orig = originalValues.current[id];
-      if (!orig) return true;
-      return (
-        (refs.name?.value ?? "") !== orig.name ||
-        (refs.formula_buy?.value || "BASE") !== orig.formula_buy ||
-        (refs.formula_sell?.value || "BASE") !== orig.formula_sell ||
-        (refs.range_start?.value ?? "") !== orig.range_start ||
-        (refs.range_stop?.value ?? "") !== orig.range_stop
-      );
-    });
-    setIsChanged(changed);
-  };
-
-  const computePreview = (
-    rateId: string,
-    buyBase: number,
-    sellBase: number,
-  ) => {
-    const refs = formulaRefs.current[rateId];
-    if (!refs) return;
-    const buyFormula = refs.formula_buy?.value || "BASE";
-    const sellFormula = refs.formula_sell?.value || "BASE";
-    const buyResult = mathjsFormula(buyFormula, buyBase);
-    const sellResult = mathjsFormula(sellFormula, sellBase);
-    setPreviews((prev) => ({
-      ...prev,
-      [rateId]: { buy: buyResult, sell: sellResult },
-    }));
-    checkIsChanged();
-
-    // เช็คว่า buy result มากกว่า sell result หรือไม่
-    if (buyResult !== null && sellResult !== null && buyResult > sellResult) {
-      setConflictIds((prev) => {
-        const msg = `Buy rate (${buyResult}) cannot be greater than Sell rate (${sellResult})`;
-        if (!prev.find((c) => c.id === rateId)) {
-          return [...prev, { id: rateId, text: msg }];
-        }
-        return prev.map((c) => (c.id === rateId ? { ...c, text: msg } : c));
-      });
-    } else {
-      // ถ้าไม่มีปัญหาเรื่อง buy > sell ให้ลบ error นี้ออก (แต่ยังคง error อื่นๆ ไว้)
-      setConflictIds((prev) => {
-        const existing = prev.find((c) => c.id === rateId);
-        if (existing?.text.startsWith("Buy rate")) {
-          return prev.filter((c) => c.id !== rateId);
-        }
-        return prev;
-      });
-    }
-  };
-
-  const checkForConflicts = (rateId: string) => {
-    const refs = formulaRefs.current[rateId];
-    if (!refs) return;
-
-    const buyForm = refs.formula_buy?.value || "";
-    const sellForm = refs.formula_sell?.value || "";
-    const startVal = refs.range_start?.value;
-    const stopVal = refs.range_stop?.value;
-
-    let error: string | null = null;
-
-    // Validate Realtime
-    const checkFormula = (formula: string): string | null => {
-      if (!formula) return null;
-      const forbiddenChars = formula.replace(/[0-9.+\-*/^()\s]|BASE/gi, "");
-      if (forbiddenChars.length > 0)
-        return `Forbidden characters: ${forbiddenChars}`;
-      if (/[+\-*/]{2,}/.test(formula.replace(/\s/g, ""))) {
-        if (!/[+\-*/]-/.test(formula)) return "Invalid operator sequence";
-      }
-      return null;
-    };
-
-    const buyErr = checkFormula(buyForm);
-    if (buyErr) error = `BUY Formula: ${buyErr}`;
-
-    const sellErr = checkFormula(sellForm);
-    if (!error && sellErr) error = `SELL Formula: ${sellErr}`;
-
-    if (!error) {
-      const start = parseFloat(startVal || "");
-      const stop = parseFloat(stopVal || "");
-      if (!isNaN(start) && !isNaN(stop) && start >= stop) {
-        error = "Range start must be less than range stop";
-      }
-    }
-
-    setConflictIds((prev) => {
-      if (error) {
-        if (!prev.find((c) => c.id === rateId)) {
-          return [...prev, { id: rateId, text: error }];
-        }
-        return prev.map((c) =>
-          c.id === rateId ? { ...c, text: error as string } : c,
-        );
-      }
-      return prev.filter((c) => c.id !== rateId);
-    });
-    checkIsChanged();
-  };
 
   const handleSave = async () => {
     if (!ExchangeRates) return;
@@ -259,9 +132,71 @@ export default function ExchangeRates() {
           range_stop: parseFloat(refs.range_stop?.value || "") || 0,
         }),
       );
-      await ExchangeRateService.bulkUpdate(updates);
+      const respo = await ExchangeRateService.bulkUpdate(updates);
+      const details = respo.details || [];
+      const overallSuccess = respo.success; // ดูภาพรวมว่าผ่านทั้งหมดไหม
+
+      // 1. สร้าง HTML สำหรับรายการแต่ละตัว
+      const rateListHtml = details
+        .map((item) => {
+          // จับคู่ ID กับข้อมูล rates ใน State เพื่อดึงชื่อสกุลเงินมาโชว์
+          const rateName =
+            ExchangeRates.flatMap((group) => group.rates).find(
+              (r) => r.id === item.id,
+            )?.name || `Unknown ID: ${item.id.slice(0, 8)}...`;
+
+          const isSuccess = item.success === true;
+
+          // ตกแต่ง ป้ายสถานะ (Badge) ให้ดูสวยงาม (สีพื้นหลังอ่อน + ตัวอักษรเข้ม)
+          const statusBadge = isSuccess
+            ? `<span style="background-color: #d1fae5; color: #059669; font-weight: 600; font-size: 0.85em; padding: 4px 10px; border-radius: 999px;">✓ Success</span>`
+            : `<span style="background-color: #fee2e2; color: #dc2626; font-weight: 600; font-size: 0.85em; padding: 4px 10px; border-radius: 999px;">✕ Failed</span>`;
+
+          // ซ่อน Error ถ้า Success / โชว์กล่อง Error ทรงสวยๆ ถ้า Failed
+          const messageHtml =
+            !isSuccess && item.error
+              ? `<div style="font-size: 0.85em; color: #4b5563; margin-top: 8px; text-align: left; background: #f9fafb; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #ef4444;">
+         <strong style="color: #ef4444;">Reason:</strong> ${item.error}
+       </div>`
+              : "";
+
+          return `
+    <li style="padding: 14px 0; border-bottom: 1px dashed #e5e7eb;">
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <span style="font-weight: 600; color: #374151; font-size: 1.05em;">${rateName}</span>
+        ${statusBadge}
+      </div>
+      ${messageHtml}
+    </li>
+  `;
+        })
+        .join("");
+
+      // 2. เรียกใช้งาน Swal
+      await Swal.fire({
+        // ถ้าภาพรวมพังหมดให้ใช้ icon warning หรือ error, ถ้าผ่านหมดใช้ success
+        icon: overallSuccess ? "success" : "warning",
+        title: overallSuccess
+          ? "Update Successful"
+          : "Update Completed with Errors",
+        html: `
+    <div style="text-align: left; font-size: 1rem;">
+      <p style="color: #6b7280; margin-bottom: 12px; font-weight: 500;">
+        ${respo.message} <!-- เอาคำว่า "Processed 20 items" มาโชว์ -->
+      </p>
+      <div ">
+        <ul style="list-style: none; padding: 0; margin: 0; max-height: 50vh; overflow-y: auto;">
+          ${rateListHtml}
+        </ul>
+      </div>
+    </div>
+  `,
+        confirmButtonText: "Close",
+        confirmButtonColor: "#3b82f6",
+        width: "550px", // ให้กว้างพอดีกับข้อความ Error
+      });
     } catch (err: any) {
-      console.error("Error during bulk update:", err.response.massage || err);
+      console.error("Error during bulk update:", err.response?.data?.message || err);
       await Swal.fire({
         icon: "error",
         title: "Save Failed",
@@ -303,7 +238,7 @@ export default function ExchangeRates() {
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "var(--btn-delete)",
-      cancelButtonColor: 'var(--btn-add)',
+      cancelButtonColor: "var(--btn-add)",
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -315,16 +250,17 @@ export default function ExchangeRates() {
             text: "The exchange rate entry has been deleted.",
           });
           loadExchangRate(); // รีโหลดข้อมูลใหม่จาก server หลังลบเรท เพื่อให้แน่ใจว่าแสดงข้อมูลที่อัพเดตแล้ว
+        } catch (err: any) {
+          await Swal.fire({
+            icon: "error",
+            title: "Delete Failed",
+            text:
+              err.response?.data?.message ||
+              "An error occurred while deleting the exchange rate. Please try again.",
+          });
         }
-          catch (err : any) {
-            await Swal.fire({
-              icon: "error",
-              title: "Delete Failed",
-              text: err.response?.data?.message || "An error occurred while deleting the exchange rate. Please try again.",
-            });
-          }
-        }
-      });
+      }
+    });
 
   if (loading) return <div className="cr-loading">Loading data...</div>;
 
@@ -334,8 +270,8 @@ export default function ExchangeRates() {
       <div className="er-toolbar">
         <div className="er-toolbar-left">
           <label className="crb-label">Extan Currencies</label>
-          <p className="er-status-chang">
-            {isChanged && "⚠ มีการแก้ไขที่ยังไม่ได้บันทึก"}
+          <p className="er-status-change">
+            {isChanged && "⚠ You have unsaved changes!"}
           </p>
         </div>
         <button className="er-btn-save" onClick={handleSave} disabled={saving}>
@@ -447,14 +383,12 @@ export default function ExchangeRates() {
                                   ref={(el) => {
                                     formulaRefs.current[rate.id].name = el;
                                   }}
-                                  onChange={() => checkIsChanged()}
+                                  onChange={() => checkForConflicts(rate.id)}
                                 />
                                 <button
                                   className="exchange-delete-btn"
                                   onClick={() => {
-                                    DeleteExchangeRate(
-                                      rate.id,
-                                    );
+                                    DeleteExchangeRate(rate.id);
                                   }}
                                 >
                                   <Minus size={12} />

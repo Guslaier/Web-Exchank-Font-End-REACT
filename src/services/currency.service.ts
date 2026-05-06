@@ -2,11 +2,36 @@
 import api from "./api";
 import { API_ENDPOINTS } from "../config/api.config";
 import type { ExchangeRate } from "../types/entities";
-import { add } from "mathjs";
+import { add, e, exp } from "mathjs";
 
 // ===== Types =====
 
 export type UpdateMode = "AUTO" | "MANUAL";
+
+export interface exclusive_rate_detail {
+  exchange_rate_id: string;
+  name: string;
+  rate_start: number;
+  rate_stop: number;
+  base_buy: number;
+  base_sell: number;
+  exclusive_details: exclusive_detail[];
+}
+
+export interface exclusive_detail {
+  id: string;
+  formula_buy: string;
+  formula_buy_max: string;
+  buy_rate: string;
+  buy_rate_max: string;
+  sync_status: string;
+  is_reviewed: boolean;
+}
+export interface RateAllData {
+  booth_id: string;
+  booth_name: string;
+  exchange_rates: exclusive_rate_detail[];
+}
 
 /** รายการสกุลเงินหลักจาก GET /currencies */
 export interface CurrencyData {
@@ -19,6 +44,7 @@ export interface CurrencyData {
   isActive: boolean;
   updateMode: UpdateMode;
   hasInitialBotData: boolean;
+  lastBotUpdate: string;
   createdAt: string;
   updatedAt: string;
   deletedAt: string | null;
@@ -108,6 +134,29 @@ export interface UpdateExchangeRateData {
   formula_buy: string;
   formula_sell: string;
 }
+
+export interface UpdateExclusiveRateData {
+  id: string;
+  formula_buy: string;
+  formula_buy_max: string;
+}
+
+export interface resonseBulkUpdateExclusiveRate {
+  id: string;
+  status: string;
+  message: string;
+}
+
+export interface responseBulkUpdateExchangeRate {
+  success: boolean;
+  message: string;
+  details: {
+    id: string;
+    success: boolean;
+    error?: string;
+  }[];
+}
+
 // ===== Currency Service (Central Rate Base) =====
 
 export const CurrencyService = {
@@ -135,6 +184,10 @@ export const CurrencyService = {
       data: ids.map((i) => ({ id: i, mode: "MANUAL" })),
     });
   },
+  /** POST /currencies/sync-force-all — สั่งให้ระบบดึงเรทจากแหล่งข้อมูลภายนอกมาใหม่ทั้งหมด */
+  syncForceAll: async (): Promise<void> => {
+    await api.post(API_ENDPOINTS.CURRENCY.SYNC_FORCE_ALL);
+  },
 };
 
 // ===== Exchange Rate Service (Formula Rate) =====
@@ -146,7 +199,6 @@ export const ExchangeRateService = {
       const res = await api.get<CurrencyData>(
         API_ENDPOINTS.EXCHANGE_RATE.GET_ALL,
       );
-      console.log("ExchangeRateService.getAll: Received data", res.data);
       return res.data;
     } catch (err) {
       console.error("ExchangeRateService.getAll", err);
@@ -157,8 +209,12 @@ export const ExchangeRateService = {
   /** POST /exchange-rates/bulk-update */
   bulkUpdate: async (
     rates: UpdateExchangeRateData[],
-  ): Promise<void> => {
-    await api.post(API_ENDPOINTS.EXCHANGE_RATE.BULK_UPDATE, { "updates": rates });
+  ): Promise<responseBulkUpdateExchangeRate> => {
+    const res = await api.post<responseBulkUpdateExchangeRate>(
+      API_ENDPOINTS.EXCHANGE_RATE.BULK_UPDATE,
+      { updates: rates },
+    );
+    return res.data;
   },
 
   /** POST /exchange-rates/sync/force-all */
@@ -179,9 +235,17 @@ export const ExchangeRateService = {
 
 export const ExclusiveRateService = {
   /** GET /exclusive-exchange-rates */
-  getAll: async (): Promise<ExclusiveRateData[]> => {
-    const res = await api.get<ExclusiveRateData[]>(
+  getAll: async (): Promise<RateAllData[]> => {
+    const res = await api.get<RateAllData[]>(
       API_ENDPOINTS.EXCLUSIVE_EXCHANGE_RATE.GET_ALL,
+    );
+    return res.data;
+  },
+
+  /** GET /exclusive-exchange-rates/booths — all booths with their rates grouped */
+  getAllByBooth: async (): Promise<BoothRates[]> => {
+    const res = await api.get<BoothRates[]>(
+      API_ENDPOINTS.EXCLUSIVE_EXCHANGE_RATE.GET_ALL_BOOTHS,
     );
     return res.data;
   },
@@ -204,10 +268,21 @@ export const ExclusiveRateService = {
 
   /** PATCH /exclusive-exchange-rates/bulk-update */
   bulkUpdate: async (
-    rates: UpdateExchangeRateData[],
-  ): Promise<void> => {
+    rates: UpdateExclusiveRateData[],
+  ): Promise<
+    {
+      id: string;
+      status: string;
+
+      message: string;
+    }[]
+  > => {
     try {
-    await api.post(API_ENDPOINTS.EXCLUSIVE_EXCHANGE_RATE.UPDATE_BULK, { "updates": rates });
+      const res = await api.post(
+        API_ENDPOINTS.EXCLUSIVE_EXCHANGE_RATE.UPDATE_BULK,
+        { data: rates },
+      );
+      return res.data;
     } catch (err) {
       console.error("ExclusiveRateService.bulkUpdate", err);
       throw err; // ให้ error ถูกส่งต่อไปยัง caller เพื่อจัดการต่อไป

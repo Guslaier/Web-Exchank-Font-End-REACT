@@ -120,6 +120,8 @@ export interface Currency {
     buyRate: number;    // อัตราที่ร้านรับซื้อ
     sellRate: number;   // อัตราที่ร้านขายออก
     isActive: boolean;  // สถานะการใช้งาน (true/false)
+    lastBotUpdate: Date; // วันที่และเวลาที่ระบบดึงเรทจากแหล่งข้อมูลภายนอกมาอัพเดตล่าสุด
+    updatedAt: Date;    // วันที่และเวลาที่ข้อมูลนี้ถูกแก้ไขล่าสุด
 }
 
 export interface ExchangeRate {

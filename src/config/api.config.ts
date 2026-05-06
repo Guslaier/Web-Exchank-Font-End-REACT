@@ -48,6 +48,7 @@ export const API_ENDPOINTS = {
     GET_BY_CODE: (code: string) => `/currencies/code/${code}`,
     MANUAL_UPDATE: '/currencies/manual-update',
     SET_MODE_BULK: '/currencies/mode',
+    SYNC_FORCE_ALL: '/currencies/sync-bot',
   },
 
   // ========== EXCHANGE RATES ==========
@@ -66,6 +67,7 @@ export const API_ENDPOINTS = {
     SYNC_AND_CLAMP: '/exclusive-exchange-rates/sync-and-clamp',
     PENDING_REVIEWS: '/exclusive-exchange-rates/pending-reviews',
     GET_ALL: '/exclusive-exchange-rates',
+    GET_ALL_BOOTHS: '/exclusive-exchange-rates/booths',
     GET_BY_ID: (id: string) => `/exclusive-exchange-rates/${id}`,
     GET_BY_EXCHANGE_HOUSE: (exhId: string) => `/exclusive-exchange-rates/booth/${exhId}`,
     GET_BY_CURRENCY: (currencyId: string) => `/exclusive-exchange-rates/currency/${currencyId}`,

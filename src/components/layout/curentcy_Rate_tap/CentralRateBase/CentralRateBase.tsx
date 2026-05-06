@@ -5,6 +5,8 @@ import {
   type CurrencyData,
 } from "../../../../services/currency.service";
 import Swal from "sweetalert2";
+import { format } from "mathjs";
+import { formatThaiDate } from "../../../../utils/fomat";
 
 export default function CentralRateBase() {
   const [currencies, setCurrencies] = useState<CurrencyData[]>([]);
@@ -197,6 +199,31 @@ export default function CentralRateBase() {
       setSaving(false);
     }
   };
+    const handleSyncClamp = async () => {
+    setSaving(true);
+    try {
+      await CurrencyService.syncForceAll();
+      await loadCurrencies();
+      await Swal.fire({
+        icon: "success", 
+        title: "Synced & Clamped!",
+        text: "Rates have been synced with BOT and clamped within allowed ranges.",
+      });
+    } catch (err: any) {
+      console.error(err);
+      await Swal.fire({
+        icon: "error",
+        title: "Error",
+        text:
+          err.response?.data?.message ||
+          "An error occurred during sync & clamp. Please try again.",
+      });
+    }
+    finally {      loadCurrencies();
+      setSaving(false);
+    }
+  };
+  
 
   if (loading) return <div className="cr-loading">Loading data...</div>;
 
@@ -231,10 +258,18 @@ export default function CentralRateBase() {
           >
             Set Manual
           </button>
+          <button
+            className="exc-btn-sync"
+            onClick={handleSyncClamp}
+            disabled={saving}
+          >
+            Sync BOT
+          </button>
+
         </div>
 
         <button className="crb-btn-save" onClick={handleSave} disabled={saving}>
-          {saving ? "กำลังบันทึก..." : "Save Changes"}
+          {saving ? "Saving..." : "Save Changes"}
         </button>
       </div>
 
@@ -296,11 +331,20 @@ export default function CentralRateBase() {
                     </td>
 
                     <td className="crb-td text-center" rowSpan={2}>
-                      <span
+                      <div
                         className={`crb-mode-badge ${isManual ? "crb-mode-badge--manual" : "crb-mode-badge--auto"}`}
                       >
                         {rate.updateMode}
-                      </span>
+                      </div>
+
+                    {  rate.updateMode === "AUTO" && (
+                      <div className="crb-last-update" translate="no">
+                        <span className="crb-last-update-label">Last Sync: </span>
+                        <span className="crb-last-update-value">
+                          {formatThaiDate(rate.lastBotUpdate)}
+                        </span>
+                      </div>
+                    )}
                     </td>
                     
                     <td className="crb-td text-center">

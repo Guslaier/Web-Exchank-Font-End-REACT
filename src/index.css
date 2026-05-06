@@ -261,6 +261,9 @@
   --exr-add-btn-bg: rgb(138, 240, 153); /* สีพื้นหลังสำหรับปุ่มเพิ่มอัตราแลกเปลี่ยน */
   --exr-delete-btn-bg: rgb(240, 138, 138); /* สีพื้นหลังสำหรับปุ่มลบอัตราแลกเปลี่ยน */
 
+  --text-warning: #e53e3e; /* สีแดงสำหรับข้อความเตือน */
+  --primary-color-light: oklch(75.686% 0.12594 256.949 / 0.5); /* เวอร์ชันอ่อนลงของ primary color สำหรับ Hover */
+  --primary-color-dark: oklch(19.56% 0.04521 257.162 / 0.8); /* เวอร์ชันเข้มขึ้นของ primary color สำหรับ Hover */
 }
 
 /* ===== Google Translate widget suppression ===== */
