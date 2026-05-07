@@ -20,8 +20,11 @@ const InputPass: React.FC<InputPassProps> = ({ className, ...props }) => {
       <input
         type={showPassword ? "text" : "password"} // 🚩 สลับ type ตรงนี้
         placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={props.value ?? password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+          props.onChange?.(e);
+        }}
         className={`pass-input ${className}`} // ใช้ class เดิมที่คุณทำไว้
         required
       />

@@ -87,6 +87,7 @@ export interface TransferTransactionData {
   boothId: string; // FK
   ShiftId?: string | null; // shiftId อาจเป็น null ได้สำหรับบางประเภทของ transaction เช่น transfer ระหว่างบูธ
   amount: number; // จำนวนเงิน
+  internalTransactionId: string | null; // รหัสการโอนภายใน (ใช้สำหรับเชื่อมโยงกับ transaction ในระบบของธนาคารหรือระบบโอนเงินอื่นๆ)
   type: TransferTransactionType; // ประเภทการโอน
   refBoothId: string; // ID บูธที่อ้างอิง
   refShiftId?: string | null; // shiftId อาจเป็น null ได้สำหรับบางประเภทของ transaction เช่น transfer ระหว่างบูธ

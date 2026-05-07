@@ -148,14 +148,40 @@ export default function Transfer() {
     }
   };
 
-  const formatTime = (dateStr: string) => {
+  
+
+  const getCurrencyCode = (tx: TransferTransaction) => {
+    if (tx.exchangeRateName) return tx.exchangeRateName.split(' ')[0];
+    const found = (currencies as any[]).find(c => c.id === tx.exchangeRateId);
+    return found?.code ?? '—';
+  };
+
+  const handleCancel = async (tx: TransferTransaction) => {
+    const confirm = await Swal.fire({
+      icon: 'warning',
+      title: 'ยืนยันการยกเลิก',
+      html: `ต้องการยกเลิกรายการ <strong>${tx.transactionNo || tx.id}</strong> ใช่หรือไม่?`,
+      showCancelButton: true,
+      confirmButtonText: 'ยกเลิกรายการ',
+      cancelButtonText: 'ปิด',
+      confirmButtonColor: '#e53e3e',
+      cancelButtonColor: '#718096',
+    });
+    if (!confirm.isConfirmed) return;
+
     try {
-      return new Date(dateStr).toLocaleTimeString('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
+      await TransferService.cancel(tx.id);
+      const transfers = await TransferService.getAll();
+      setRecentTransfers(transfers);
+      Swal.fire({
+        icon: 'success', title: 'ยกเลิกสำเร็จ',
+        text: 'รายการถูกยกเลิกเรียบร้อยแล้ว',
+        confirmButtonColor: '#3535cc',
+        timer: 2000, timerProgressBar: true,
       });
-    } catch {
-      return '';
+    } catch (err: any) {
+      const msg = err?.response?.data?.message ?? 'เกิดข้อผิดพลาดในการยกเลิก';
+      Swal.fire({ icon: 'error', title: 'ยกเลิกไม่สำเร็จ', text: msg, confirmButtonColor: '#3535cc' });
     }
   };
 
@@ -307,44 +333,138 @@ export default function Transfer() {
         </button>
       </div>
 
-      {/* Recent Transfers */}
-      <div className="transfer-recent">
-        <h2 className="transfer-recent-title">Recent Transfers</h2>
-        <div className="transfer-recent-list">
-          {initialLoading ? (
-            Array.from({ length: 3 }).map((_, i) => (
+        <div className="">Cash Transaction</div>
+      {/* Recent Transfers Table */}
+      <div className="table-container">
+        {initialLoading ? (
+          <div className="transfer-recent-list">
+            {Array.from({ length: 3 }).map((_, i) => (
               <div key={i} className="transfer-skeleton" />
-            ))
-          ) : recentTransfers.length === 0 ? (
-            <p className="transfer-empty">No recent transfers</p>
-          ) : (
-            recentTransfers.slice(0, 10).map((tx) => (
-              <div key={tx.transactionNo || tx.id} className="transfer-recent-item">
-                <div className="transfer-recent-left">
-                  <div className="transfer-recent-icon">→</div>
-                  <div>
-                    <div className="transfer-recent-id">
-                      {tx.transactionNo || tx.id}
-                    </div>
-                    <div className="transfer-recent-route">
-                      {tx.boothName || tx.boothId}{' '}
-                      → {tx.refBoothName || tx.refBoothId || 'Center'}
-                    </div>
-                  </div>
-                </div>
-                <div className="transfer-recent-right">
-                  <div className="transfer-recent-amount">
-                    {tx.amount?.toLocaleString()}{' '}
-                    {tx.exchangeRateName || ''}
-                  </div>
-                  <div className="transfer-recent-time">
-                    {tx.createdAt ? formatTime(tx.createdAt) : ''}
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        ) : recentTransfers.length === 0 ? (
+          <p className="transfer-empty">No recent transfers</p>
+        ) : (
+     
+            <table className="table transfer-table">
+              <thead className="table-header transfer-table-header">
+                <tr>
+                  <th>id</th>
+                  <th>Booth</th>
+                  <th>Ref_Booth</th>
+                  <th>Direction</th>
+                  <th>Code</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(() => {
+                  const seen = new Set<string>();
+                  const rows: React.ReactNode[] = [];
+                  let groupIndex = 0;
+
+                  const isPair = (a: TransferTransaction, b: TransferTransaction) => {
+                    if (seen.has(b.id)) return false;
+                    if (a.internalTransactionId && b.internalTransactionId && a.internalTransactionId === b.internalTransactionId) return true;
+                    const isTransfer = (t: TransferTransaction) => t.type === 'TRANSFER_IN' || t.type === 'TRANSFER_OUT';
+                    if (!isTransfer(a) || !isTransfer(b)) return false;
+                    if (a.type === b.type) return false;
+                    return (
+                      a.boothId === b.refBoothId &&
+                      a.refBoothId === b.boothId &&
+                      a.amount === b.amount &&
+                      a.exchangeRateId === b.exchangeRateId
+                    );
+                  };
+
+                  const sorted = [...recentTransfers].sort(
+                    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+                  );
+
+                  sorted.slice(0, 20).forEach((tx) => {
+                    if (seen.has(tx.id)) return;
+                    const pairRaw = sorted.find((t) => t.id !== tx.id && isPair(tx, t));
+                    if (pairRaw) {
+                      // TRANSFER_OUT first
+                      const first  = tx.type === 'TRANSFER_OUT' ? tx : pairRaw;
+                      const second = tx.type === 'TRANSFER_OUT' ? pairRaw : tx;
+                      seen.add(first.id);
+                      seen.add(second.id);
+                      const canCancel = first.status !== 'CANCELLED' && first.status !== 'CANCELED';
+                      const zebraClass = groupIndex++ % 2 === 0 ? 'tf-row-even' : 'tf-row-odd';
+                      rows.push(
+                        <React.Fragment key={`pair-${first.id} `}>
+                          <tr key-hover={first.transactionNo || first.id } className={`tf-paired-row ${zebraClass} ${ first.status === 'CANCELED' ? 'tf-status-cancelled' : ''}`}>
+                            <td className="tf-td-id">{first.transactionNo || first.id}</td>
+                            <td>{first.boothName || first.boothId || '—'}</td>
+                            <td>{first.refBoothName || first.refBoothId || 'Center'}</td>
+                            <td>
+                              <span className={`tf-direction ${first.type.includes('OUT') ? 'tf-dir-out' : 'tf-dir-in'}`}>
+                                {first.type}
+                              </span>
+                            </td>
+                            <td className="tf-td-code">{getCurrencyCode(first)}</td>
+                            <td className="tf-td-amount">{first.amount?.toLocaleString()}</td>
+                            <td rowSpan={2}><span className={`tf-status tf-status-${first.status?.toLowerCase()}`}>{second.status}</span></td>
+
+                            <td rowSpan={2} className="tf-action-paired">
+                              {canCancel && (
+                                <button className="tf-cancel-btn" onClick={() => handleCancel(first)}>
+                                  Cancel
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                          <tr key-hover={`${first.transactionNo || first.id}-in`} className={`tf-paired-row tf-paired-last ${zebraClass} ${ first.status === 'CANCELED' ? 'tf-status-cancelled' : ''}` }>
+                            <td className="tf-td-id">{second.transactionNo || second.id}</td>
+                            <td>{second.boothName || second.boothId || '—'}</td>
+                            <td>{second.refBoothName || second.refBoothId || 'Center'}</td>
+                            <td>
+                              <span className={`tf-direction ${second.type.includes('OUT') ? 'tf-dir-out' : 'tf-dir-in'}`}>
+                                {second.type}
+                              </span>
+                            </td>
+                            <td className="tf-td-code">{getCurrencyCode(second)}</td>
+                            <td className="tf-td-amount">{second.amount?.toLocaleString()}</td>
+                          </tr>
+                        </React.Fragment>,
+                      );
+                      return;
+                    }
+                    seen.add(tx.id);
+                    const zebraClass = groupIndex++ % 2 === 0 ? 'tf-row-even' : 'tf-row-odd';
+                    rows.push(
+                      <tr key-hover={tx.id} key={tx.id} className={`${zebraClass} ${tx.status === 'CANCELLED' || tx.status === 'CANCELED' ? 'tf-status-cancelled' : ''}`}>
+                        <td className="tf-td-id">{tx.transactionNo || tx.id}</td>
+                        <td>{tx.boothName || tx.boothId || '—'}</td>
+                        <td>{tx.refBoothName || tx.refBoothId || 'Center'}</td>
+                        <td>
+                          <span className={`tf-direction ${tx.type.includes('OUT') ? 'tf-dir-out' : 'tf-dir-in'}`}>
+                            {tx.type}
+                          </span>
+                        </td>
+                        <td className="tf-td-code">{getCurrencyCode(tx)}</td>
+                        <td className="tf-td-amount">{tx.amount?.toLocaleString()}</td>
+                        <td><span className={`tf-status tf-status-${tx.status?.toLowerCase()}`}>{tx.status}</span></td>
+
+                        <td>
+                          {tx.status !== 'CANCELLED' && tx.status !== 'CANCELED' && (
+                            <button className="tf-cancel-btn" onClick={() => handleCancel(tx)}>
+                              Cancel
+                            </button>
+                          )}
+                        </td>
+                      </tr>,
+                    );
+                  });
+                  return rows;
+                })()}
+              </tbody>
+            </table>
+      
+        )}
       </div>
     </div>
   );

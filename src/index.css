@@ -253,6 +253,8 @@
   --booth-unknown-text: #475569;
 
   --table-hover: #d6e6f6; /* สีพื้นหลังเมื่อ Hover แถวในตาราง */
+  --table-row-even-bg: #f8f8f9; /* สีพื้นหลังสำหรับแถวคู่ในตาราง */
+  --table-header-text: #4a5568; /* สีข้อความในหัวตาราง */
   
   --text-buy: #2f5fff; /* สีน้ำเงินสำหรับข้อความ BUY */
   --text-sell: #cf1717; /* สีแดงสำหรับข้อความ SELL */
@@ -288,6 +290,9 @@
   --transfer-card-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   --transfer-input-border: #d1d5db;
   --transfer-input-focus-border: #3535cc;
+
+
+  --table-row-cancelled-bg: #fbd8dc; /* สีพื้นหลังสำหรับแถวที่ถูกยกเลิก */
 }
 
 /* ===== Google Translate widget suppression ===== */
@@ -364,6 +369,8 @@ button {
   max-width: 100%;
   width: 100%;
   background-color: var(--bg-card);
+    border-spacing: 0;         /* กำจัดระยะห่างระหว่างเซลล์ */
+    border: none;
 }
 .main-row-alt {
   background-color: #f8f8f9;

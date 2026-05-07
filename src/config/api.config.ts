@@ -86,16 +86,22 @@ export const API_ENDPOINTS = {
 
   // ========== SHIFTS ==========
   SHIFT: {
-    OPEN: '/shifts/open',
-    CLOSE: (id: string) => `/shifts/${id}/close`,
-    SET_TOTAL_EXCHANGE: (id: string) => `/shifts/${id}/set-total-exchange`,
-    SET_TOTAL_RECEIVE: (id: string) => `/shifts/${id}/set-total-receive`,
-    GET_ACTIVE_SHIFTS: '/shifts/active',
-    SUMMARIZE: (id: string) => `/shifts/${id}/summarize`,
-    GET_SUMMARY: (id: string) => `/shifts/${id}/summary`,
+    OPEN: '/shifts',
+    CLOSE: '/shifts',
+    GET_ACTIVES: '/shifts/actives',
     GET_ALL: '/shifts',
-    GET_BY_ID: (id: string) => `/shifts/${id}`,
     GET_BY_BOOTH: (boothId: string) => `/shifts/booth/?id=${boothId}`,
+    AUDIT: (id: string) => `/shifts/audit/${id}`,
+  },
+
+  // ========== SYSTEM LOGS ==========
+  SYSTEM_LOG: {
+    GET_ALL: '/system-logs',
+  },
+
+  // ========== STOCKS ==========
+  STOCK: {
+    GET_BY_SHIFT: '/stocks/shift',
   },
 
   // ========== CUSTOMERS ==========

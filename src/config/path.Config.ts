@@ -8,6 +8,7 @@ import editRateIcon from "../assets/svg/exchange-rate-svgrepo-com.svg";
 import reportIcon from "../assets/svg/dashboard-svgrepo-com.svg";
 import recordTradingIcon from "../assets/svg/dashboard-svgrepo-com.svg";
 import transactionEntryIcon from "../assets/svg/dashboard-svgrepo-com.svg";
+import openShiftIcon from "../assets/svg/dashboard-svgrepo-com.svg";
 import logoutIcon from "../assets/svg/logout.svg";  
 
 export interface IMenu {
@@ -29,6 +30,7 @@ export const Path = {
   REPORT: `${basePath}report`,
   RECORD_TRADING: `${basePath}record-trading`,
   TRANSACTION_ENTRY: `${basePath}transaction-entry`,
+  OPEN_SHIFT: `${basePath}open-shift`,
   LOGOUT: `${basePath}logout`,
   LOGOUT_CLOSESHIFT: `${basePath}logout-closeshift`,
   LOGIN: `${basePath}login`,
@@ -44,6 +46,7 @@ export const menus: IMenu[] = [
   { icon: manageUserIcon, title: 'User', path: Path.MANAGE_USER, roles: ['ADMIN','MANAGER'] },
   { icon: editRateIcon, title: 'Currency Rate', path: Path.EDIT_RATE, roles: ['ADMIN','MANAGER'] },
   { icon: reportIcon, title: 'Report & Audit', path: Path.REPORT, roles: ['ADMIN','MANAGER'] },
+  { icon: openShiftIcon, title: 'Open / Close Shift', path: Path.OPEN_SHIFT, roles: ['ADMIN','MANAGER'] },
   { icon: recordTradingIcon, title: 'Record Trading', path: Path.RECORD_TRADING, roles: ['EMPLOYEE'] },
   { icon: transactionEntryIcon, title: 'Transaction  Entry', path: Path.TRANSACTION_ENTRY, roles: ['EMPLOYEE'] },
 ];

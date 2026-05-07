@@ -18,6 +18,11 @@ import BoothManagement from "./pages/Booth/BoothManagement.tsx";
 import Currency from "./pages/Currency/Currency.tsx";
 import Transfer from "./pages/Tranfer/Tranfer.tsx";
 import TransactionPage from "./pages/transection/transection.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import Report from "./pages/Report.tsx";
+import RecordTrading from "./pages/RecordTrading.tsx";
+import TransactionEntry from "./pages/TransactionEntry.tsx";
+import OpenShift from "./pages/OpenShift.tsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +59,10 @@ const router = createBrowserRouter([
             children: [
               // { path: "manage-user", element: <ManageUser /> }, // ตัวอย่างหน้า Admin
                 {
+                  path: Path.DASHBOARD,
+                  element: <Dashboard />,
+                },
+                {
                   path: Path.MANAGE_TRANSACTION,
                   element: <TransactionPage />,
                 },
@@ -73,7 +82,15 @@ const router = createBrowserRouter([
                 {
                   path: Path.CASH_TRANSFER,
                   element: <Transfer />, // ต
-                }
+                },
+                {
+                  path: Path.REPORT,
+                  element: <Report />,
+                },
+                {
+                path: Path.OPEN_SHIFT,
+                element: <OpenShift />,
+              },
 
             ]
           },
@@ -83,8 +100,14 @@ const router = createBrowserRouter([
             element: <MainGuard allowedRoles={["EMPLOYEE"]} />, // ทั้ง STAFF และ ADMIN เข้าได้
             children: [
               {
-
-              }
+                path: Path.RECORD_TRADING,
+                element: <RecordTrading />,
+              },
+              {
+                path: Path.TRANSACTION_ENTRY,
+                element: <TransactionEntry />,
+              },
+              
             ]
           }
         ],

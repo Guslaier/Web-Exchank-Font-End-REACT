@@ -59,4 +59,9 @@ export const ExchangeTransactionService = {
   ): Promise<void> => {
     await api.put(API_ENDPOINTS.EXCHANGE_TRANSACTION.SET_APPROVE(id), { status });
   },
+
+  /** PUT /exchange-transactions/req/pending/:id — EMPLOYEE void request */
+  requestVoid: async (id: string, voidReason: string): Promise<void> => {
+    await api.put(API_ENDPOINTS.EXCHANGE_TRANSACTION.SET_PENDING(id), { voidReason });
+  },
 };

@@ -13,6 +13,7 @@ export interface TransferTransaction {
   exchangeRateId: string;
   exchangeRateName?: string;
   status: string;
+  internalTransactionId: string | null;
   createdAt: string;
   updatedAt: string;
 }

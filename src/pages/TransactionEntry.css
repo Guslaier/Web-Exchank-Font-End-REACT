@@ -1,0 +1,195 @@
+/* ===== Transaction Entry Page (Employee) ===== */
+.txe-page {
+  padding: 1.5rem 2rem;
+  min-height: 100vh;
+  background: var(--bg-main, #f5f6fa);
+}
+.txe-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ===== Card wrapper ===== */
+.txe-card {
+  background: var(--transfer-card-bg, #fff);
+  border: 1px solid var(--transfer-card-border, #e8ebf2);
+  border-radius: 14px;
+  box-shadow: var(--transfer-card-shadow, 0 2px 8px rgba(15,23,42,.06));
+  max-width: 680px;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* ===== BUY / SELL Toggle ===== */
+.txe-type-toggle {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+.txe-type-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  background: #f1f5f9;
+  color: #718096;
+}
+.txe-type-btn.buy-active {
+  background: var(--booth-open-bg, #c6e7d1);
+  color: var(--booth-open-text, #006d35);
+  border-color: var(--booth-open-text, #006d35);
+}
+.txe-type-btn.sell-active {
+  background: var(--booth-close-bg, #f2d5d5);
+  color: var(--booth-close-text, #c00000);
+  border-color: var(--booth-close-text, #c00000);
+}
+.txe-type-btn:hover:not(.buy-active):not(.sell-active) { background: #e2e8f0; color: #4a5568; }
+
+/* ===== Form Groups ===== */
+.txe-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+}
+.txe-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #4a5568;
+}
+.txe-label .txe-optional {
+  font-weight: 400;
+  color: #a0aec0;
+  font-size: 0.78rem;
+  margin-left: 0.35rem;
+}
+.txe-input, .txe-select, .txe-textarea {
+  border: 1.5px solid var(--transfer-input-border, #d1d5db);
+  border-radius: 8px;
+  padding: 0.52rem 0.9rem;
+  font-size: 0.9rem;
+  color: #2d3748;
+  outline: none;
+  background: #fff;
+  transition: border-color .18s;
+  font-family: inherit;
+}
+.txe-input:focus, .txe-select:focus, .txe-textarea:focus {
+  border-color: var(--transfer-input-focus-border, #3535cc);
+}
+.txe-input:read-only {
+  background: #f7f8ff;
+  color: #4a5568;
+}
+.txe-textarea { resize: vertical; min-height: 70px; }
+.txe-select { cursor: pointer; }
+
+/* ===== Rate Display ===== */
+.txe-rate-display {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f7f8ff;
+  border: 1px solid #e0e4ff;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.txe-rate-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.txe-rate-label { font-size: 0.73rem; font-weight: 600; color: #718096; text-transform: uppercase; }
+.txe-rate-value { font-size: 1rem; font-weight: 700; color: #3535cc; }
+
+/* ===== THB Display ===== */
+.txe-thb-box {
+  background: #f0fff4;
+  border: 1.5px solid #9ae6b4;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.txe-thb-label { font-size: 0.84rem; font-weight: 600; color: #2f855a; }
+.txe-thb-value { font-size: 1.5rem; font-weight: 800; color: #22543d; }
+
+/* ===== Divider ===== */
+.txe-divider {
+  border: none;
+  border-top: 1px dashed #e2e8f0;
+  margin: 1.25rem 0;
+}
+
+/* ===== Optional Section Toggle ===== */
+.txe-optional-toggle {
+  background: transparent;
+  border: none;
+  color: #3535cc;
+  font-size: 0.87rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.txe-optional-toggle:hover { text-decoration: underline; }
+
+/* ===== Form Grid ===== */
+.txe-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+
+/* ===== Submit Button ===== */
+.txe-submit-btn {
+  width: 100%;
+  background: var(--transfer-btn-process-bg, #3535cc);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, opacity .2s;
+  margin-top: 0.5rem;
+}
+.txe-submit-btn:hover   { background: var(--transfer-btn-process-hover, #2929a8); }
+.txe-submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ===== Image Upload ===== */
+.txe-img-upload { display: flex; flex-direction: column; gap: 0.5rem; }
+.txe-img-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+}
+
+/* ===== No Shift warning ===== */
+.txe-no-shift { text-align: center; padding: 3rem 1rem; color: #718096; font-size: 1rem; }
+
+@media (max-width: 640px) {
+  .txe-page { padding: 1rem; }
+  .txe-card { padding: 1.25rem; }
+  .txe-form-grid-2 { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,266 @@
+/* ── OpenShift page ── */
+.os-page {
+  padding: 1.5rem 2rem;
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* header refresh button */
+.os-refresh-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--booth-card-border);
+  border-radius: var(--border-radius);
+  background: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+.os-refresh-btn:hover:not(:disabled) { background: var(--table-hover); }
+.os-refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Status banner ── */
+.os-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: var(--border-radius);
+  margin: 1.25rem 0;
+  border: 1.5px solid transparent;
+}
+.os-status-open {
+  background: var(--booth-open-bg);
+  border-color: var(--booth-open-text);
+}
+.os-status-closed {
+  background: var(--booth-noshift-bg);
+  border-color: var(--booth-noshift-text);
+}
+
+.os-status-icon { font-size: 1.6rem; flex-shrink: 0; }
+
+.os-status-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.os-status-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.os-status-meta {
+  font-size: 0.82rem;
+  color: var(--text-support);
+}
+
+.os-close-btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--btn-delete);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.os-close-btn:hover:not(:disabled) { background: var(--btn-delete-dark); }
+.os-close-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Card ── */
+.os-card {
+  background: var(--bg-card);
+  border: 1px solid var(--booth-card-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--booth-card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.os-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--booth-title);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Booth grid ── */
+.os-booth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.os-booth-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.2rem 0.8rem;
+  border: 2px solid var(--booth-card-border);
+  border-radius: var(--border-radius);
+  background: var(--booth-create-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.os-booth-card:hover:not(:disabled):not(.os-booth-occupied) {
+  border-color: var(--btn-add);
+  background: var(--booth-create-hover-bg);
+  box-shadow: 0 0 0 3px var(--primary-color-light);
+}
+.os-booth-card.os-booth-selected {
+  border-color: var(--btn-add);
+  background: var(--booth-tomorrow-bg);
+  box-shadow: 0 0 0 3px var(--primary-color-light);
+}
+.os-booth-card.os-booth-occupied {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #f5f5f5;
+}
+.os-booth-icon { font-size: 2rem; }
+.os-booth-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--booth-title);
+}
+.os-booth-location {
+  font-size: 0.78rem;
+  color: var(--booth-location-text);
+}
+
+/* chips */
+.os-booth-chip {
+  margin-top: 0.3rem;
+  padding: 0.18rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.os-chip-free {
+  background: var(--booth-open-bg);
+  color: var(--booth-open-text);
+}
+.os-chip-busy {
+  background: var(--booth-close-bg);
+  color: var(--booth-close-text);
+}
+
+/* selected checkmark */
+.os-booth-check {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: var(--btn-add);
+  color: #fff;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+/* ── Action row ── */
+.os-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--booth-card-border);
+}
+.os-selected-label {
+  font-size: 0.88rem;
+  color: var(--text-support);
+}
+.os-open-btn {
+  padding: 0.55rem 1.6rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--btn-submit);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.os-open-btn:hover:not(:disabled) { background: var(--btn-submit-dark); }
+.os-open-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── Detail grid (active shift) ── */
+.os-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.os-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--booth-create-bg);
+  border: 1px solid var(--booth-card-border);
+  border-radius: var(--border-radius);
+}
+.os-detail-label {
+  font-size: 0.75rem;
+  color: var(--text-support);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.os-detail-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  word-break: break-all;
+}
+.os-mono { font-family: monospace; font-size: 0.82rem; }
+
+/* status chip in detail */
+.os-status-chip {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.os-chip-open   { background: var(--booth-open-bg); color: var(--booth-open-text); }
+.os-chip-closed { background: var(--booth-close-bg); color: var(--booth-close-text); }
+.os-chip-active { background: var(--booth-open-bg); color: var(--booth-open-text); }
+
+/* ── Skeleton ── */
+.os-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.os-skeleton-booth {
+  height: 140px;
+  border-radius: var(--border-radius);
+  background: linear-gradient(90deg, #e8ebf2 25%, #f5f7fb 50%, #e8ebf2 75%);
+  background-size: 200% 100%;
+  animation: os-shimmer 1.3s infinite;
+}
+@keyframes os-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Empty state ── */
+.os-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-support);
+  font-size: 0.95rem;
+}
