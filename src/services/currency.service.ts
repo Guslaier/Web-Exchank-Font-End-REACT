@@ -91,7 +91,7 @@ export interface RateDetail {
   sell_rate: number;
 }
 
-export interface CurrencyData {
+export interface ExchangeCurrencyData {
   currencyInfo: {
     id: string;
     code: string;
@@ -194,9 +194,9 @@ export const CurrencyService = {
 
 export const ExchangeRateService = {
   /** GET /exchange-rates — คืนค่า ExchangeRate[] */
-  getAll: async (): Promise<CurrencyData> => {
+  getAll: async (): Promise<ExchangeCurrencyData> => {
     try {
-      const res = await api.get<CurrencyData>(
+      const res = await api.get<ExchangeCurrencyData>(
         API_ENDPOINTS.EXCHANGE_RATE.GET_ALL,
       );
       return res.data;

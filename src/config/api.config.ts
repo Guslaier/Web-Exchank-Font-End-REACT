@@ -110,17 +110,15 @@ export const API_ENDPOINTS = {
 
   // ========== TRANSFER TRANSACTIONS ==========
   TRANSFER_TRANSACTION: {
-    BOOTH_TO_BOOTH_C2: '/transfer-transactions/booth-to-booth-c2',
-    BOOTH_TO_BOOTH_C1: '/transfer-transactions/booth-to-booth-c1',
-    CUSTOM_TO_BOOTH_IN: '/transfer-transactions/custom-to-booth-in',
-    CUSTOM_TO_BOOTH_OUT: '/transfer-transactions/custom-to-booth-out',
+    BOOTH_TO_BOOTH: '/transfer-transactions/booth-to-booth',
+    CENTER_TO_BOOTH: '/transfer-transactions/center-to-booth',
     GET_ALL: '/transfer-transactions',
     GET_BY_ID: (id: string) => `/transfer-transactions/${id}`,
     GET_BY_BOOTH: (boothId: string) => `/transfer-transactions/booth/${boothId}`,
     GET_BY_SHIFT: (shiftId: string) => `/transfer-transactions/shift/${shiftId}`,
     GET_BY_DATE_RANGE: '/transfer-transactions/date-range',
-    CANCEL: (id: string) => `/transfer-transactions/${id}/cancel`,
-    FIRST_SHIFT_CASH_COUNT: '/transfer-transactions/first-shift-cash-count',
+    CANCEL: (id: string) => `/transfer-transactions/cancel/${id}`,
+    FIRST_SHIFT_CASH_COUNT: '/transfer-transactions/test-first-shift-cash-count',
   },
 
   // ========== TRANSACTION RECORDS ==========

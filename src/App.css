@@ -19,7 +19,7 @@ body{
 .content {
   flex: 1;
   padding: calc(var(--spacing) * 8);
-  background-color: #FFFFFF;
+  background-color: var(--bg-main);
   min-width: 0;
 }
 

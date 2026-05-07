@@ -1,0 +1,263 @@
+/* ===== Transfer Page ===== */
+
+
+
+/* ===== Form Card ===== */
+.transfer-form-card {
+  background-color: var(--transfer-card-bg);
+  border: 1px solid var(--transfer-card-border);
+  border-radius: 12px;
+  box-shadow: var(--transfer-card-shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Field / Row Layout ===== */
+.transfer-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transfer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.transfer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transfer-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ===== Toggle buttons (Transfer Type / Cash Flow) ===== */
+.transfer-toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.transfer-toggle-btn {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--transfer-tab-idle-border);
+  background-color: var(--transfer-tab-idle-bg);
+  color: var(--transfer-tab-idle-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.transfer-toggle-btn:hover {
+  background-color: var(--transfer-tab-active-bg);
+  color: var(--transfer-tab-active-text);
+}
+
+.transfer-toggle-btn.active {
+  background-color: var(--transfer-tab-active-bg);
+  color: var(--transfer-tab-active-text);
+  border-color: var(--transfer-tab-active-border);
+  font-weight: 600;
+}
+
+/* Cash In active */
+.transfer-toggle-btn.cash-in.active {
+  background-color: var(--transfer-cash-in-active-bg);
+  color: var(--transfer-cash-in-active-text);
+  border-color: var(--transfer-cash-in-active-border);
+}
+
+/* Cash Out active */
+.transfer-toggle-btn.cash-out.active {
+  background-color: var(--transfer-cash-out-active-bg);
+  color: var(--transfer-cash-out-active-text);
+  border-color: var(--transfer-cash-out-active-border);
+}
+
+/* ===== Select & Input ===== */
+.transfer-select,
+.transfer-input {
+  width: 100%;
+  padding: 0.65rem 0.875rem;
+  border: 1px solid var(--transfer-input-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.transfer-select:focus,
+.transfer-input:focus {
+  outline: none;
+  border-color: var(--transfer-input-focus-border);
+  box-shadow: 0 0 0 2px rgba(53, 53, 204, 0.12);
+}
+
+.transfer-input {
+  text-align: left;
+  padding-left: 0.875rem;
+}
+
+.transfer-input::placeholder {
+  color: #a0aec0;
+}
+
+/* ===== Submit Button ===== */
+.transfer-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--transfer-btn-process-bg);
+  color: var(--transfer-btn-process-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.25rem;
+}
+
+.transfer-submit-btn:hover:not(:disabled) {
+  background-color: var(--transfer-btn-process-hover);
+}
+
+.transfer-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.transfer-submit-btn .transfer-submit-icon {
+  font-size: 1.1rem;
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+/* ===== Error Message ===== */
+.transfer-error {
+  background-color: #fff5f5;
+  color: var(--text-error);
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ===== Recent Transfers ===== */
+.transfer-recent {
+  background-color: var(--bg-main);
+}
+
+.transfer-recent-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.transfer-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transfer-empty {
+  color: var(--text-support);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.transfer-recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--transfer-card-bg);
+  border: 1px solid var(--transfer-card-border);
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--transfer-card-shadow);
+  transition: background-color 0.15s;
+}
+
+.transfer-recent-item:hover {
+  background-color: #f8faff;
+}
+
+.transfer-recent-left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.transfer-recent-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--transfer-recent-icon-bg);
+  color: var(--transfer-recent-icon-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.transfer-recent-id {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.transfer-recent-route {
+  font-size: 0.775rem;
+  color: var(--transfer-tab-active-text);
+  margin-top: 0.125rem;
+}
+
+.transfer-recent-right {
+  text-align: right;
+}
+
+.transfer-recent-amount {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.transfer-recent-time {
+  font-size: 0.775rem;
+  color: var(--text-support);
+  margin-top: 0.125rem;
+}
+
+/* ===== Loading Skeleton ===== */
+.transfer-skeleton {
+  height: 56px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

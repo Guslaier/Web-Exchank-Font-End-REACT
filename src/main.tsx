@@ -16,6 +16,7 @@ import ResetPassword from "./pages/Reset_Password/Reset_Password.tsx";
 import Profile from "./pages/Profile/Profile.tsx";
 import BoothManagement from "./pages/Booth/BoothManagement.tsx";
 import Currency from "./pages/Currency/Currency.tsx";
+import Transfer from "./pages/Tranfer/Tranfer.tsx";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
               // { path: "manage-user", element: <ManageUser /> }, // ตัวอย่างหน้า Admin
                 {
                   path: Path.MANAGE_TRANSACTION, // ใช้แค่ชื่อ path ไม่ต้องใส่ / ข้างหน้าใน children
-                  element: <div>Manage Transaction (Admin Only)</div>,
+                  element: <div>Manage Transaction(Admin Only)</div>,
                 },
                 {
                   path: Path.MANAGE_USER,
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
                 {
                   path: Path.EDIT_RATE,
                   element: <Currency />, // ตัวอย่างหน้า Currency Management
+                },
+                {
+                  path: Path.CASH_TRANSFER,
+                  element: <Transfer />, // ต
                 }
 
             ]

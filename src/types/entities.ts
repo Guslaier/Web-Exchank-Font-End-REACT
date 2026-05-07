@@ -1,9 +1,21 @@
-export type UserRole = "ADMIN" | "MANAGER" | "EMPLOYEE" ; // อิงตาม Database
-export type TranStatus = "COMPLETED" | "PENDING" | "VOIDED" | "CANCELED"; // อิงตาม Database
-export type TranSectionType =  "EXCHANGE" | "TRANSFER"; // อิงตาม Database
-export type TransferTransaction =  "CASH_IN" | "CASH_OUT" | 'TRANSFER_IN' | 'TRANSFER_OUT'; // สำหรับการโอนเงินระหว่างสาขา
-export type TranType = "BUY" | "SELL" ; // อิงตาม Database
-
+export type UserRole = 'ADMIN' | 'MANAGER' | 'EMPLOYEE'; // อิงตาม Database
+export type TranStatus =
+  | 'COMPLETED'
+  | 'COMPLETE_CONFIC'
+  | 'PENDING'
+  | 'VOIDED'
+  | 'CANCELED'; // อิงตาม Database
+export type TranSectionType =
+  | 'EXCHANGE'
+  | 'TRANSFER'
+  | 'FISERST_SHIFT_CASH_COUNT'
+  | 'CLOSE_SHIFT_CASH_COUNT'; // อิงตาม Database
+export type TransferTransactionType =
+  | 'CASH_IN'
+  | 'CASH_OUT'
+  | 'TRANSFER_IN'
+  | 'TRANSFER_OUT'; // สำหรับการโอนเงินระหว่างสาขา
+export type TranType = 'BUY' | 'SELL'; // อิงตาม Database
 //== User Interfaces ==//
 export interface UserData {
     readonly id: string;
@@ -70,17 +82,19 @@ export interface TransactionData {
 }
 
 export interface TransferTransactionData {
-     readonly transactionNo: string;     // PK, FK (Primary Key & Foreign Key)
-    readonly exchangeRatesId: string;   // FK
-    readonly boothId: string;           // FK
-     amount: number;            // จำนวนเงิน
-     type: TranSectionType;     // ประเภทการโอน
-     refBoothId: string;        // ID บูธที่อ้างอิง
-     description?: string;      // รายละเอียด (ใส่ ? เพราะปกติมักจะเป็น optional)
-     userId: string;            // ผู้ทำรายการ
-     status: TranStatus;        // สถานะ (เช่น success, pending, cancel)
-     createdAt: Date;
-     updatedAt: Date;
+    readonly id: string; // PK, FK (Primary Key & Foreign Key)
+  readonly exchangeRateId: string; // FK
+  boothId: string; // FK
+  ShiftId?: string | null; // shiftId อาจเป็น null ได้สำหรับบางประเภทของ transaction เช่น transfer ระหว่างบูธ
+  amount: number; // จำนวนเงิน
+  type: TransferTransactionType; // ประเภทการโอน
+  refBoothId: string; // ID บูธที่อ้างอิง
+  refShiftId?: string | null; // shiftId อาจเป็น null ได้สำหรับบางประเภทของ transaction เช่น transfer ระหว่างบูธ
+  description?: string; // รายละเอียด (ใส่ ? เพราะปกติมักจะเป็น optional)
+  userId: string; // ผู้ทำรายการ
+  status: TranStatus; // สถานะ (เช่น success, pending, cancel)
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ExchangeTransactionData {

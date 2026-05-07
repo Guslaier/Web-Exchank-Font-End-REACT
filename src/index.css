@@ -138,7 +138,7 @@
     42.944% 0.03789 284.685 / 0.386
   ); /* ตัวอย่างการใช้ Tailwind border color */
   /* สีพื้นหลัง (Background) */
-  --bg-main: #f4f7fe; /* พื้นหลังสีเทาอ่อนด้านขวา */
+  --bg-main: #ffffff; /* พื้นหลังสีเทาอ่อนด้านขวา */
   --bg-card: #ffffff; /* พื้นหลังขาวของ Card/Table */
 
   /* สีข้อความ (Text) */
@@ -264,6 +264,30 @@
   --text-warning: #e53e3e; /* สีแดงสำหรับข้อความเตือน */
   --primary-color-light: oklch(75.686% 0.12594 256.949 / 0.5); /* เวอร์ชันอ่อนลงของ primary color สำหรับ Hover */
   --primary-color-dark: oklch(19.56% 0.04521 257.162 / 0.8); /* เวอร์ชันเข้มขึ้นของ primary color สำหรับ Hover */
+
+  /* --- Transfer page colors --- */
+  --transfer-tab-active-bg: #eef0ff;
+  --transfer-tab-active-text: #3535cc;
+  --transfer-tab-active-border: #3535cc;
+  --transfer-tab-idle-bg: #ffffff;
+  --transfer-tab-idle-text: #2d3748;
+  --transfer-tab-idle-border: #d1d5db;
+  --transfer-cash-in-active-bg: #e6faf0;
+  --transfer-cash-in-active-text: #0f7d44;
+  --transfer-cash-in-active-border: #0f7d44;
+  --transfer-cash-out-active-bg: #fff5f5;
+  --transfer-cash-out-active-text: #c00000;
+  --transfer-cash-out-active-border: #c00000;
+  --transfer-btn-process-bg: #3535cc;
+  --transfer-btn-process-hover: #2929a8;
+  --transfer-btn-process-text: #ffffff;
+  --transfer-recent-icon-bg: #eef0ff;
+  --transfer-recent-icon-text: #3535cc;
+  --transfer-card-bg: #ffffff;
+  --transfer-card-border: #e8ebf2;
+  --transfer-card-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --transfer-input-border: #d1d5db;
+  --transfer-input-focus-border: #3535cc;
 }
 
 /* ===== Google Translate widget suppression ===== */

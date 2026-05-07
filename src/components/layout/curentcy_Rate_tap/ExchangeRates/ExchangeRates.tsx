@@ -3,6 +3,7 @@ import "./ExchangeRates.css";
 import {
   ExchangeRateService,
   type CurrencyData,
+  type ExchangeCurrencyData,
   type UpdateExchangeRateData,
 } from "../../../../services/currency.service";
 import React from "react";
@@ -12,7 +13,7 @@ import { useSSE } from "../../../../services/sse.service";
 import { Minus, Plus } from "lucide-react";
 
 export default function ExchangeRates() {
-  const [ExchangeRates, setExchangeRates] = useState<CurrencyData[] | null>(
+  const [ExchangeRates, setExchangeRates] = useState<ExchangeCurrencyData[] | null>(
     null,
   );
   const [loading, setLoading] = useState(true);
@@ -52,7 +53,7 @@ export default function ExchangeRates() {
     const data = await ExchangeRateService.getAll();
     const newData = Object.values(data).filter(
       (item) => item.currencyInfo.code !== "THB",
-    ) as CurrencyData[];
+    ) as ExchangeCurrencyData[];
     setExchangeRates(newData);
     // บันทึกค่าเดิมไว้เปรียบเทียบตอน save
     const origMap: typeof originalValues.current = {};
