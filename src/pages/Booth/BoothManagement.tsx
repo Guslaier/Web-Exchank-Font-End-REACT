@@ -7,6 +7,8 @@ import type { BoothData } from "../../types/entities";
 import { BoothService } from "../../services/booth.service";
 import Swal from "sweetalert2";
 
+type ViewMode = "grid" | "list";
+
 export default function BoothManagement() {
   const [booths, setBooths] = useState<BoothData[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,6 +17,7 @@ export default function BoothManagement() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingBooth, setEditingBooth] = useState<BoothData | null>(null);
   const [listCurrentShift, setListCurrentShift] = useState<string[]>([]);
+  const [viewMode, setViewMode] = useState<ViewMode>("grid");
 
   const fetchBooths = async () => {
     try {
@@ -130,12 +133,41 @@ export default function BoothManagement() {
           <h1 className="TP">Booth Management</h1>
           <p className="STP">Manage exchange booths and locations</p>
         </div>
-        <Button
-          label="Add Booth"
-          variant="add"
-          className="main-add booth-main-add"
-          onClick={() => setShowAddModal(true)}
-        />
+        <div className="booth-header-right">
+          <div className="booth-view-toggle">
+            <button
+              className={`booth-view-btn${viewMode === "grid" ? " active" : ""}`}
+              onClick={() => setViewMode("grid")}
+              title="Grid View"
+              aria-label="Grid view"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor"/>
+                <rect x="11" y="1" width="6" height="6" rx="1.5" fill="currentColor"/>
+                <rect x="1" y="11" width="6" height="6" rx="1.5" fill="currentColor"/>
+                <rect x="11" y="11" width="6" height="6" rx="1.5" fill="currentColor"/>
+              </svg>
+            </button>
+            <button
+              className={`booth-view-btn${viewMode === "list" ? " active" : ""}`}
+              onClick={() => setViewMode("list")}
+              title="List View"
+              aria-label="List view"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="2" width="16" height="2.5" rx="1.25" fill="currentColor"/>
+                <rect x="1" y="7.75" width="16" height="2.5" rx="1.25" fill="currentColor"/>
+                <rect x="1" y="13.5" width="16" height="2.5" rx="1.25" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+          <Button
+            label="Add Booth"
+            variant="add"
+            className="main-add booth-main-add"
+            onClick={() => setShowAddModal(true)}
+          />
+        </div>
       </div>
 
       <Search
@@ -144,7 +176,8 @@ export default function BoothManagement() {
         id="booth-management"
       />
 
-      <div className="booth-grid">
+      {viewMode === "grid" ? (
+        <div className="booth-grid">
           {filteredBooths.sort((a, b) => a.name.localeCompare(b.name))
           .map((booth) => (
             <BoothCard 
@@ -166,7 +199,28 @@ export default function BoothManagement() {
             </div>
             <span className="booth-create-text">Create New Booth</span>
           </button>
-      </div>
+        </div>
+      ) : (
+        <div className="booth-list-wrapper">
+          {filteredBooths.sort((a, b) => a.name.localeCompare(b.name)).map((booth) => (
+            <div key={booth.id} className="booth-row-item">
+              <BoothCard
+                booth={booth}
+                listCurrentShift={listCurrentShift}
+                onEdit={() => {
+                  setEditingBooth(booth);
+                  setShowEditModal(true);
+                }}
+                onDelete={deleteBooth}
+                onRefresh={async () => await fetchBooths()}
+              />
+            </div>
+          ))}
+          {filteredBooths.length === 0 && (
+            <p className="booth-list-empty">No booths found</p>
+          )}
+        </div>
+      )}
 
       {showAddModal && (
         <div className="modal-overlay" role="dialog" aria-modal="true">

@@ -6,13 +6,105 @@
   font-size: 1.25rem;
 }
 
+/* ===== Header Right (toggle + add button) ===== */
+.booth-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ===== View Toggle ===== */
+.booth-view-toggle {
+  display: flex;
+  align-items: center;
+  background-color: var(--booth-shift-bg);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.booth-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-support);
+  cursor: pointer;
+  transition: background-color 0.18s, color 0.18s;
+}
+
+.booth-view-btn:hover {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+.booth-view-btn.active {
+  background-color: var(--bg-card);
+  color: var(--btn-add);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ===== Grid ===== */
 .booth-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
   gap: 1.3rem;
 }
 
+/* ===== List / Row wrapper ===== */
+.booth-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* Each row item stretches the BoothCard horizontally */
+.booth-row-item .booth-card {
+  min-height: unset;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.3rem 1.4rem;
+  flex-wrap: nowrap;
+}
+
+/* Name + location + active block — flex column, fixed width */
+.booth-row-item .booth-card-top {
+  flex: 0 0 200px;
+  min-width: 140px;
+}
+
+/* Location + Active together */
+.booth-row-item .booth-card > div:nth-child(2) {
+  flex: 0 0 200px;
+  min-width: 140px;
+}
+
+/* Shift box takes remaining space */
+.booth-row-item .booth-shift-box {
+  flex: 1;
+  min-width: 180px;
+  border-radius: 12px;
+}
+
+/* Actions stay at the end, fixed width */
+.booth-row-item .booth-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
+  grid-template-columns: 120px 46px;
+}
+
+.booth-list-empty {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-support);
+}
+
+/* ===== Create Card ===== */
 .booth-create-card {
   min-height: 260px;
   border: 2px dashed var(--booth-create-border);
@@ -71,11 +163,27 @@
     align-items: stretch;
   }
 
+  .booth-header-right {
+    justify-content: space-between;
+  }
+
   .booth-main-add {
     width: 100%;
   }
 
   .booth-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* On mobile, list view falls back to vertical cards */
+  .booth-row-item .booth-card {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .booth-row-item .booth-card-top,
+  .booth-row-item .booth-card > div:nth-child(2) {
+    flex: unset;
+    width: 100%;
   }
 }

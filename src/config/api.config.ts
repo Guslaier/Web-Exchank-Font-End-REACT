@@ -77,11 +77,11 @@ export const API_ENDPOINTS = {
   // ========== EXCHANGE TRANSACTIONS ==========
   EXCHANGE_TRANSACTION: {
     CREATE: '/exchange-transactions',
-    GET_BY_SHIFT: (shiftId: string) => `/exchange-transactions/shift/${shiftId}`,
-    GET_DETAIL: (id: string) => `/exchange-transactions/${id}`,
-    GET_MANY: '/exchange-transactions',
-    SET_PENDING: (id: string) => `/exchange-transactions/${id}/set-pending`,
-    SET_APPROVE: (id: string) => `/exchange-transactions/${id}/set-approve`,
+    GET_BY_SHIFT: (shiftId: string) => `/exchange-transactions/shift?id=${shiftId}`,
+    GET_DETAIL: (id: string) => `/exchange-transactions?id=${id}`,
+    GET_MANY: '/exchange-transactions/many',
+    SET_PENDING: (id: string) => `/exchange-transactions/req/pending/${id}`,
+    SET_APPROVE: (id: string) => `/exchange-transactions/approve/pending/${id}`,
   },
 
   // ========== SHIFTS ==========
