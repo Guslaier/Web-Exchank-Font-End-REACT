@@ -237,9 +237,10 @@ await Swal.fire({
             className="er-select"
             value={selectedBoothId}
             onChange={(e) => handleBoothChange(e.target.value)}
+            translate="no"
           >
             {booths.map((b) => (
-              <option key={b.id} value={b.id}>
+              <option key={b.id} value={b.id} translate="no">
                 {b.name}
               </option>
             ))}
@@ -307,6 +308,7 @@ await Swal.fire({
                         rowSpan={
                           conflictIds.find((c) => c.id === rate.id) ? 2 : 1
                         }
+                        translate="no"
                       >
                         {rate.name}
                       </td>

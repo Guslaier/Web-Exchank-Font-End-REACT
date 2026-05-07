@@ -18,6 +18,7 @@ export const useSSE = (onRefresh: () => void) => {
           if (msg.data) {
             const data = JSON.parse(msg.data);
             if (data.signal === 'refresh') {
+              console.log('Received refresh signal from server');
               onRefresh(); // เรียกฟังก์ชันดึงข้อมูลใหม่
             }
           }

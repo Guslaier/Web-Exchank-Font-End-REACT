@@ -274,7 +274,8 @@ export default function ViewAllRates() {
                 <th className="var-th var-th--central">Buy (Base)</th>
                 <th className="var-th var-th--sell">Sell (Base)</th>
                 {Rates.map((b) => (
-                  <th key={b.booth_id} className="var-th var-th--booth">
+                  <th key={b.booth_id} className="var-th var-th--booth"
+                  translate="no">
                     {b.booth_name}
                   </th>
                 ))}
@@ -294,6 +295,7 @@ export default function ViewAllRates() {
                     <td
                       className={`var-td var-td--currency var-td--clickable ${isExSelected ? "var-td--ex-currency-selected" : ""}`}
                       onClick={() => handleCurrencyRowClick(currencyItem)}
+                      translate="no"
                     >
                       <span className="var-code">{name}</span>
                       <span className="var-td--edit-icon">✎</span>
@@ -348,7 +350,7 @@ export default function ViewAllRates() {
             </div>
 
             <div className="var-panel-meta">
-              <span className="var-panel-currency">{selectedExchangeRate.name}</span>
+              <span className="var-panel-currency" translate="no">{selectedExchangeRate.name}</span>
               <span className="var-panel-range">
                 range {selectedExchangeRate.rangeStart} - {selectedExchangeRate.rangeStop}
               </span>
@@ -428,8 +430,8 @@ export default function ViewAllRates() {
             </div>
 
             <div className="var-panel-meta">
-              <span className="var-panel-currency">{selectedCell.currencyName}</span>
-              <span className="var-panel-booth">{selectedCell.boothName}</span>
+              <span className="var-panel-currency" translate="no">{selectedCell.currencyName}</span>
+              <span className="var-panel-booth" translate="no">{selectedCell.boothName}</span>
             </div>
 
             <div className="var-panel-rates">
