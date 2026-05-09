@@ -99,6 +99,14 @@ export const API_ENDPOINTS = {
     GET_ALL: '/system-logs',
   },
 
+  // ========== REPORTS ==========
+  REPORT: {
+    GET_ALL: '/reports',
+    GET_BY_USER: (userId: string) => `/reports/user/${userId}`,
+    GET_DETAIL: (id: string) => `/reports/detail/${id}`,
+    SYNC: (userId: string) => `/reports/sync/${userId}`,
+  },
+
   // ========== STOCKS ==========
   STOCK: {
     GET_BY_SHIFT: '/stocks/shift',

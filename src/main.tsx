@@ -18,11 +18,9 @@ import BoothManagement from "./pages/Booth/BoothManagement.tsx";
 import Currency from "./pages/Currency/Currency.tsx";
 import Transfer from "./pages/Tranfer/Tranfer.tsx";
 import TransactionPage from "./pages/transection/transection.tsx";
-import Dashboard from "./pages/Dashboard.tsx";
-import Report from "./pages/Report.tsx";
-import RecordTrading from "./pages/RecordTrading.tsx";
-import TransactionEntry from "./pages/TransactionEntry.tsx";
+
 import OpenShift from "./pages/OpenShift.tsx";
+import Report from "./pages/Report/Report.tsx";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +58,7 @@ const router = createBrowserRouter([
               // { path: "manage-user", element: <ManageUser /> }, // ตัวอย่างหน้า Admin
                 {
                   path: Path.DASHBOARD,
-                  element: <Dashboard />,
+                  // element: <Dashboard />,
                 },
                 {
                   path: Path.MANAGE_TRANSACTION,
@@ -101,11 +99,11 @@ const router = createBrowserRouter([
             children: [
               {
                 path: Path.RECORD_TRADING,
-                element: <RecordTrading />,
+                // element: <RecordTrading />,
               },
               {
                 path: Path.TRANSACTION_ENTRY,
-                element: <TransactionEntry />,
+                // element: <TransactionEntry />,
               },
               
             ]

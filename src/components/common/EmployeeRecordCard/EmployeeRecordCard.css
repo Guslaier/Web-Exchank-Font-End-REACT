@@ -1,0 +1,183 @@
+/* Employee Record Card - clean rebuild from screenshot */
+
+.employee-report__grid-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #dce3ee;
+  border-radius: var(--border-radius);
+  background: #f4f6f9;
+  box-shadow: 0 10px 22px -22px rgba(15, 23, 42, 0.45);
+}
+
+.employee-report__employee-cell-wrap {
+    display: grid;
+    /* กำหนดสัดส่วนคอลัมน์ให้เหมาะสม (ตัวอย่าง: แบ่ง 3 ส่วนเท่ากัน) */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.2rem; /* เพิ่มระยะห่างระหว่างช่อง */
+    
+    grid-template-areas: 
+        "info          cash           actions"
+        "time          balance        net";
+}
+
+/* 2. เชื่อม Class เข้ากับ Area ที่กำหนดไว้ */
+.time { grid-area: time; }
+.employee-info { grid-area: info; }
+.cash_advance { grid-area: cash; }
+.balance_check { grid-area: balance; }
+.employee-report__actions { grid-area: actions; }
+.employee-report__net { grid-area: net; }
+/* Employee Record Card - clean rebuild from screenshot */
+.balance_check .is-positive,
+.employee-report__net .net.is-positive,
+.employee-report__daily-sheet tbody td.is-positive {
+  color: #2f9b52;
+}
+
+.h-ti {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    color: var(--text-support);
+    font-size: calc(var(--font-size-base)*0.725);
+    
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    justify-content: flex-end;
+}
+.employee-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+.employee-info .email {
+    color: var(--text-support);
+    font-size: calc(var(--font-size-base)*0.75);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.employee-report__actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+.employee-report__actions button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d4dbe7;
+    background-color: transparent;
+    border: none    ;
+    padding: 0.2rem;
+    font: inherit;
+    color: var(--booth-title);
+    font-weight: 600;
+}
+.employee-report__actions button:hover {
+    background-color: #e3e7ef;
+    border-radius: var(--border-radius);
+}
+
+.employee-report__actions button svg {
+    width:90%;
+    aspect-ratio: 1/1;
+    fill: currentColor;
+    color: var(--text-support);
+}
+/* Employee Record Card - clean rebuild from screenshot */
+.balance_check .is-negative{
+    color: #73110a;
+}
+.employee-report__net .net.is-negative,
+.employee-report__daily-sheet tbody td.is-negative {
+    color: #d53428;
+}
+
+
+
+
+.employee-report__daily-sheet-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #e3e7ef;
+  border-radius: var(--border-radius);
+  background: #f8f9fb;
+  margin-top: 0.5rem;
+}
+
+.employee-report__daily-sheet {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+.employee-report__daily-sheet th,
+.employee-report__daily-sheet td {
+  padding: 0.1rem 0.1rem;
+  border-right: 1px solid #d7dde6;
+  border-bottom: 1px solid #dde2ea;
+  white-space: nowrap;
+  font-size: calc(var(--font-size-base)*0.675);
+}
+
+.employee-report__daily-sheet th:last-child,
+.employee-report__daily-sheet td:last-child {
+  border-right: none;
+}
+
+.employee-report__daily-sheet thead th {
+  background: #b87160;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.employee-report__daily-sheet thead th:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+
+.employee-report__daily-sheet thead th:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+
+.employee-report__daily-sheet tbody td {
+  color: #173052;
+  text-align: left;
+}
+
+.employee-report__daily-sheet tbody td:nth-child(1),
+.employee-report__daily-sheet tbody td:nth-child(2) {
+  font-weight: 700;
+  color: #46658f;
+}
+
+.employee-report__daily-sheet tbody td:nth-child(4) {
+  text-align: center;
+}
+
+.employee-report__daily-sheet tbody td.is-weekend {
+  background: #f2eedf76;
+  color: #bd6a53;
+}
+
+.employee-report__daily-sheet tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.employee-report__daily-sheet tr:hover{
+    background-color: #b5b5b5;
+}

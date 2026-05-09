@@ -18,7 +18,7 @@ body{
 
 .content {
   flex: 1;
-  padding: calc(var(--spacing) * 8);
+  padding: calc(var(--spacing) * 6);
   background-color: var(--bg-main);
   min-width: 0;
 }

@@ -5,7 +5,7 @@ import cashTransferIcon from "../assets/svg/transfer-fee-svgrepo-com.svg";
 import manageBoothIcon from "../assets/svg/booth-svgrepo-com.svg";
 import manageUserIcon from "../assets/svg/user-svgrepo-com.svg";
 import editRateIcon from "../assets/svg/exchange-rate-svgrepo-com.svg";
-import reportIcon from "../assets/svg/dashboard-svgrepo-com.svg";
+import reportIcon from "../assets/svg/report-svgrepo-com.svg";
 import recordTradingIcon from "../assets/svg/dashboard-svgrepo-com.svg";
 import transactionEntryIcon from "../assets/svg/dashboard-svgrepo-com.svg";
 import openShiftIcon from "../assets/svg/dashboard-svgrepo-com.svg";
@@ -45,8 +45,8 @@ export const menus: IMenu[] = [
   { icon: manageBoothIcon, title: 'Booth', path: Path.MANAGE_BOOTH, roles: ['ADMIN','MANAGER'] },
   { icon: manageUserIcon, title: 'User', path: Path.MANAGE_USER, roles: ['ADMIN','MANAGER'] },
   { icon: editRateIcon, title: 'Currency Rate', path: Path.EDIT_RATE, roles: ['ADMIN','MANAGER'] },
+  { icon: openShiftIcon, title: 'Shift Management', path: Path.OPEN_SHIFT, roles: ['ADMIN','MANAGER'] },
   { icon: reportIcon, title: 'Report & Audit', path: Path.REPORT, roles: ['ADMIN','MANAGER'] },
-  { icon: openShiftIcon, title: 'Open / Close Shift', path: Path.OPEN_SHIFT, roles: ['ADMIN','MANAGER'] },
   { icon: recordTradingIcon, title: 'Record Trading', path: Path.RECORD_TRADING, roles: ['EMPLOYEE'] },
   { icon: transactionEntryIcon, title: 'Transaction  Entry', path: Path.TRANSACTION_ENTRY, roles: ['EMPLOYEE'] },
 ];

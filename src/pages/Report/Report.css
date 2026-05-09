@@ -1,0 +1,69 @@
+/* ===== Report Management Page ===== */
+
+.rp-page {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* ----- Header ----- */
+.rp-header {
+  margin-bottom: calc(var(--spacing) * 4);
+}
+
+/* ----- Tab bar ----- */
+.rp-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 0.5);
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: calc(var(--spacing) * 6);
+}
+
+.rp-tab-btn {
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
+  font-size: calc(var(--font-size-base) * 0.9);
+  font-weight: 600;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background: transparent;
+  color: var(--text-support);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  margin-bottom: -2px; /* ทับขอบล่างของ container */
+}
+
+.rp-tab-btn:hover {
+  color: var(--text-main);
+  background-color: #f0f4ff;
+}
+
+/* Active tab: ขีดเส้นล่างสีน้ำเงิน + พื้นหลังอ่อน */
+.rp-tab-btn--active {
+  background-color: #f4f7fe;
+  color: #1a3a6e;
+  border-bottom-color: var(--btn-add);
+}
+
+/* ----- Content area ----- */
+.rp-content {
+  flex: 1;
+}
+
+/* ----- Shared loading / empty states ----- */
+.rp-loading,
+.rp-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  color: var(--text-support);
+  font-size: calc(var(--font-size-base) * 0.9);
+}
+
+.rp-empty {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px dashed #cdd5e0;
+}
