@@ -4,29 +4,27 @@ import { Path } from '../config/path.Config';
 import type { UserRole } from '../types/entities';
 
 interface GuardProps {
-  allowedRoles?: UserRole[]; // ตัวเลือกสำหรับระบุบทบาทที่อนุญาตเข้าถึง
+  allowedRoles?: UserRole[];
 }
 
-// MainGuard เป็นคอมโพเนนต์ที่ใช้สำหรับป้องกันการเข้าถึงหน้าเว็บตามเงื่อนไขการ Login และสิทธิ์ของผู้ใช้
 const MainGuard = ({ allowedRoles }: GuardProps) => {
   const location = useLocation();
   
-  // 🔍 Hook 1: เช็คการ Login (Auth Check)
-  const token = storage.get<string>('authToken');
+  // 🔍 เปลี่ยนจากการเช็ค token เป็นการเช็ค userInfo หรือ userRole แทน
+  // เพราะเราย้าย token ไปไว้ใน HttpOnly Cookie แล้ว
+  const userInfo = storage.get<string>('userInfo'); 
   const userRole = storage.get<UserRole>('userRole');
 
-  // ถ้ายังไม่ได้ Login ให้ไปหน้า Login
-  if (!token) {
+  // ถ้าไม่มีข้อมูล User ใน storage แสดงว่ายังไม่ได้ Login หรือ Session หลุด
+  if (!userInfo) {
     return <Navigate to={Path.LOGIN} state={{ from: location }} replace />;
   }
 
-  // 🔍 Hook 2: เช็คสิทธิ์ (Role Check) - ถ้ามีการระบุบทบาทที่อนุญาต
-  if (allowedRoles && !allowedRoles.includes(userRole!)) {
-    // ถ้าสิทธิ์ไม่ถึง ให้เด้งไปหน้าแรก (Dashboard)
+  // 🔍 Role Check
+  if (allowedRoles && (!userRole || !allowedRoles.includes(userRole))) {
     return <Navigate to={Path.DASHBOARD} replace />;
   }
 
-  // ผ่านทุกด่าน ให้ไปต่อได้
   return <Outlet />;
 };
 
